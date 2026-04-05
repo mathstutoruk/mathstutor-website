@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maths Tutor UK | GCSE & A-Level Maths Tuition</title>
+  <meta
+    name="description"
+    content="Premium 1-to-1 GCSE and A-Level maths tuition in the UK. Clear teaching, structured lessons, and exam-focused support."
+  />
+  <meta name="theme-color" content="#0f172a" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0f172a;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-border: rgba(255, 255, 255, 0.12);
+      --text: #eef2ff;
+      --muted: #b6c0d4;
+      --gold: #d4af37;
+      --gold-2: #f4d97a;
+      --white: #ffffff;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(212, 175, 55, 0.16), transparent 26%),
+        radial-gradient(circle at top right, rgba(212, 175, 55, 0.08), transparent 18%),
+        linear-gradient(180deg, #030712 0%, #07111f 35%, #0b1324 100%);
+      color: var(--text);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 10, 21, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(212, 175, 55, 0.45);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-text strong {
+      font-size: 1rem;
+      color: var(--white);
+    }
+
+    .brand-text span {
+      font-size: 0.78rem;
+      color: var(--gold-2);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.97rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #151515;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.22);
+    }
+
+    .menu-btn {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font: inherit;
+    }
+
+    .hero {
+      padding: 88px 0 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      color: var(--gold-2);
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      margin: 0 0 18px;
+      max-width: 12ch;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 15px 22px;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #151515;
+      box-shadow: 0 16px 40px rgba(212, 175, 55, 0.22);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-points li {
+      padding: 11px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      aspect-ratio: 4 / 4.6;
+      border-radius: 22px;
+      object-fit: cover;
+      background: #0f172a;
+    }
+
+    .floating-card {
+      position: absolute;
+      background: rgba(7, 17, 31, 0.88);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .floating-card strong {
+      font-size: 1rem;
+    }
+
+    .card-top {
+      top: 24px;
+      left: -18px;
+    }
+
+    .card-bottom {
+      right: -12px;
+      bottom: 28px;
+    }
+
+    section {
+      padding: 34px 0 34px;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      color: var(--gold-2);
+      margin-bottom: 8px;
+      letter-spacing: -0.04em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .services-grid,
+    .testimonial-grid,
+    .faq-grid,
+    .footer-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .services-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--gold-2);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .about-photo {
+      min-height: 100%;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 420px;
+    }
+
+    .about-content {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 16px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .check {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 14px;
+      color: var(--text);
+      font-size: 0.96rem;
+    }
+
+    .testimonial-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .testimonial blockquote {
+      margin: 0 0 16px;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .testimonial .author {
+      color: var(--gold-2);
+      font-weight: 700;
+      font-size: 0.94rem;
+    }
+
+    .cta-panel {
+      background:
+        linear-gradient(135deg, rgba(212, 175, 55, 0.16), rgba(255,255,255,0.04)),
+        rgba(255,255,255,0.04);
+      border: 1px solid rgba(212, 175, 55, 0.22);
+      border-radius: 30px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .cta-box {
+      background: rgba(7, 17, 31, 0.8);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .cta-box ul {
+      margin: 0 0 18px;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .faq-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-item h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+    }
+
+    .contact-card,
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card p,
+    .contact-card li,
+    .form-card p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 12px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      font-size: 0.92rem;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 14px 15px;
+      font: inherit;
+      outline: none;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #97a3bb;
+    }
+
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .footer {
+      padding: 22px 0 40px;
+    }
+
+    .footer-inner {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 26px;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1.3fr 0.7fr 0.7fr;
+      align-items: start;
+    }
+
+    .footer h4 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .footer p,
+    .footer a {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 18px;
+      padding-top: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .about-wrap,
+      .cta-panel,
+      .contact-wrap,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .testimonial-grid,
+      .stats,
+      .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 78px;
+        left: 16px;
+        right: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(7, 17, 31, 0.96);
+        border: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: inline-flex;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .services-grid,
+      .testimonial-grid,
+      .stats,
+      .faq-grid,
+      .checklist,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-top,
+      .card-bottom {
+        position: static;
+        margin-top: 12px;
+      }
+
+      .hero-card {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <img src="logo.png" alt="Maths Tutor UK logo" class="brand-logo" />
+        <span class="brand-text">
+          <strong>Maths Tutor UK</strong>
+          <span>Premium GCSE & A-Level Tuition</span>
+        </span>
+      </a>
+
+      <nav id="navLinks" class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Book a Call</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Online maths tuition across the UK</div>
+          <h1>Serious maths support for students who want top results.</h1>
+          <p>
+            Premium 1-to-1 GCSE and A-Level maths tuition designed to build confidence,
+            improve exam technique, and turn weak areas into strengths. Clear teaching,
+            structured sessions, and focused support every step of the way.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Book Your Free Consultation</a>
+            <a href="#services" class="btn btn-secondary">Explore Services</a>
+          </div>
+
+          <ul class="hero-points">
+            <li>1-to-1 online lessons</li>
+            <li>GCSE & A-Level focus</li>
+            <li>Exam technique and confidence</li>
+          </ul>
+        </div>
+
+        <div class="hero-card">
+          <img
+            src="hero-photo.jpg"
+            alt="Professional maths tutor portrait"
+            class="hero-photo"
+          />
+
+          <div class="floating-card card-top">
+            <small>Teaching style</small>
+            <strong>Clear, structured, exam-focused</strong>
+          </div>
+
+          <div class="floating-card card-bottom">
+            <small>Suitable for</small>
+            <strong>GCSE • A-Level • Resits</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="stats">
+          <div class="stat">
+            <strong>1-to-1</strong>
+            <span>Personalised sessions tailored to the student</span>
+          </div>
+          <div class="stat">
+            <strong>Online</strong>
+            <span>Flexible tuition from anywhere in the UK</span>
+          </div>
+          <div class="stat">
+            <strong>Focused</strong>
+            <span>Targeted support on weak topics and exam skills</span>
+          </div>
+          <div class="stat">
+            <strong>Premium</strong>
+            <span>Professional tuition for students aiming higher</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services built around grades, confidence, and consistency.</h2>
+          <p>
+            Every student is different. The goal is not to overload them with random work,
+            but to teach clearly, fix misunderstandings, and develop the exam habits that
+            actually move results.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card">
+            <span class="badge">GCSE Maths</span>
+            <h3>Foundation and Higher support</h3>
+            <p>
+              Strong support for students who need clearer explanations, better confidence,
+              and a smarter approach to exam questions.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="badge">A-Level Maths</span>
+            <h3>Pure, statistics, and mechanics</h3>
+            <p>
+              Step-by-step tuition on difficult topics, with structured methods that help
+              students understand the why behind the working.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="badge">Exam Preparation</span>
+            <h3>Technique under pressure</h3>
+            <p>
+              Learn how to approach questions efficiently, avoid common mistakes, and pick
+              up more marks even when the paper feels difficult.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="badge">Resits</span>
+            <h3>A fresh, focused second attempt</h3>
+            <p>
+              Ideal for students retaking maths who need structure, consistency, and someone
+              to rebuild their confidence properly.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="badge">Weekly Tuition</span>
+            <h3>Consistent long-term progress</h3>
+            <p>
+              Regular sessions to keep pace with school, strengthen weak areas, and prevent
+              topics from piling up before exams.
+            </p>
+          </article>
+
+          <article class="card">
+            <span class="badge">Parent Updates</span>
+            <h3>Clear communication</h3>
+            <p>
+              Parents stay informed on progress, priorities, and where the student most needs
+              support, without unnecessary fluff.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-wrap">
+          <div class="about-photo">
+            <img src="hero-photo.jpg" alt="Maths tutor portrait" />
+          </div>
+
+          <div class="about-content">
+            <div class="section-head" style="margin-bottom: 18px;">
+              <h2>Premium tuition without the corporate feel.</h2>
+              <p>
+                This site is built around a simple idea: students do better when they are taught
+                properly, challenged appropriately, and given a calm, structured environment to improve.
+              </p>
+            </div>
+
+            <p>
+              Lessons are designed to make difficult maths feel manageable. That means cutting out
+              confusion, teaching methods clearly, and showing students how to think through problems
+              rather than panic when a question looks unfamiliar.
+            </p>
+
+            <p>
+              Whether the goal is to secure a pass, move up several grades, or perform strongly at
+              A-Level, the focus stays on clarity, confidence, and results.
+            </p>
+
+            <div class="checklist">
+              <div class="check">Clear explanations without waffle</div>
+              <div class="check">Structured sessions with real purpose</div>
+              <div class="check">Strong focus on exam technique</div>
+              <div class="check">Professional, premium client experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <h2>Testimonials section ready for your real reviews.</h2>
+          <p>
+            I’ve written these as polished placeholders so the page looks complete. Later,
+            you can swap the names and wording for your real client testimonials.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="card testimonial">
+            <blockquote>“My son finally started understanding topics that had confused him for months. The sessions felt calm, focused, and genuinely effective.”</blockquote>
+            <div class="author">— Parent of GCSE student</div>
+          </article>
+
+          <article class="card testimonial">
+            <blockquote>“I liked that everything was explained properly instead of being rushed. I felt much more confident going into my mocks.”</blockquote>
+            <div class="author">— GCSE student</div>
+          </article>
+
+          <article class="card testimonial">
+            <blockquote>“Professional from the start. Clear communication, organised lessons, and a noticeable improvement in confidence.”</blockquote>
+            <div class="author">— Parent review</div>
+          </article>
+
+          <article class="card testimonial">
+            <blockquote>“A-Level maths stopped feeling impossible. The teaching was direct, patient, and much easier to follow than in class.”</blockquote>
+            <div class="author">— A-Level student</div>
+          </article>
+
+          <article class="card testimonial">
+            <blockquote>“We were impressed by how targeted the tuition was. It quickly became obvious which areas needed work and how to improve them.”</blockquote>
+            <div class="author">— Parent of Year 11 student</div>
+          </article>
+
+          <article class="card testimonial">
+            <blockquote>“The best part was learning how to approach exam questions properly. That changed everything for me.”</blockquote>
+            <div class="author">— GCSE Higher student</div>
+          </article>
+
+          <article class="card testimonial">
+            <blockquote>“Reliable, professional, and very strong at explaining maths in a way that actually sticks.”</blockquote>
+            <div class="author">— Parent testimonial</div>
+          </article>
+
+          <article class="card testimonial">
+            <blockquote>“I felt more prepared after a few sessions than I had in months of school lessons. Everything made more sense.”</blockquote>
+            <div class="author">— A-Level student</div>
+          </article>
+
+          <article class="card testimonial">
+            <blockquote>“Excellent support before exams. Calm teaching, great structure, and a real boost in confidence.”</blockquote>
+            <div class="author">— Parent of resit student</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2>Ready to make maths feel less stressful and far more manageable?</h2>
+            <p>
+              Start with a free consultation to discuss the student’s current level, goals,
+              and what kind of support would be most useful.
+            </p>
+          </div>
+
+          <div class="cta-box">
+            <ul>
+              <li>Discuss the student’s current position</li>
+              <li>Identify weak topics and priorities</li>
+              <li>See whether weekly tuition is the right fit</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" style="width:100%;">Enquire Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Frequently asked questions</h2>
+          <p>
+            Keep this section on the site. It reduces hesitation and answers the things parents
+            usually want to know before making contact.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <article class="card faq-item">
+            <h3>What levels do you teach?</h3>
+            <p>GCSE Maths, A-Level Maths, and maths resits. You can adjust this wording later if you add more offerings.</p>
+          </article>
+
+          <article class="card faq-item">
+            <h3>Are lessons online or in person?</h3>
+            <p>This version of the site is written for online tuition across the UK. If you offer in-person lessons too, we can add that easily.</p>
+          </article>
+
+          <article class="card faq-item">
+            <h3>How long are lessons?</h3>
+            <p>Most tutors use 60-minute sessions as standard. You can change this text if you want to offer 90-minute sessions or intensives.</p>
+          </article>
+
+          <article class="card faq-item">
+            <h3>Can you help with exam technique?</h3>
+            <p>Yes. A major part of improving in maths is learning how to read questions properly, structure answers, and avoid common mark-losing mistakes.</p>
+          </article>
+
+          <article class="card faq-item">
+            <h3>Do parents get updates?</h3>
+            <p>Yes. Parents can be kept informed about progress, focus areas, and how the student is developing over time.</p>
+          </article>
+
+          <article class="card faq-item">
+            <h3>How do I get started?</h3>
+            <p>Use the contact form below to arrange a free consultation and discuss the student’s needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Make an enquiry</h2>
+          <p>
+            Right now this form is styled and ready, but not connected to a live email system yet.
+            Until we wire it up, you can have the button open your email directly.
+          </p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-card">
+            <h3 style="margin-top:0;">Get in touch</h3>
+            <p>
+              This premium starter site is designed to look polished immediately. Once your domain
+              is sorted and your final brand assets are ready, we can replace all placeholders and
+              make it fully live.
+            </p>
+
+            <ul class="contact-list">
+              <li><strong>Website:</strong> mathstutor.co.uk</li>
+              <li><strong>Email:</strong> yourname@mathstutor.co.uk</li>
+              <li><strong>Format:</strong> Online 1-to-1 tuition</li>
+            </ul>
+          </div>
+
+          <div class="form-card">
+            <form id="contactForm">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Full name</label>
+                  <input id="name" type="text" placeholder="Your name" required />
+                </div>
+
+                <div class="field">
+                  <label for="email">Email address</label>
+                  <input id="email" type="email" placeholder="you@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="field">
+                  <label for="studentYear">Student year group</label>
+                  <select id="studentYear" required>
+                    <option value="">Select one</option>
+                    <option>Year 9</option>
+                    <option>Year 10</option>
+                    <option>Year 11</option>
+                    <option>Year 12</option>
+                    <option>Year 13</option>
+                    <option>Resit student</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="level">Level</label>
+                  <select id="level" required>
+                    <option value="">Select one</option>
+                    <option>GCSE Maths</option>
+                    <option>A-Level Maths</option>
+                    <option>Maths Resit</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="message">How can I help?</label>
+                <textarea id="message" placeholder="Tell me about the student, current level, and what support is needed." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer;">
+                Send Enquiry
+              </button>
+
+              <p class="form-note" id="formMessage"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h4>Maths Tutor UK</h4>
+          <p>
+            Premium online maths tuition for GCSE, A-Level, and resit students across the UK.
+          </p>
+        </div>
+
+        <div>
+          <h4>Sections</h4>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:yourname@mathstutor.co.uk">yourname@mathstutor.co.uk</a>
+            <a href="#contact">Book a consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        © 2026 Maths Tutor UK. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    const contactForm = document.getElementById("contactForm");
+    const formMessage = document.getElementById("formMessage");
+
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const studentYear = document.getElementById("studentYear").value.trim();
+      const level = document.getElementById("level").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent("New enquiry from " + name);
+      const body = encodeURIComponent(
+        "Name: " + name + "\\n" +
+        "Email: " + email + "\\n" +
+        "Student year: " + studentYear + "\\n" +
+        "Level: " + level + "\\n\\n" +
+        "Message:\\n" + message
+      );
+
+      window.location.href = "mailto:yourname@mathstutor.co.uk?subject=" + subject + "&body=" + body;
+
+      formMessage.textContent = "Your email app should open now. Replace yourname@mathstutor.co.uk in the code with your real email.";
+    });
+  </script>
+</body>
+</html>
