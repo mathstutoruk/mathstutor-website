@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maths Tutor UK</title>
-  <meta name="description" content="Premium GCSE, A-Level and Further Maths tuition." />
+  <meta name="description" content="GCSE, A-Level and Further Maths tuition with clear teaching, structured lessons and strong academic foundations." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,7 @@
       --muted:#667085;
       --white:#ffffff;
       --shadow:0 14px 30px rgba(0,0,0,.12);
+      --border:#e7dfd4;
     }
 
     *{box-sizing:border-box}
@@ -32,7 +33,7 @@
 
     img{display:block;max-width:100%}
     a{text-decoration:none;color:inherit}
-    h1,h2,h3{
+    h1,h2,h3,h4{
       font-family:'Playfair Display',serif;
       margin:0;
       font-weight:600;
@@ -77,6 +78,9 @@
 
     .nav-area{
       padding-top:26px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
     }
 
     .nav{
@@ -89,6 +93,7 @@
       font-size:16px;
       font-weight:500;
       line-height:1;
+      width:fit-content;
     }
 
     .nav a{
@@ -104,7 +109,9 @@
       margin-top:26px;
       height:2px;
       background:var(--gold);
-      width:100%;
+      width:fit-content;
+      min-width:100%;
+      align-self:flex-end;
     }
 
     .hero{
@@ -113,15 +120,9 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.02fr .98fr;
-      gap:54px;
+      grid-template-columns:1.08fr .92fr;
+      gap:48px;
       align-items:center;
-    }
-
-    .eyebrow{
-      font-size:18px;
-      color:var(--muted);
-      margin-bottom:18px;
     }
 
     .hero h1{
@@ -169,7 +170,7 @@
 
     .hero-image img{
       width:100%;
-      max-width:610px;
+      max-width:500px;
       margin-left:auto;
       border-radius:18px;
       box-shadow:var(--shadow);
@@ -257,7 +258,7 @@
 
     .card{
       background:#fff;
-      border:1px solid #e7dfd4;
+      border:1px solid var(--border);
       border-radius:16px;
       padding:28px;
       box-shadow:0 8px 20px rgba(0,0,0,.04);
@@ -272,7 +273,33 @@
       color:#606b7b;
       font-size:17px;
       line-height:1.75;
-      margin:0 0 20px;
+      margin:0;
+    }
+
+    .long-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:22px;
+    }
+
+    .long-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:30px;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    }
+
+    .long-card h3{
+      font-size:30px;
+      margin-bottom:14px;
+    }
+
+    .long-card p{
+      color:#5f6979;
+      font-size:17px;
+      line-height:1.85;
+      margin:0;
     }
 
     .testimonials{
@@ -283,7 +310,7 @@
 
     .testimonial{
       background:#fff;
-      border:1px solid #e7dfd4;
+      border:1px solid var(--border);
       border-radius:16px;
       padding:26px;
       box-shadow:0 8px 20px rgba(0,0,0,.04);
@@ -334,6 +361,7 @@
       .hero-grid,
       .about-grid,
       .cards,
+      .long-grid,
       .testimonials{
         grid-template-columns:1fr;
       }
@@ -364,12 +392,19 @@
       .nav-area{
         width:100%;
         padding-top:8px;
+        align-items:center;
       }
 
       .nav{
         justify-content:center;
         gap:18px;
         text-align:center;
+        width:100%;
+      }
+
+      .gold-line{
+        width:100%;
+        min-width:0;
       }
 
       .hero{
@@ -377,7 +412,7 @@
       }
 
       .hero h1{font-size:40px}
-      .hero-copy,.lead,.center-head p,.card p,.testimonial p,.contact-panel p{
+      .hero-copy,.lead,.center-head p,.card p,.long-card p,.testimonial p,.contact-panel p{
         font-size:17px;
       }
 
@@ -419,7 +454,6 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Premium online maths tuition</div>
           <h1>GCSE, A-Level & Further Maths Tuition</h1>
           <p class="hero-copy">
             Clear teaching, structured lessons and high-quality support designed to
@@ -443,19 +477,19 @@
         <div>
           <h2 class="section-title">Hi, I’m your Maths Tutor</h2>
           <p class="lead">
-            I provide one-to-one online tuition for GCSE, A-Level and Further Maths,
-            with a strong focus on clarity, consistency and results.
+            I offer a structured and thoughtful approach to teaching mathematics, built on both strong subject knowledge and a clear understanding of how students learn.
           </p>
           <p class="lead">
-            Whether a student is struggling with maths or aiming for top grades, I help
-            them improve through calm teaching, structured preparation and carefully
-            chosen question practice.
+            My focus is not just on improving grades, but on developing confidence and genuine understanding, so that students feel more comfortable and capable when approaching new topics.
+          </p>
+          <p class="lead">
+            I adapt each lesson to the individual, ensuring that explanations are clear, engaging, and suited to the student’s way of thinking.
           </p>
 
           <ul class="ticks">
-            <li><span class="tick">✔</span><span><strong>Proven results</strong> helping students improve their performance in maths.</span></li>
-            <li><span class="tick">✔</span><span><strong>Clear explanations</strong> that make difficult topics feel manageable.</span></li>
-            <li><span class="tick">✔</span><span><strong>Tailored support</strong> based on the student’s level and needs.</span></li>
+            <li><span class="tick">✔</span><span><strong>Strong subject knowledge</strong> built through university study and continued academic development.</span></li>
+            <li><span class="tick">✔</span><span><strong>Teaching insight</strong> grounded in school experience, training, and classroom practice.</span></li>
+            <li><span class="tick">✔</span><span><strong>Clear lesson structure</strong> that helps students build understanding step by step.</span></li>
           </ul>
 
           <a href="#contact" class="btn btn-gold">Get in Touch</a>
@@ -470,29 +504,32 @@
     <section class="section" id="packs">
       <div class="container">
         <div class="center-head">
-          <h2>High-Quality Maths Support</h2>
+          <h2>Academic Background</h2>
           <p>
-            Premium tuition designed around understanding, confidence and strong exam performance.
+            A strong foundation in pure mathematics, mathematical education, and structured analytical thinking.
           </p>
         </div>
 
         <div class="cards">
           <div class="card">
-            <h3>GCSE Maths</h3>
-            <p>Clear explanations, confidence building and effective exam technique for GCSE students.</p>
-            <a href="#contact" class="btn btn-light">Learn More</a>
+            <h3>Pure Mathematics Background</h3>
+            <p>
+              I completed a Bachelor of Science (BSc Hons) at Loughborough University in 2016, with a strong focus on pure mathematics. My studies centred on rigorous logical thinking, formal mathematical argument, and abstract concepts.
+            </p>
           </div>
 
           <div class="card">
-            <h3>A-Level Maths</h3>
-            <p>Carefully structured support for students studying pure, statistics and mechanics.</p>
-            <a href="#contact" class="btn btn-light">Learn More</a>
+            <h3>Mathematics Education Insight</h3>
+            <p>
+              I also studied mathematics education, exploring how students learn, common misconceptions, and effective ways to explain complex ideas accessibly and clearly.
+            </p>
           </div>
 
           <div class="card">
-            <h3>Further Maths</h3>
-            <p>Advanced one-to-one support for students tackling more challenging mathematical topics.</p>
-            <a href="#contact" class="btn btn-light">Learn More</a>
+            <h3>Ongoing Development</h3>
+            <p>
+              I continue to engage with mathematics education research and teaching methods through independent study, with a particular interest in how mathematical thinking can be developed effectively.
+            </p>
           </div>
         </div>
       </div>
@@ -501,26 +538,25 @@
     <section class="section" id="classes">
       <div class="container">
         <div class="center-head">
-          <h2>What I Offer</h2>
+          <h2>Teacher Training & Classroom Experience</h2>
           <p>
-            Structured tuition that helps students understand the content properly and perform with more confidence.
+            Real experience across diverse school settings, with a strong grounding in classroom teaching and student progress.
           </p>
         </div>
 
-        <div class="cards">
-          <div class="card">
-            <h3>Prepared Lessons</h3>
-            <p>Each session is focused, clear and designed to move the student forward in a measurable way.</p>
+        <div class="long-grid">
+          <div class="long-card">
+            <h3>Teacher Training</h3>
+            <p>
+              I undertook teacher training in Secondary Mathematics at Brunel University, gaining extensive experience across a range of inner-city and diverse school settings, including both state and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons.
+            </p>
           </div>
 
-          <div class="card">
-            <h3>Question Practice</h3>
-            <p>Students build fluency through carefully chosen questions and repeated exam-style exposure.</p>
-          </div>
-
-          <div class="card">
-            <h3>Personalised Teaching</h3>
-            <p>Support is shaped around the student’s pace, weak areas and target outcomes.</p>
+          <div class="long-card">
+            <h3>Practical Classroom Experience</h3>
+            <p>
+              I worked with students across varying abilities, focusing on building understanding, encouraging participation, and creating a positive learning environment where students could make meaningful progress in mathematics. Alongside my degree, I also completed the Employability Award at Loughborough University, gaining hands-on experience supporting students from disadvantaged backgrounds in classroom settings.
+            </p>
           </div>
         </div>
       </div>
@@ -529,26 +565,39 @@
     <section class="section" id="articles">
       <div class="container">
         <div class="center-head">
-          <h2>How Lessons Work</h2>
+          <h2>Teaching Approach</h2>
           <p>
-            Online-first tuition that is simple, flexible and designed to fit around study and revision.
+            A balance of structure, logical clarity, and discussion-based understanding.
           </p>
         </div>
 
-        <div class="cards">
-          <div class="card">
-            <h3>Online Lessons</h3>
-            <p>High-quality online sessions that make it easy for students to learn from home with full one-to-one attention.</p>
+        <div class="long-grid">
+          <div class="long-card">
+            <h3>A-levels & Teaching Approach</h3>
+            <p>
+              My academic background includes A-level studies in Mathematics, Chemistry, Physics, and Philosophy, providing a strong and well-rounded foundation across both analytical and conceptual disciplines. I also completed AS-level Philosophy one year early during my GCSE studies, achieving 93%, placing me among the highest-performing students of my age nationally in that exam sitting. This strengthened my ability to think critically, analyse arguments, and communicate complex ideas clearly.
+            </p>
           </div>
 
-          <div class="card">
-            <h3>Focused Revision</h3>
-            <p>Lessons can target weak topics, upcoming school content or specific exam preparation.</p>
+          <div class="long-card">
+            <h3>How I Work With Students</h3>
+            <p>
+              In my lessons, I prioritise clarity, structure, and active engagement. I break down complex ideas into manageable steps, encourage students to ask questions, and create an environment where they feel confident to think through problems independently. By combining logical explanation with discussion and reflection, I help students move beyond memorisation and develop a deeper understanding of mathematics that supports long-term progress.
+            </p>
           </div>
 
-          <div class="card">
-            <h3>Steady Progress</h3>
-            <p>A calm, structured approach that builds confidence over time rather than relying on last-minute cramming.</p>
+          <div class="long-card">
+            <h3>What Students Can Expect</h3>
+            <p>
+              Students can expect a supportive and focused learning environment, where progress is built step by step. Whether a student is aiming to improve grades, prepare for exams, or strengthen their foundational understanding, I provide clear guidance and consistent support. My goal is to help each student become more confident, independent, and capable in their approach to mathematics.
+            </p>
+          </div>
+
+          <div class="long-card">
+            <h3>Why Choose Me</h3>
+            <p>
+              I offer a structured and thoughtful approach to teaching mathematics, built on both strong subject knowledge and a clear understanding of how students learn. My focus is not just on improving grades, but on developing confidence and genuine understanding, so that students feel more comfortable and capable when approaching new topics.
+            </p>
           </div>
         </div>
       </div>
