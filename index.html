@@ -68,37 +68,39 @@
 
     .navbar {
       background: #071f46;
-      padding: 42px 48px 28px 48px;
+      padding: 54px 48px 30px 48px;
       position: relative;
-      min-height: 140px;
+      min-height: 175px;
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
       border-bottom: 3px solid #d4af37;
+      overflow: visible;
     }
 
     .logo-wrap {
       position: absolute;
-      left: 48px;
-      top: -6px;
-      z-index: 5;
+      left: 52px;
+      top: 4px;
+      z-index: 10;
     }
 
     .logo-wrap img {
-      width: 165px;
-      height: 165px;
+      width: 230px;
+      height: 230px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.28);
     }
 
     .nav-links {
       display: flex;
-      gap: 46px;
+      gap: 44px;
       color: #fff;
       font-size: 18px;
-      font-weight: 500;
+      font-weight: 600;
       margin-right: 30px;
+      padding-bottom: 12px;
     }
 
     .nav-links a:hover {
@@ -107,7 +109,7 @@
 
     .hero {
       background: linear-gradient(to right, #f8f4ef 0%, #f8f4ef 58%, #f2f0f4 100%);
-      padding: 70px 48px 55px;
+      padding: 78px 48px 55px;
     }
 
     .hero-inner {
@@ -374,20 +376,38 @@
       color: #dfe7f4;
     }
 
+    @media (max-width: 1200px) {
+      .logo-wrap img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .navbar {
+        min-height: 165px;
+      }
+
+      .nav-links {
+        gap: 28px;
+        font-size: 17px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+    }
+
     @media (max-width: 1100px) {
       .hero-inner,
-      .about,
-      .testimonials-contact {
+      .about {
         flex-direction: column;
-        display: flex;
+      }
+
+      .testimonials-contact {
+        grid-template-columns: 1fr;
       }
 
       .services {
         grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 54px;
       }
 
       .about h2,
@@ -406,16 +426,6 @@
 
       .about-image img {
         margin-left: 0;
-      }
-
-      .nav-links {
-        gap: 22px;
-        font-size: 16px;
-      }
-
-      .logo-wrap img {
-        width: 130px;
-        height: 130px;
       }
     }
 
@@ -436,19 +446,20 @@
 
       .navbar {
         min-height: auto;
-        padding-top: 120px;
+        padding-top: 138px;
+        padding-bottom: 24px;
         justify-content: center;
       }
 
       .logo-wrap {
         left: 50%;
         transform: translateX(-50%);
-        top: -10px;
+        top: -6px;
       }
 
       .logo-wrap img {
-        width: 120px;
-        height: 120px;
+        width: 160px;
+        height: 160px;
       }
 
       .nav-links {
@@ -456,6 +467,11 @@
         justify-content: center;
         gap: 18px;
         margin-right: 0;
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 56px;
       }
 
       .hero h1 {
