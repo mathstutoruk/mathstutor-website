@@ -1,211 +1,630 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maths Tutor UK</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maths Tutor UK</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-body {
-  margin:0;
-  font-family: 'Inter', sans-serif;
-  background:#f7f7f7;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-h1,h2 {
-  font-family:'Playfair Display', serif;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.topbar {
-  background:#0b1f3a;
-  color:white;
-  padding:10px 30px;
-  display:flex;
-  justify-content:space-between;
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f7f4f0;
+      color: #18233a;
+    }
 
-.navbar {
-  background:#0b1f3a;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      margin-top: 0;
+    }
 
-.navbar img {
-  height:55px;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-.nav-links a {
-  color:white;
-  margin:0 15px;
-  text-decoration:none;
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-.cta {
-  background:#d4af37;
-  padding:10px 18px;
-  color:black;
-  font-weight:600;
-  border-radius:6px;
-}
+    .topbar {
+      background: #071f46;
+      color: #fff;
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 500;
+    }
 
-/* HERO */
-.hero {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:60px 40px;
-  background:white;
-}
+    .phone {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-.hero-text {
-  max-width:500px;
-}
+    .cta-top {
+      background: #d4af37;
+      color: #111;
+      padding: 16px 28px;
+      border-radius: 10px;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
 
-.hero h1 {
-  font-size:42px;
-}
+    .navbar {
+      background: #071f46;
+      padding: 42px 48px 28px 48px;
+      position: relative;
+      min-height: 140px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      border-bottom: 3px solid #d4af37;
+    }
 
-.hero p {
-  color:#555;
-}
+    .logo-wrap {
+      position: absolute;
+      left: 48px;
+      top: -6px;
+      z-index: 5;
+    }
 
-.hero img {
-  width:420px;
-  border-radius:10px;
-}
+    .logo-wrap img {
+      width: 165px;
+      height: 165px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+    }
 
-/* ABOUT */
-.section {
-  padding:60px 40px;
-}
+    .nav-links {
+      display: flex;
+      gap: 46px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      margin-right: 30px;
+    }
 
-.about {
-  display:flex;
-  gap:40px;
-  align-items:center;
-}
+    .nav-links a:hover {
+      color: #d4af37;
+    }
 
-.about img {
-  width:300px;
-  border-radius:10px;
-}
+    .hero {
+      background: linear-gradient(to right, #f8f4ef 0%, #f8f4ef 58%, #f2f0f4 100%);
+      padding: 70px 48px 55px;
+    }
 
-/* SERVICES */
-.services {
-  display:flex;
-  gap:20px;
-}
+    .hero-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+    }
 
-.card {
-  background:white;
-  padding:25px;
-  border-radius:8px;
-  flex:1;
-}
+    .hero-text {
+      flex: 1;
+      max-width: 650px;
+    }
 
-.card button {
-  background:#0b1f3a;
-  color:white;
-  padding:10px;
-  margin-top:15px;
-}
+    .eyebrow {
+      font-size: 22px;
+      color: #4c5464;
+      margin-bottom: 24px;
+    }
 
-/* CONTACT */
-.contact {
-  background:#0b1f3a;
-  color:white;
-  text-align:center;
-  padding:60px;
-}
+    .hero h1 {
+      font-size: 76px;
+      line-height: 1.04;
+      color: #16244a;
+      margin-bottom: 22px;
+    }
 
-.contact button {
-  background:#d4af37;
-  padding:12px 20px;
-  border:none;
-}
-</style>
+    .hero-sub {
+      font-size: 30px;
+      line-height: 1.3;
+      color: #24304d;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .hero-desc {
+      font-size: 22px;
+      line-height: 1.55;
+      color: #4f5665;
+      margin-bottom: 34px;
+      max-width: 620px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold,
+    .btn-light,
+    .btn-blue {
+      display: inline-block;
+      padding: 18px 30px;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    }
+
+    .btn-gold {
+      background: #d4af37;
+      color: #111;
+    }
+
+    .btn-light {
+      background: #f2ede7;
+      color: #18233a;
+      border: 1px solid #d3ccc2;
+    }
+
+    .btn-blue {
+      background: #16244a;
+      color: white;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 620px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .section {
+      padding: 72px 48px;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .about {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .about-text {
+      flex: 1.15;
+    }
+
+    .about-image {
+      flex: 0.85;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 14px;
+      margin-left: auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+
+    .about h2 {
+      font-size: 58px;
+      line-height: 1.12;
+      color: #16244a;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      font-size: 21px;
+      line-height: 1.65;
+      color: #454d5c;
+      margin-bottom: 18px;
+    }
+
+    .ticks {
+      list-style: none;
+      padding: 0;
+      margin: 26px 0 34px;
+    }
+
+    .ticks li {
+      font-size: 22px;
+      line-height: 1.5;
+      color: #2b3347;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .tick-icon {
+      color: #8ea34a;
+      font-weight: bold;
+      margin-top: 2px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 56px;
+      line-height: 1.1;
+      color: #16244a;
+      margin-bottom: 40px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #e8e1d7;
+      border-radius: 14px;
+      padding: 34px 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card h3 {
+      font-size: 34px;
+      color: #16244a;
+      margin-bottom: 18px;
+    }
+
+    .card p {
+      font-size: 21px;
+      line-height: 1.6;
+      color: #4f5665;
+      margin-bottom: 28px;
+    }
+
+    .testimonials-contact {
+      display: grid;
+      grid-template-columns: 1.45fr 0.95fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .testimonial-box,
+    .contact-box {
+      background: #fff;
+      border: 1px solid #e8e1d7;
+      border-radius: 14px;
+      padding: 34px 32px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    .testimonial-box h2,
+    .contact-box h2 {
+      font-size: 46px;
+      color: #16244a;
+      margin-bottom: 22px;
+    }
+
+    .quote {
+      font-size: 22px;
+      line-height: 1.7;
+      color: #404858;
+      margin-bottom: 24px;
+    }
+
+    .quote strong {
+      color: #16244a;
+    }
+
+    .contact-box p {
+      font-size: 24px;
+      line-height: 1.6;
+      color: #2d3650;
+      margin: 0 0 14px;
+      text-align: center;
+    }
+
+    .contact-big {
+      font-size: 48px;
+      font-weight: 700;
+      color: #16244a;
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .footer-cta {
+      background: #071f46;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      margin-top: 30px;
+    }
+
+    .footer-cta h2 {
+      font-size: 52px;
+      margin-bottom: 18px;
+    }
+
+    .footer-cta p {
+      font-size: 23px;
+      margin-bottom: 28px;
+      color: #dfe7f4;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-inner,
+      .about,
+      .testimonials-contact {
+        flex-direction: column;
+        display: flex;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .about h2,
+      .section-title,
+      .testimonial-box h2,
+      .contact-box h2,
+      .footer-cta h2 {
+        font-size: 42px;
+      }
+
+      .hero-image,
+      .about-image {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .about-image img {
+        margin-left: 0;
+      }
+
+      .nav-links {
+        gap: 22px;
+        font-size: 16px;
+      }
+
+      .logo-wrap img {
+        width: 130px;
+        height: 130px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar,
+      .navbar,
+      .hero,
+      .section {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+      }
+
+      .navbar {
+        min-height: auto;
+        padding-top: 120px;
+        justify-content: center;
+      }
+
+      .logo-wrap {
+        left: 50%;
+        transform: translateX(-50%);
+        top: -10px;
+      }
+
+      .logo-wrap img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+        margin-right: 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-sub {
+        font-size: 24px;
+      }
+
+      .hero-desc,
+      .about p,
+      .ticks li,
+      .card p,
+      .quote,
+      .footer-cta p {
+        font-size: 18px;
+      }
+
+      .section-title,
+      .about h2,
+      .testimonial-box h2,
+      .contact-box h2,
+      .footer-cta h2 {
+        font-size: 34px;
+      }
+
+      .contact-big {
+        font-size: 34px;
+      }
+
+      .btn-gold,
+      .btn-light,
+      .btn-blue {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="topbar">
-  <span>📞 01234 567 890</span>
-  <span class="cta">Book a Lesson</span>
-</div>
-
-<div class="navbar">
-  <img src="logo.png">
-  <div class="nav-links">
-    <a href="#">Home</a>
-    <a href="#">GCSE</a>
-    <a href="#">A-Level</a>
-    <a href="#">Contact</a>
-  </div>
-</div>
-
-<section class="hero">
-  <div class="hero-text">
-    <p>Expert online maths tutor</p>
-    <h1>GCSE & A-Level Maths Tutor</h1>
-    <p>Helping students gain confidence and achieve top grades through structured, high-quality tuition.</p>
-
-    <button class="cta">Book a Lesson</button>
+  <div class="topbar">
+    <div class="phone">📞 01234 567 890</div>
+    <a href="#contact" class="cta-top">Book a Lesson</a>
   </div>
 
-  <!-- ✅ PNG FIX HERE -->
-  <img src="me.png">
-</section>
-
-<section class="section">
-  <div class="about">
-    <div>
-      <h2>Hi, I’m your Maths Tutor</h2>
-      <p>I provide one-to-one online tuition tailored to each student.</p>
-
-      <ul>
-        <li>✔ Proven results</li>
-        <li>✔ Clear explanations</li>
-        <li>✔ Personalised teaching</li>
-      </ul>
+  <div class="navbar">
+    <div class="logo-wrap">
+      <img src="logo.png" alt="Maths Tutor UK logo">
     </div>
 
-    <!-- ✅ PNG FIX HERE -->
-    <img src="me.png">
-  </div>
-</section>
-
-<section class="section">
-  <h2>Boost Maths Skills & Confidence</h2>
-
-  <div class="services">
-    <div class="card">
-      <h3>GCSE Maths</h3>
-      <p>Strong foundations and exam technique.</p>
-      <button>Learn More</button>
-    </div>
-
-    <div class="card">
-      <h3>A-Level Maths</h3>
-      <p>Advanced support for top grades.</p>
-      <button>Learn More</button>
-    </div>
-
-    <div class="card">
-      <h3>Further Maths</h3>
-      <p>High-level problem solving.</p>
-      <button>Call Now</button>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#services">GCSE Maths Tuition</a>
+      <a href="#services">A-Level Maths Tuition</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
-</section>
 
-<section class="contact">
-  <h2>Start Your Journey Today</h2>
-  <button>Contact Now</button>
-</section>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="eyebrow">Expert online maths tutor</div>
+        <h1>GCSE & A-Level Maths Tutor</h1>
+        <div class="hero-sub">Building students' confidence, skills and exam technique</div>
+        <p class="hero-desc">
+          Helping students gain confidence and achieve top grades through structured,
+          high-quality, personalised online maths tuition.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-gold">Book a Lesson</a>
+          <a href="#contact" class="btn-light">Call or WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="me.png" alt="Maths tutor portrait">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about">
+      <div class="about-text">
+        <h2>Hi, I’m your Maths Tutor</h2>
+        <p>
+          I provide one-to-one online tuition for GCSE, A-Level and Further Maths.
+        </p>
+        <p>
+          Whether your son or daughter is struggling with maths or aiming for top grades,
+          I can help them improve with calm, clear and effective teaching.
+        </p>
+
+        <ul class="ticks">
+          <li><span class="tick-icon">✔</span> <span><strong>Proven track record</strong> of helping students improve their grades significantly in mathematics.</span></li>
+          <li><span class="tick-icon">✔</span> <span><strong>Simple, clear and effective</strong> explanations of difficult concepts.</span></li>
+          <li><span class="tick-icon">✔</span> <span><strong>Supportive and engaging lessons</strong> tailored to each student’s needs and learning style.</span></li>
+        </ul>
+
+        <a href="#contact" class="btn-blue">Learn More About Me</a>
+      </div>
+
+      <div class="about-image">
+        <img src="me.png" alt="Maths tutor photo">
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <h2 class="section-title">Boost Maths Skills & Confidence</h2>
+
+      <div class="services">
+        <div class="card">
+          <h3>GCSE Maths</h3>
+          <p>One-to-one tuition to help students excel in their GCSE exams.</p>
+          <a href="#contact" class="btn-blue">Learn More</a>
+        </div>
+
+        <div class="card">
+          <h3>A-Level Maths</h3>
+          <p>Expert tuition in Pure Mathematics, Statistics and Mechanics.</p>
+          <a href="#contact" class="btn-blue">Learn More</a>
+        </div>
+
+        <div class="card">
+          <h3>Further Maths</h3>
+          <p>Advanced tutoring for students seeking to master challenging topics.</p>
+          <a href="#contact" class="btn-gold">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container testimonials-contact">
+      <div class="testimonial-box">
+        <h2>What Parents & Students Say</h2>
+
+        <div class="quote">
+          “For the first time, my <strong>daughter is enjoying maths</strong> and feels much more
+          confident approaching her GCSE exams. The support has made a huge difference.”
+        </div>
+
+        <div class="quote">
+          “My son started A-Level Maths feeling overwhelmed, but with the right guidance,
+          he’s now performing at the top of his class.”
+        </div>
+      </div>
+
+      <div class="contact-box" id="contact">
+        <h2>Call or WhatsApp</h2>
+        <div class="contact-big">01234 567 890</div>
+        <p>info@mathstutor.co.uk</p>
+        <p>Birmingham, England</p>
+        <div style="margin-top: 26px; text-align:center;">
+          <a href="mailto:info@mathstutor.co.uk" class="btn-gold">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer-cta">
+    <h2>Start Your Journey Today</h2>
+    <p>Book a free consultation and see how personalised maths tuition can help.</p>
+    <a href="mailto:info@mathstutor.co.uk" class="btn-gold">Contact Now</a>
+  </section>
 
 </body>
 </html>
