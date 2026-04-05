@@ -38,16 +38,32 @@ h1,h2 {
 /* NAVBAR */
 .navbar {
   background:#071f46;
-  padding:30px 40px;
+  padding:60px 40px 30px;
   display:flex;
-  align-items:center;
-  justify-content:space-between;
+  align-items:flex-end;
+  justify-content:flex-end;
   border-bottom:3px solid #d4af37;
+  position:relative;
 }
 
-/* BIG LOGO */
+/* LOGO WRAPPER */
+.logo {
+  position:absolute;
+  left:40px;
+  top:10px;
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  overflow:hidden;
+  box-shadow:0 12px 25px rgba(0,0,0,0.3);
+}
+
+/* THIS IS THE KEY FIX */
 .logo img {
-  height:130px;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform:scale(1.6); /* 🔥 zoom into centre */
 }
 
 /* NAV LINKS */
@@ -149,16 +165,16 @@ h1,h2 {
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <span>📞 01234 567 890</span>
   <span class="cta-top">Book a Lesson</span>
 </div>
 
-<!-- NAVBAR -->
 <div class="navbar">
+
+  <!-- 🔥 ORIGINAL LOGO USED -->
   <div class="logo">
-    <img src="logo-cropped.png">
+    <img src="logo.png">
   </div>
 
   <div class="nav-links">
@@ -169,7 +185,6 @@ h1,h2 {
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
     <p>Expert online maths tutor</p>
@@ -182,7 +197,6 @@ h1,h2 {
   <img src="me.png">
 </section>
 
-<!-- ABOUT -->
 <section class="section">
   <div class="about">
     <div>
@@ -200,7 +214,6 @@ h1,h2 {
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="section">
   <h2>Boost Maths Skills & Confidence</h2>
 
@@ -225,7 +238,6 @@ h1,h2 {
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact">
   <h2>Start Your Journey Today</h2>
   <button>Contact Now</button>
