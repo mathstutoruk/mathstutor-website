@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maths Tutor UK</title>
-  <meta name="description" content="GCSE, A-Level and Further Maths tuition with clear teaching, structured lessons and strong academic foundations." />
+  <meta name="description" content="Mathematics tuition for GCSE, A-Level and Further Maths, with clear teaching, structured lessons and strong academic foundations." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -83,6 +83,14 @@
       align-items:flex-end;
     }
 
+    .nav-track{
+      display:inline-flex;
+      flex-direction:column;
+      align-items:stretch;
+      width:max-content;
+      max-width:100%;
+    }
+
     .nav{
       display:flex;
       justify-content:flex-end;
@@ -93,7 +101,8 @@
       font-size:16px;
       font-weight:500;
       line-height:1;
-      width:fit-content;
+      width:max-content;
+      max-width:100%;
     }
 
     .nav a{
@@ -109,9 +118,7 @@
       margin-top:26px;
       height:2px;
       background:var(--gold);
-      width:fit-content;
-      min-width:100%;
-      align-self:flex-end;
+      width:100%;
     }
 
     .hero{
@@ -126,16 +133,16 @@
     }
 
     .hero h1{
-      font-size:62px;
-      line-height:1.04;
+      font-size:60px;
+      line-height:1.05;
       letter-spacing:-0.02em;
       margin-bottom:18px;
-      max-width:680px;
+      max-width:700px;
     }
 
     .hero-copy{
-      font-size:21px;
-      line-height:1.7;
+      font-size:20px;
+      line-height:1.75;
       color:#586274;
       max-width:620px;
       margin-bottom:28px;
@@ -170,7 +177,7 @@
 
     .hero-image img{
       width:100%;
-      max-width:500px;
+      max-width:470px;
       margin-left:auto;
       border-radius:18px;
       box-shadow:var(--shadow);
@@ -182,9 +189,9 @@
 
     .about-grid{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:50px;
-      align-items:center;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:start;
     }
 
     .section-title{
@@ -195,7 +202,7 @@
 
     .lead{
       font-size:19px;
-      line-height:1.75;
+      line-height:1.8;
       color:#5f6979;
       margin-bottom:16px;
     }
@@ -203,7 +210,7 @@
     .ticks{
       list-style:none;
       padding:0;
-      margin:28px 0 32px;
+      margin:28px 0 0;
       display:grid;
       gap:15px;
     }
@@ -223,12 +230,24 @@
       margin-top:1px;
     }
 
-    .about-image img{
-      width:100%;
-      max-width:420px;
-      margin-left:auto;
+    .summary-card{
+      background:#fff;
+      border:1px solid var(--border);
       border-radius:18px;
-      box-shadow:var(--shadow);
+      padding:28px;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    }
+
+    .summary-card h3{
+      font-size:30px;
+      margin-bottom:14px;
+    }
+
+    .summary-card p{
+      color:#5f6979;
+      font-size:17px;
+      line-height:1.85;
+      margin:0 0 14px;
     }
 
     .center-head{
@@ -272,7 +291,7 @@
     .card p{
       color:#606b7b;
       font-size:17px;
-      line-height:1.75;
+      line-height:1.8;
       margin:0;
     }
 
@@ -298,7 +317,7 @@
     .long-card p{
       color:#5f6979;
       font-size:17px;
-      line-height:1.85;
+      line-height:1.9;
       margin:0;
     }
 
@@ -319,7 +338,7 @@
     .testimonial p{
       margin:0 0 16px;
       font-size:17px;
-      line-height:1.8;
+      line-height:1.85;
       color:#334055;
     }
 
@@ -344,7 +363,7 @@
 
     .contact-panel p{
       font-size:19px;
-      line-height:1.75;
+      line-height:1.8;
       color:#d9e2ef;
       max-width:760px;
       margin:0 auto 24px;
@@ -371,8 +390,7 @@
       .center-head h2,
       .contact-panel h2{font-size:38px}
 
-      .hero-image img,
-      .about-image img{
+      .hero-image img{
         margin-left:0;
       }
     }
@@ -395,6 +413,10 @@
         align-items:center;
       }
 
+      .nav-track{
+        width:100%;
+      }
+
       .nav{
         justify-content:center;
         gap:18px;
@@ -404,7 +426,6 @@
 
       .gold-line{
         width:100%;
-        min-width:0;
       }
 
       .hero{
@@ -412,7 +433,7 @@
       }
 
       .hero h1{font-size:40px}
-      .hero-copy,.lead,.center-head p,.card p,.long-card p,.testimonial p,.contact-panel p{
+      .hero-copy,.lead,.summary-card p,.center-head p,.card p,.long-card p,.testimonial p,.contact-panel p{
         font-size:17px;
       }
 
@@ -436,16 +457,18 @@
       </a>
 
       <div class="nav-area">
-        <nav class="nav">
-          <a href="#top">Home</a>
-          <a href="#classes">Group Classes</a>
-          <a href="#packs">Question Packs</a>
-          <a href="#bio">Bio</a>
-          <a href="#articles">Articles</a>
-          <a href="#youtube">YouTube</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="gold-line"></div>
+        <div class="nav-track">
+          <nav class="nav">
+            <a href="#top">Home</a>
+            <a href="#classes">Group Classes</a>
+            <a href="#packs">Question Packs</a>
+            <a href="#bio">Bio</a>
+            <a href="#articles">Articles</a>
+            <a href="#youtube">YouTube</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <div class="gold-line"></div>
+        </div>
       </div>
     </div>
   </header>
@@ -454,10 +477,9 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <h1>GCSE, A-Level & Further Maths Tuition</h1>
+          <h1>Mathematics Tuition for GCSE, A-Level & Further Maths</h1>
           <p class="hero-copy">
-            Clear teaching, structured lessons and high-quality support designed to
-            build confidence, improve exam technique and help students perform strongly.
+            Clear teaching, careful structure and high-quality academic support combine to build confidence, strengthen understanding and improve examination performance.
           </p>
 
           <div class="hero-actions">
@@ -475,28 +497,35 @@
     <section class="section" id="bio">
       <div class="container about-grid">
         <div>
-          <h2 class="section-title">Hi, I’m your Maths Tutor</h2>
+          <h2 class="section-title">A Thoughtful and Structured Approach to Mathematics</h2>
           <p class="lead">
-            I offer a structured and thoughtful approach to teaching mathematics, built on both strong subject knowledge and a clear understanding of how students learn.
+            Strong subject knowledge is combined with a clear understanding of how students learn, allowing lessons to be shaped around both academic precision and genuine accessibility.
           </p>
           <p class="lead">
-            My focus is not just on improving grades, but on developing confidence and genuine understanding, so that students feel more comfortable and capable when approaching new topics.
+            The emphasis extends beyond grades alone. Confidence, fluency and independent mathematical thinking are developed alongside examination technique, so that new topics feel manageable rather than intimidating.
           </p>
           <p class="lead">
-            I adapt each lesson to the individual, ensuring that explanations are clear, engaging, and suited to the student’s way of thinking.
+            Explanations are tailored carefully to the individual student, with lessons designed to be clear, engaging and intellectually well structured.
           </p>
 
           <ul class="ticks">
-            <li><span class="tick">✔</span><span><strong>Strong subject knowledge</strong> built through university study and continued academic development.</span></li>
-            <li><span class="tick">✔</span><span><strong>Teaching insight</strong> grounded in school experience, training, and classroom practice.</span></li>
-            <li><span class="tick">✔</span><span><strong>Clear lesson structure</strong> that helps students build understanding step by step.</span></li>
+            <li><span class="tick">✔</span><span><strong>Strong academic foundations</strong> developed through university study and continued intellectual engagement with mathematics.</span></li>
+            <li><span class="tick">✔</span><span><strong>Substantial teaching insight</strong> grounded in training, classroom practice and direct work with students of varied ability.</span></li>
+            <li><span class="tick">✔</span><span><strong>Clarity and structure</strong> at the centre of every lesson, allowing progress to build steadily and confidently.</span></li>
           </ul>
-
-          <a href="#contact" class="btn btn-gold">Get in Touch</a>
         </div>
 
-        <div class="about-image">
-          <img src="me.png" alt="Maths tutor photo">
+        <div class="summary-card">
+          <h3>Professional Profile</h3>
+          <p>
+            Teacher training in Secondary Mathematics was undertaken at Brunel University, with experience gained across a range of inner-city and diverse school settings, including both state schools and independent colleges.
+          </p>
+          <p>
+            A Bachelor of Science (BSc Hons) from Loughborough University, completed in 2016, provided a strong grounding in pure mathematics, logical reasoning and formal mathematical argument.
+          </p>
+          <p>
+            Alongside subject study, mathematics education formed an important part of academic development, offering valuable insight into how students encounter difficulty, form misconceptions, and build understanding.
+          </p>
         </div>
       </div>
     </section>
@@ -506,29 +535,29 @@
         <div class="center-head">
           <h2>Academic Background</h2>
           <p>
-            A strong foundation in pure mathematics, mathematical education, and structured analytical thinking.
+            A rigorous mathematical foundation supported by wider study in teaching, learning and analytical reasoning.
           </p>
         </div>
 
         <div class="cards">
           <div class="card">
-            <h3>Pure Mathematics Background</h3>
+            <h3>Pure Mathematics</h3>
             <p>
-              I completed a Bachelor of Science (BSc Hons) at Loughborough University in 2016, with a strong focus on pure mathematics. My studies centred on rigorous logical thinking, formal mathematical argument, and abstract concepts.
+              University study was centred on pure mathematics, strengthening the ability to think logically, work with abstraction and approach complex problems with clarity and precision.
             </p>
           </div>
 
           <div class="card">
-            <h3>Mathematics Education Insight</h3>
+            <h3>Mathematics Education</h3>
             <p>
-              I also studied mathematics education, exploring how students learn, common misconceptions, and effective ways to explain complex ideas accessibly and clearly.
+              Study of mathematics education provided a deeper understanding of student thinking, common misconceptions, and effective ways to communicate demanding ideas in an accessible form.
             </p>
           </div>
 
           <div class="card">
             <h3>Ongoing Development</h3>
             <p>
-              I continue to engage with mathematics education research and teaching methods through independent study, with a particular interest in how mathematical thinking can be developed effectively.
+              Continued engagement with research and advanced ideas in mathematics education supports an evolving and reflective approach to teaching and student understanding.
             </p>
           </div>
         </div>
@@ -540,22 +569,22 @@
         <div class="center-head">
           <h2>Teacher Training & Classroom Experience</h2>
           <p>
-            Real experience across diverse school settings, with a strong grounding in classroom teaching and student progress.
+            Extensive practical experience across varied school environments, supported by strong classroom presence and a secure command of subject knowledge.
           </p>
         </div>
 
         <div class="long-grid">
           <div class="long-card">
-            <h3>Teacher Training</h3>
+            <h3>Training and School Experience</h3>
             <p>
-              I undertook teacher training in Secondary Mathematics at Brunel University, gaining extensive experience across a range of inner-city and diverse school settings, including both state and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons.
+              Teacher training in Secondary Mathematics included substantial experience across diverse school settings. During this period, strong classroom management skills were developed alongside the ability to deliver lessons that were both engaging and well structured. Work with students across a broad ability range strengthened the capacity to adapt explanations and maintain a positive learning environment in which meaningful mathematical progress could be made.
             </p>
           </div>
 
           <div class="long-card">
-            <h3>Practical Classroom Experience</h3>
+            <h3>Employability Award & Practical Work</h3>
             <p>
-              I worked with students across varying abilities, focusing on building understanding, encouraging participation, and creating a positive learning environment where students could make meaningful progress in mathematics. Alongside my degree, I also completed the Employability Award at Loughborough University, gaining hands-on experience supporting students from disadvantaged backgrounds in classroom settings.
+              The Employability Award at Loughborough University provided additional hands-on experience supporting students from disadvantaged backgrounds within classroom settings. This further developed rapport-building, adaptability and the ability to create a focused, supportive atmosphere in which learners could overcome difficulties and progress with confidence.
             </p>
           </div>
         </div>
@@ -567,36 +596,36 @@
         <div class="center-head">
           <h2>Teaching Approach</h2>
           <p>
-            A balance of structure, logical clarity, and discussion-based understanding.
+            Logical structure, thoughtful discussion and careful explanation are brought together to help students understand mathematics properly.
           </p>
         </div>
 
         <div class="long-grid">
           <div class="long-card">
-            <h3>A-levels & Teaching Approach</h3>
+            <h3>A-levels & Intellectual Breadth</h3>
             <p>
-              My academic background includes A-level studies in Mathematics, Chemistry, Physics, and Philosophy, providing a strong and well-rounded foundation across both analytical and conceptual disciplines. I also completed AS-level Philosophy one year early during my GCSE studies, achieving 93%, placing me among the highest-performing students of my age nationally in that exam sitting. This strengthened my ability to think critically, analyse arguments, and communicate complex ideas clearly.
+              Academic study included A-levels in Mathematics, Chemistry, Physics and Philosophy, providing a strong and well-rounded foundation across both analytical and conceptual disciplines. AS-level Philosophy was completed a year early during GCSE studies, with a score of 93%, placing performance among the highest nationally for that sitting. This strengthened critical thinking, argument analysis and the communication of complex ideas with clarity.
             </p>
           </div>
 
           <div class="long-card">
-            <h3>How I Work With Students</h3>
+            <h3>How Lessons Are Conducted</h3>
             <p>
-              In my lessons, I prioritise clarity, structure, and active engagement. I break down complex ideas into manageable steps, encourage students to ask questions, and create an environment where they feel confident to think through problems independently. By combining logical explanation with discussion and reflection, I help students move beyond memorisation and develop a deeper understanding of mathematics that supports long-term progress.
+              Lessons are shaped by clarity, structure and active engagement. Complex ideas are broken into manageable stages, while questioning, discussion and reflection are used to move understanding beyond memorisation. The aim is not merely to rehearse methods, but to cultivate mathematical confidence and independent reasoning.
             </p>
           </div>
 
           <div class="long-card">
             <h3>What Students Can Expect</h3>
             <p>
-              Students can expect a supportive and focused learning environment, where progress is built step by step. Whether a student is aiming to improve grades, prepare for exams, or strengthen their foundational understanding, I provide clear guidance and consistent support. My goal is to help each student become more confident, independent, and capable in their approach to mathematics.
+              A supportive and focused learning environment is maintained throughout. Whether the aim is stronger grades, more secure foundations or better examination preparation, guidance is provided steadily and carefully so that students become more confident, more independent and more capable in their mathematical thinking.
             </p>
           </div>
 
           <div class="long-card">
-            <h3>Why Choose Me</h3>
+            <h3>Why This Approach Works</h3>
             <p>
-              I offer a structured and thoughtful approach to teaching mathematics, built on both strong subject knowledge and a clear understanding of how students learn. My focus is not just on improving grades, but on developing confidence and genuine understanding, so that students feel more comfortable and capable when approaching new topics.
+              Strong subject knowledge alone is not enough; what matters equally is the ability to make mathematics intelligible, engaging and manageable. By combining academic rigour with thoughtful explanation, lessons are able to support both performance and genuine understanding.
             </p>
           </div>
         </div>
@@ -608,7 +637,7 @@
         <div class="center-head">
           <h2>What Parents & Students Say</h2>
           <p>
-            This section is ready for your real testimonials and social proof.
+            This section is ready for authentic testimonials and longer-form social proof.
           </p>
         </div>
 
@@ -619,17 +648,17 @@
           </div>
 
           <div class="testimonial">
-            <p>“The lessons are clear, calm and very effective. Difficult topics finally started making sense.”</p>
+            <p>“The lessons are calm, clear and highly effective. Difficult topics finally began to make sense.”</p>
             <strong>A-Level student</strong>
           </div>
 
           <div class="testimonial">
-            <p>“A very professional tutor who explains things properly and makes the sessions feel productive.”</p>
+            <p>“A very professional tutor whose explanations are thoughtful, precise and genuinely helpful.”</p>
             <strong>Parent review</strong>
           </div>
 
           <div class="testimonial">
-            <p>“The exam practice made a huge difference. I felt much more prepared and less stressed.”</p>
+            <p>“Exam practice became far less stressful, and preparation felt much more structured and purposeful.”</p>
             <strong>Further Maths student</strong>
           </div>
         </div>
@@ -639,9 +668,9 @@
     <section class="section" id="contact">
       <div class="container">
         <div class="contact-panel">
-          <h2>Have a specific query?</h2>
+          <h2>Have a Specific Query?</h2>
           <p>
-            Get in touch to discuss the student’s current level, targets and what kind of support would be most useful.
+            Enquiries are welcome for discussion of current level, academic goals and the form of support most likely to be beneficial.
           </p>
           <a href="mailto:info@mathstutor.co.uk" class="btn btn-gold">Contact</a>
         </div>
