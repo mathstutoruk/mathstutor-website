@@ -4,468 +4,622 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Maths Tutor UK</title>
-  <meta name="description" content="Mathematics tuition for GCSE, A-Level and Further Maths, with clear teaching, structured lessons and strong academic foundations." />
+  <meta
+    name="description"
+    content="Mathematics tuition for GCSE and A-Level, with structured teaching, strong academic foundations, and high-quality lesson preparation."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
-    :root{
-      --navy:#071f46;
-      --gold:#d4af37;
-      --cream:#f5f3ef;
-      --text:#22304a;
-      --muted:#667085;
-      --white:#ffffff;
-      --shadow:0 14px 30px rgba(0,0,0,.12);
-      --border:#e7dfd4;
+    :root {
+      --navy: #071f46;
+      --gold: #d4af37;
+      --gold-dark: #b89220;
+      --cream: #f5f3ef;
+      --white: #ffffff;
+      --text: #21314e;
+      --muted: #606c7c;
+      --border: #e6ddd0;
+      --shadow: 0 14px 30px rgba(0,0,0,0.10);
+      --radius: 18px;
+      --container: 1220px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:'Inter',sans-serif;
-      background:var(--cream);
-      color:var(--text);
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--cream);
+      color: var(--text);
     }
 
-    img{display:block;max-width:100%}
-    a{text-decoration:none;color:inherit}
-    h1,h2,h3,h4{
-      font-family:'Playfair Display',serif;
-      margin:0;
-      font-weight:600;
-      color:#16244a;
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, h4 {
+      font-family: "Playfair Display", serif;
+      color: #16244a;
+      margin: 0;
+      font-weight: 600;
     }
 
-    .container{
-      width:min(1220px, calc(100% - 40px));
-      margin:0 auto;
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
     }
 
-    .header{
-      background:var(--navy);
-      padding:26px 0 18px;
+    .site-header {
+      background: var(--navy);
+      padding: 24px 0 16px;
     }
 
-    .header-inner{
-      display:grid;
-      grid-template-columns:220px 1fr;
-      gap:26px;
-      align-items:start;
+    .header-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 26px;
+      align-items: start;
     }
 
-    .logo-wrap{
-      width:170px;
-      height:170px;
-      border-radius:50%;
-      overflow:hidden;
-      box-shadow:0 18px 34px rgba(0,0,0,.26);
-      margin-top:8px;
+    .logo-wrap {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.28);
+      margin-top: 8px;
     }
 
-    .logo-wrap img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      transform:scale(1.73);
-      transform-origin:center;
-      border-radius:50%;
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.73);
+      transform-origin: center;
+      border-radius: 50%;
     }
 
-    .nav-area{
-      padding-top:26px;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-end;
+    .nav-area {
+      padding-top: 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
     }
 
-    .nav-track{
-      display:inline-flex;
-      flex-direction:column;
-      align-items:stretch;
-      width:max-content;
-      max-width:100%;
+    .nav-track {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: max-content;
+      max-width: 100%;
     }
 
-    .nav{
-      display:flex;
-      justify-content:flex-end;
-      align-items:center;
-      gap:34px;
-      flex-wrap:wrap;
-      color:var(--white);
-      font-size:16px;
-      font-weight:500;
-      line-height:1;
-      width:max-content;
-      max-width:100%;
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 30px;
+      flex-wrap: wrap;
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 500;
+      width: max-content;
+      max-width: 100%;
     }
 
-    .nav a{
-      white-space:nowrap;
-      opacity:.98;
+    .nav a {
+      white-space: nowrap;
+      opacity: 0.98;
     }
 
-    .nav a:hover{
-      color:var(--gold);
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--gold);
+      outline: none;
     }
 
-    .gold-line{
-      margin-top:26px;
-      height:2px;
-      background:var(--gold);
-      width:100%;
+    .nav-contact {
+      font-weight: 700;
+      letter-spacing: 0.01em;
     }
 
-    .hero{
-      padding:78px 0 72px;
+    .youtube-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
     }
 
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:48px;
-      align-items:center;
+    .youtube-link svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
     }
 
-    .hero h1{
-      font-size:60px;
-      line-height:1.05;
-      letter-spacing:-0.02em;
-      margin-bottom:18px;
-      max-width:700px;
+    .gold-line {
+      margin-top: 24px;
+      height: 2px;
+      background: var(--gold);
+      width: 100%;
     }
 
-    .hero-copy{
-      font-size:20px;
-      line-height:1.75;
-      color:#586274;
-      max-width:620px;
-      margin-bottom:28px;
+    .hero {
+      padding: 72px 0 72px;
     }
 
-    .hero-actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 54px;
+      align-items: center;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 22px;
-      border-radius:10px;
-      font-size:16px;
-      font-weight:600;
+    .hero h1 {
+      font-size: 60px;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+      max-width: 760px;
     }
 
-    .btn-gold{
-      background:var(--gold);
-      color:#151515;
+    .hero-credentials {
+      font-size: 20px;
+      line-height: 1.65;
+      color: #42506a;
+      margin-bottom: 10px;
+      font-weight: 500;
     }
 
-    .btn-light{
-      background:#f8f6f2;
-      border:1px solid #d8d1c7;
-      color:#16244a;
+    .hero-welcome {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      color: #16244a;
+      margin-bottom: 14px;
     }
 
-    .hero-image img{
-      width:100%;
-      max-width:470px;
-      margin-left:auto;
-      border-radius:18px;
-      box-shadow:var(--shadow);
+    .hero-copy {
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 26px;
     }
 
-    .section{
-      padding:78px 0;
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
     }
 
-    .about-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
-      align-items:start;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .section-title{
-      font-size:48px;
-      line-height:1.08;
-      margin-bottom:18px;
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.08);
     }
 
-    .lead{
-      font-size:19px;
-      line-height:1.8;
-      color:#5f6979;
-      margin-bottom:16px;
+    .btn-gold {
+      background: var(--gold);
+      color: #151515;
     }
 
-    .ticks{
-      list-style:none;
-      padding:0;
-      margin:28px 0 0;
-      display:grid;
-      gap:15px;
+    .btn-light {
+      background: #faf8f4;
+      border: 1px solid #d9d1c5;
+      color: #16244a;
     }
 
-    .ticks li{
-      display:flex;
-      gap:12px;
-      align-items:flex-start;
-      font-size:18px;
-      line-height:1.65;
-      color:#334055;
+    .hero-image img {
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
     }
 
-    .tick{
-      color:#8aa04b;
-      font-weight:700;
-      margin-top:1px;
+    .section {
+      padding: 78px 0;
     }
 
-    .summary-card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:28px;
-      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    .welcome-section {
+      text-align: center;
     }
 
-    .summary-card h3{
-      font-size:30px;
-      margin-bottom:14px;
+    .welcome-photo {
+      width: 240px;
+      height: auto;
+      margin: 0 auto 24px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
     }
 
-    .summary-card p{
-      color:#5f6979;
-      font-size:17px;
-      line-height:1.85;
-      margin:0 0 14px;
+    .welcome-section h2 {
+      font-size: 48px;
+      margin-bottom: 18px;
     }
 
-    .center-head{
-      text-align:center;
-      margin-bottom:34px;
+    .welcome-text {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 19px;
+      line-height: 1.85;
+      color: var(--muted);
     }
 
-    .center-head h2{
-      font-size:46px;
-      line-height:1.08;
-      margin-bottom:14px;
+    .welcome-text p {
+      margin: 0 0 16px;
     }
 
-    .center-head p{
-      max-width:760px;
-      margin:0 auto;
-      color:#606b7b;
-      font-size:18px;
-      line-height:1.75;
+    .welcome-contact {
+      margin-top: 18px;
+      display: inline-flex;
+      color: #16244a;
+      font-weight: 700;
+      border-bottom: 1px solid #16244a;
+      padding-bottom: 2px;
     }
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:22px;
+    .center-head {
+      text-align: center;
+      margin-bottom: 34px;
     }
 
-    .card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:28px;
-      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    .center-head h2 {
+      font-size: 46px;
+      line-height: 1.08;
+      margin-bottom: 14px;
     }
 
-    .card h3{
-      font-size:28px;
-      margin-bottom:12px;
+    .center-head p {
+      max-width: 780px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
     }
 
-    .card p{
-      color:#606b7b;
-      font-size:17px;
-      line-height:1.8;
-      margin:0;
+    .slider-wrap {
+      position: relative;
     }
 
-    .long-grid{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:22px;
+    .slider-outer {
+      overflow: hidden;
+      border-radius: 18px;
     }
 
-    .long-card{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:30px;
-      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    .slider-track {
+      display: flex;
+      transition: transform 0.35s ease;
+      will-change: transform;
     }
 
-    .long-card h3{
-      font-size:30px;
-      margin-bottom:14px;
+    .slide {
+      min-width: 100%;
+      padding: 4px;
     }
 
-    .long-card p{
-      color:#5f6979;
-      font-size:17px;
-      line-height:1.9;
-      margin:0;
+    .slide-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+      overflow: hidden;
     }
 
-    .testimonials{
-      display:grid;
-      grid-template-columns:repeat(2, 1fr);
-      gap:22px;
+    .slide-image {
+      aspect-ratio: 16 / 8.5;
+      background: linear-gradient(135deg, #eef2f8, #dde6f3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      color: #20304d;
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      text-align: center;
     }
 
-    .testimonial{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:26px;
-      box-shadow:0 8px 20px rgba(0,0,0,.04);
+    .slide-body {
+      padding: 24px 26px 28px;
     }
 
-    .testimonial p{
-      margin:0 0 16px;
-      font-size:17px;
-      line-height:1.85;
-      color:#334055;
+    .slide-body h3 {
+      font-size: 30px;
+      margin-bottom: 12px;
     }
 
-    .testimonial strong{
-      font-size:15px;
-      color:#16244a;
+    .slide-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.85;
     }
 
-    .contact-panel{
-      background:var(--navy);
-      color:var(--white);
-      text-align:center;
-      border-radius:22px;
-      padding:52px 26px;
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: none;
+      background: var(--white);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+      color: #16244a;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 2;
     }
 
-    .contact-panel h2{
-      color:var(--white);
-      font-size:44px;
-      margin-bottom:14px;
+    .slider-btn:hover {
+      background: #f7f4ee;
     }
 
-    .contact-panel p{
-      font-size:19px;
-      line-height:1.8;
-      color:#d9e2ef;
-      max-width:760px;
-      margin:0 auto 24px;
+    .slider-btn.prev { left: -18px; }
+    .slider-btn.next { right: -18px; }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
     }
 
-    .footer{
-      text-align:center;
-      color:#7a8596;
-      font-size:14px;
-      padding:22px 0 36px;
+    .offer-card,
+    .info-card,
+    .price-card,
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
     }
 
-    @media (max-width: 1050px){
+    .offer-card h3,
+    .info-card h3,
+    .price-card h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .offer-card p,
+    .info-card p,
+    .price-card p,
+    .testimonial-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .split-section {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .split-section.reverse {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .split-image img {
+      width: 100%;
+      max-width: 430px;
+      margin-left: auto;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .map-frame {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      min-height: 340px;
+      background: #e8edf5;
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 340px;
+      border: 0;
+    }
+
+    .testimonial-wrap {
+      position: relative;
+    }
+
+    .testimonial-outer {
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.35s ease;
+    }
+
+    .testimonial-slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 4px;
+    }
+
+    .testimonial-card strong {
+      display: block;
+      margin-top: 14px;
+      color: #16244a;
+      font-size: 15px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .price-sub {
+      color: #6d7788;
+      font-size: 15px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+
+    .price-value {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      color: #16244a;
+      margin: 14px 0 18px;
+    }
+
+    .final-panel {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      border-radius: 22px;
+      padding: 52px 24px;
+    }
+
+    .final-panel h2 {
+      color: var(--white);
+      font-size: 42px;
+      margin-bottom: 18px;
+    }
+
+    .footer {
+      text-align: center;
+      color: #7b8798;
+      font-size: 14px;
+      padding: 22px 0 36px;
+    }
+
+    @media (max-width: 1180px) {
+      .offer-grid { grid-template-columns: repeat(3, 1fr); }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 1050px) {
       .hero-grid,
-      .about-grid,
-      .cards,
-      .long-grid,
-      .testimonials{
-        grid-template-columns:1fr;
+      .split-section,
+      .split-section.reverse {
+        grid-template-columns: 1fr;
       }
 
-      .hero h1{font-size:48px}
-      .section-title,
+      .hero h1 { font-size: 48px; }
+      .welcome-section h2,
       .center-head h2,
-      .contact-panel h2{font-size:38px}
-
-      .hero-image img{
-        margin-left:0;
-      }
+      .final-panel h2 { font-size: 38px; }
+      .split-image img { margin-left: 0; }
+      .testimonial-slide { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 820px){
-      .header-inner{
-        grid-template-columns:1fr;
-        justify-items:center;
+    @media (max-width: 820px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
       }
 
-      .logo-wrap{
-        width:150px;
-        height:150px;
-        margin-top:0;
+      .logo-wrap {
+        width: 150px;
+        height: 150px;
+        margin-top: 0;
       }
 
-      .nav-area{
-        width:100%;
-        padding-top:8px;
-        align-items:center;
+      .nav-area {
+        width: 100%;
+        padding-top: 8px;
+        align-items: center;
       }
 
-      .nav-track{
-        width:100%;
+      .nav-track { width: 100%; }
+      .nav {
+        justify-content: center;
+        gap: 18px;
+        width: 100%;
+        text-align: center;
       }
 
-      .nav{
-        justify-content:center;
-        gap:18px;
-        text-align:center;
-        width:100%;
+      .hero { padding-top: 56px; }
+      .hero h1 { font-size: 40px; }
+      .hero-credentials,
+      .hero-copy,
+      .welcome-text,
+      .center-head p,
+      .slide-body p,
+      .offer-card p,
+      .info-card p,
+      .testimonial-card p,
+      .price-card p {
+        font-size: 17px;
       }
 
-      .gold-line{
-        width:100%;
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
       }
 
-      .hero{
-        padding-top:56px;
+      .btn { width: 100%; }
+
+      .offer-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero h1{font-size:40px}
-      .hero-copy,.lead,.summary-card p,.center-head p,.card p,.long-card p,.testimonial p,.contact-panel p{
-        font-size:17px;
-      }
-
-      .hero-actions{
-        display:grid;
-        grid-template-columns:1fr;
-      }
-
-      .btn{
-        width:100%;
-      }
+      .slider-btn.prev { left: 8px; }
+      .slider-btn.next { right: 8px; }
     }
   </style>
 </head>
 <body>
 
-  <header class="header">
+  <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="logo-wrap" aria-label="Maths Tutor UK home">
+      <a href="index.html" class="logo-wrap" aria-label="Maths Tutor UK home">
         <img src="logo.png" alt="Maths Tutor UK logo">
       </a>
 
       <div class="nav-area">
         <div class="nav-track">
-          <nav class="nav">
-            <a href="#top">Home</a>
-            <a href="#classes">Group Classes</a>
-            <a href="#packs">Question Packs</a>
-            <a href="#bio">Bio</a>
-            <a href="#articles">Articles</a>
-            <a href="#youtube">YouTube</a>
-            <a href="#contact">Contact</a>
+          <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="#offer">Group Classes</a>
+            <a href="#lessons">Question Packs</a>
+            <a href="bio.html">Bio</a>
+            <a href="#online-lessons">Articles</a>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="youtube-link"
+              aria-label="YouTube"
+              title="YouTube"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32.2 32.2 0 0 0 0 12a32.2 32.2 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.9.5 9.3.5 9.3.5s7.4 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32.2 32.2 0 0 0 24 12a32.2 32.2 0 0 0-.5-5.8ZM9.6 15.5v-7l6 3.5-6 3.5Z"/>
+              </svg>
+            </a>
+            <a href="#contact" class="nav-contact">Contact</a>
           </nav>
           <div class="gold-line"></div>
         </div>
@@ -473,211 +627,410 @@
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <h1>Mathematics Tuition for GCSE, A-Level & Further Maths</h1>
+          <h1>Mathematics Tuition for GCSE &amp; A-Level</h1>
+          <div class="hero-credentials">
+            Loughborough Mathematics Graduate | Full-Time Tutor | 10+ Years Experience
+          </div>
+          <div class="hero-welcome">Welcome</div>
           <p class="hero-copy">
-            Clear teaching, careful structure and high-quality academic support combine to build confidence, strengthen understanding and improve examination performance.
+            Carefully structured teaching, strong academic foundations and high-quality lesson preparation combine to build confidence, strengthen understanding and improve examination performance.
           </p>
 
           <div class="hero-actions">
             <a href="#contact" class="btn btn-gold">Contact</a>
-            <a href="#bio" class="btn btn-light">Learn More</a>
+            <a href="bio.html" class="btn btn-light">Read Bio</a>
           </div>
         </div>
 
         <div class="hero-image">
-          <img src="me.png" alt="Maths tutor portrait">
+          <img src="me.png" alt="Surinder Sangha portrait">
         </div>
       </div>
     </section>
 
-    <section class="section" id="bio">
-      <div class="container about-grid">
-        <div>
-          <h2 class="section-title">A Thoughtful and Structured Approach to Mathematics</h2>
-          <p class="lead">
-            Strong subject knowledge is combined with a clear understanding of how students learn, allowing lessons to be shaped around both academic precision and genuine accessibility.
-          </p>
-          <p class="lead">
-            The emphasis extends beyond grades alone. Confidence, fluency and independent mathematical thinking are developed alongside examination technique, so that new topics feel manageable rather than intimidating.
-          </p>
-          <p class="lead">
-            Explanations are tailored carefully to the individual student, with lessons designed to be clear, engaging and intellectually well structured.
-          </p>
-
-          <ul class="ticks">
-            <li><span class="tick">✔</span><span><strong>Strong academic foundations</strong> developed through university study and continued intellectual engagement with mathematics.</span></li>
-            <li><span class="tick">✔</span><span><strong>Substantial teaching insight</strong> grounded in training, classroom practice and direct work with students of varied ability.</span></li>
-            <li><span class="tick">✔</span><span><strong>Clarity and structure</strong> at the centre of every lesson, allowing progress to build steadily and confidently.</span></li>
-          </ul>
-        </div>
-
-        <div class="summary-card">
-          <h3>Professional Profile</h3>
+    <section class="section welcome-section">
+      <div class="container">
+        <img src="me.png" alt="Surinder Sangha" class="welcome-photo">
+        <h2>Welcome</h2>
+        <div class="welcome-text">
+          <p><strong>Hi, I’m Surinder.</strong></p>
           <p>
-            Teacher training in Secondary Mathematics was undertaken at Brunel University, with experience gained across a range of inner-city and diverse school settings, including both state schools and independent colleges.
+            Since graduating from Loughborough University in 2016 with a BSc in Mathematics, thousands of hours of one-to-one tuition have been delivered across A-Level Mathematics and Further Mathematics, with lessons centred on clarity, structure and strong examination preparation.
           </p>
-          <p>
-            A Bachelor of Science (BSc Hons) from Loughborough University, completed in 2016, provided a strong grounding in pure mathematics, logical reasoning and formal mathematical argument.
-          </p>
-          <p>
-            Alongside subject study, mathematics education formed an important part of academic development, offering valuable insight into how students encounter difficulty, form misconceptions, and build understanding.
-          </p>
+          <a href="#contact" class="welcome-contact">Contact</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="packs">
+    <section class="section" id="lessons">
       <div class="container">
         <div class="center-head">
-          <h2>Academic Background</h2>
+          <h2>Mathematics Lessons</h2>
           <p>
-            A rigorous mathematical foundation supported by wider study in teaching, learning and analytical reasoning.
+            A carefully prepared bank of mathematics teaching materials, revision slides and question sets designed to support deep understanding and steady progress.
           </p>
         </div>
 
-        <div class="cards">
-          <div class="card">
-            <h3>Pure Mathematics</h3>
-            <p>
-              University study was centred on pure mathematics, strengthening the ability to think logically, work with abstraction and approach complex problems with clarity and precision.
-            </p>
+        <div class="slider-wrap">
+          <button class="slider-btn prev" type="button" aria-label="Previous lesson slide">‹</button>
+
+          <div class="slider-outer">
+            <div class="slider-track" id="lessonTrack">
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="slide-image">Algebra, Graphs &amp; Core Techniques</div>
+                  <div class="slide-body">
+                    <h3>Presentations Across Key Topics</h3>
+                    <p>
+                      Structured slides cover major topics in a clear sequence, combining theory, worked examples and carefully chosen questions.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="slide-image">Ranked Question Practice</div>
+                  <div class="slide-body">
+                    <h3>Questions Ordered by Difficulty</h3>
+                    <p>
+                      Practice material is selected to help students move from secure basics to more demanding examination-style problems with confidence.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="slide-image">Specification-Aligned Learning</div>
+                  <div class="slide-body">
+                    <h3>Clear Relevance to Course Content</h3>
+                    <p>
+                      Lesson materials remain closely tied to course requirements so that time is spent on content that genuinely supports classroom and examination success.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="slide-image">Summary &amp; Recall Slides</div>
+                  <div class="slide-body">
+                    <h3>Concise Revision Support</h3>
+                    <p>
+                      Summary slides help students distil important ideas, methods and patterns into a form that is easier to review and remember.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="slide-image">Worked Examples</div>
+                  <div class="slide-body">
+                    <h3>Step-by-Step Modelling</h3>
+                    <p>
+                      Fully worked examples demonstrate not only how questions are answered, but why each step is mathematically appropriate.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="slide-image">Enrichment &amp; Deeper Understanding</div>
+                  <div class="slide-body">
+                    <h3>Conceptual Depth</h3>
+                    <p>
+                      Selected enrichment material supports stronger mathematical thinking and helps students see beyond memorised procedures.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="slide-image">Challenge Questions</div>
+                  <div class="slide-body">
+                    <h3>Pushing Beyond the Basics</h3>
+                    <p>
+                      More demanding questions are used to develop resilience, accuracy and the ability to think flexibly under pressure.
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="slide-image">Exam Technique &amp; Presentation</div>
+                  <div class="slide-body">
+                    <h3>Performance Under Examination Conditions</h3>
+                    <p>
+                      Students are guided in method presentation, mark-winning structure and the habits that improve examination performance over time.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
           </div>
 
-          <div class="card">
-            <h3>Mathematics Education</h3>
-            <p>
-              Study of mathematics education provided a deeper understanding of student thinking, common misconceptions, and effective ways to communicate demanding ideas in an accessible form.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Ongoing Development</h3>
-            <p>
-              Continued engagement with research and advanced ideas in mathematics education supports an evolving and reflective approach to teaching and student understanding.
-            </p>
-          </div>
+          <button class="slider-btn next" type="button" aria-label="Next lesson slide">›</button>
         </div>
       </div>
     </section>
 
-    <section class="section" id="classes">
+    <section class="section" id="offer">
       <div class="container">
         <div class="center-head">
-          <h2>Teacher Training & Classroom Experience</h2>
+          <h2>What I Offer</h2>
           <p>
-            Extensive practical experience across varied school environments, supported by strong classroom presence and a secure command of subject knowledge.
+            A mathematics tuition structure built around preparation, clarity, confidence and meaningful progress.
           </p>
         </div>
 
-        <div class="long-grid">
-          <div class="long-card">
-            <h3>Training and School Experience</h3>
+        <div class="offer-grid">
+          <article class="offer-card">
+            <h3>Fully Prepared Lessons</h3>
             <p>
-              Teacher training in Secondary Mathematics included substantial experience across diverse school settings. During this period, strong classroom management skills were developed alongside the ability to deliver lessons that were both engaging and well structured. Work with students across a broad ability range strengthened the capacity to adapt explanations and maintain a positive learning environment in which meaningful mathematical progress could be made.
+              Each session is supported by carefully selected explanations, examples and question practice so that lesson time is used purposefully.
             </p>
-          </div>
+          </article>
 
-          <div class="long-card">
-            <h3>Employability Award & Practical Work</h3>
+          <article class="offer-card">
+            <h3>Confidence Building</h3>
             <p>
-              The Employability Award at Loughborough University provided additional hands-on experience supporting students from disadvantaged backgrounds within classroom settings. This further developed rapport-building, adaptability and the ability to create a focused, supportive atmosphere in which learners could overcome difficulties and progress with confidence.
+              Confidence is strengthened through steady progression, thoughtful explanation and repeated success with increasingly demanding questions.
             </p>
-          </div>
+          </article>
+
+          <article class="offer-card">
+            <h3>Effective Learning Habits</h3>
+            <p>
+              Students are guided towards stronger revision habits, active recall and more effective long-term retention of mathematical ideas.
+            </p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Ensured Learning</h3>
+            <p>
+              Understanding is checked regularly, misconceptions are addressed directly, and difficult ideas are revisited in a clear and systematic way.
+            </p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Regular Feedback After Lessons</h3>
+            <p>
+              Frequent feedback helps maintain direction, clarify areas for improvement and ensure that progress remains deliberate and measurable.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="articles">
-      <div class="container">
-        <div class="center-head">
-          <h2>Teaching Approach</h2>
+    <section class="section" id="online-lessons">
+      <div class="container split-section">
+        <div class="info-card">
+          <h3>Online Lessons</h3>
           <p>
-            Logical structure, thoughtful discussion and careful explanation are brought together to help students understand mathematics properly.
+            Online lessons offer a convenient and efficient way to access high-quality mathematics tuition from home. Sessions are structured carefully and can run smoothly with a simple setup, while still allowing for explanation, worked examples, question practice and direct interaction throughout.
           </p>
         </div>
 
-        <div class="long-grid">
-          <div class="long-card">
-            <h3>A-levels & Intellectual Breadth</h3>
-            <p>
-              Academic study included A-levels in Mathematics, Chemistry, Physics and Philosophy, providing a strong and well-rounded foundation across both analytical and conceptual disciplines. AS-level Philosophy was completed a year early during GCSE studies, with a score of 93%, placing performance among the highest nationally for that sitting. This strengthened critical thinking, argument analysis and the communication of complex ideas with clarity.
-            </p>
-          </div>
-
-          <div class="long-card">
-            <h3>How Lessons Are Conducted</h3>
-            <p>
-              Lessons are shaped by clarity, structure and active engagement. Complex ideas are broken into manageable stages, while questioning, discussion and reflection are used to move understanding beyond memorisation. The aim is not merely to rehearse methods, but to cultivate mathematical confidence and independent reasoning.
-            </p>
-          </div>
-
-          <div class="long-card">
-            <h3>What Students Can Expect</h3>
-            <p>
-              A supportive and focused learning environment is maintained throughout. Whether the aim is stronger grades, more secure foundations or better examination preparation, guidance is provided steadily and carefully so that students become more confident, more independent and more capable in their mathematical thinking.
-            </p>
-          </div>
-
-          <div class="long-card">
-            <h3>Why This Approach Works</h3>
-            <p>
-              Strong subject knowledge alone is not enough; what matters equally is the ability to make mathematics intelligible, engaging and manageable. By combining academic rigour with thoughtful explanation, lessons are able to support both performance and genuine understanding.
-            </p>
-          </div>
+        <div class="split-image">
+          <img src="me.png" alt="Surinder Sangha online lesson profile image">
         </div>
       </div>
     </section>
 
-    <section class="section" id="youtube">
+    <section class="section" id="in-person-lessons">
+      <div class="container split-section reverse">
+        <div class="map-frame">
+          <iframe
+            title="Approximate map location for Notting Hill"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Notting%20Hill%2C%20London&z=13&output=embed">
+          </iframe>
+        </div>
+
+        <div class="info-card">
+          <h3>In-Person Lessons</h3>
+          <p>
+            In-person lessons are also intended to be available, with Notting Hill set as the working location. The map shows an approximate area for now, with further practical details to be confirmed when arrangements are finalised.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
       <div class="container">
         <div class="center-head">
-          <h2>What Parents & Students Say</h2>
+          <h2>Testimonials</h2>
           <p>
-            This section is ready for authentic testimonials and longer-form social proof.
+            A selection of parent and student feedback, presented in a larger format with slider navigation.
           </p>
         </div>
 
-        <div class="testimonials">
-          <div class="testimonial">
-            <p>“For the first time, my daughter is enjoying maths and feels much more confident approaching her GCSE exams.”</p>
-            <strong>Parent of GCSE student</strong>
+        <div class="testimonial-wrap">
+          <button class="slider-btn prev" type="button" id="testPrev" aria-label="Previous testimonials">‹</button>
+
+          <div class="testimonial-outer">
+            <div class="testimonial-track" id="testimonialTrack">
+              <div class="testimonial-slide">
+                <article class="testimonial-card">
+                  <p>“For the first time, mathematics felt manageable rather than overwhelming. Lessons were calm, clear and genuinely effective.”</p>
+                  <strong>Priya Patel</strong>
+                </article>
+                <article class="testimonial-card">
+                  <p>“A strong balance of structure, patience and high standards. Confidence improved greatly over a relatively short period.”</p>
+                  <strong>Daniel Grewal</strong>
+                </article>
+                <article class="testimonial-card">
+                  <p>“The quality of the lesson preparation was obvious straight away. Every session felt purposeful and very well thought through.”</p>
+                  <strong>Aisha Khan</strong>
+                </article>
+              </div>
+
+              <div class="testimonial-slide">
+                <article class="testimonial-card">
+                  <p>“Complex topics were explained with clarity and precision. Examination practice also became far less stressful.”</p>
+                  <strong>Emily Robertson</strong>
+                </article>
+                <article class="testimonial-card">
+                  <p>“A highly professional approach, with excellent communication and a strong sense of academic care throughout.”</p>
+                  <strong>Harjit Bains</strong>
+                </article>
+                <article class="testimonial-card">
+                  <p>“The lessons improved not only marks, but also the ability to think independently when faced with unfamiliar questions.”</p>
+                  <strong>Tom Wallace</strong>
+                </article>
+              </div>
+
+              <div class="testimonial-slide">
+                <article class="testimonial-card">
+                  <p>“One of the most thoughtful and well-prepared tutors encountered. Difficult ideas were broken down in a very accessible way.”</p>
+                  <strong>Neha Sharma</strong>
+                </article>
+                <article class="testimonial-card">
+                  <p>“There was a real difference in confidence, especially with harder algebra and problem-solving questions.”</p>
+                  <strong>Luke Harrison</strong>
+                </article>
+                <article class="testimonial-card">
+                  <p>“The feedback after lessons was especially valuable. It gave clear direction and kept progress moving steadily forward.”</p>
+                  <strong>Sofia Ahmed</strong>
+                </article>
+              </div>
+            </div>
           </div>
 
-          <div class="testimonial">
-            <p>“The lessons are calm, clear and highly effective. Difficult topics finally began to make sense.”</p>
-            <strong>A-Level student</strong>
-          </div>
+          <button class="slider-btn next" type="button" id="testNext" aria-label="Next testimonials">›</button>
+        </div>
+      </div>
+    </section>
 
-          <div class="testimonial">
-            <p>“A very professional tutor whose explanations are thoughtful, precise and genuinely helpful.”</p>
-            <strong>Parent review</strong>
-          </div>
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="center-head">
+          <h2>Pricing</h2>
+          <p>
+            One-to-one tuition options across GCSE and A-Level study.
+          </p>
+        </div>
 
-          <div class="testimonial">
-            <p>“Exam practice became far less stressful, and preparation felt much more structured and purposeful.”</p>
-            <strong>Further Maths student</strong>
-          </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <div class="price-sub">One-to-one</div>
+            <h3>GCSE Mathematics</h3>
+            <div class="price-value">£55/hour</div>
+            <a href="#contact" class="btn btn-gold">Book</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-sub">One-to-one</div>
+            <h3>GCSE Further Mathematics</h3>
+            <div class="price-value">£55/hour</div>
+            <a href="#contact" class="btn btn-gold">Book</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-sub">One-to-one</div>
+            <h3>A-Level Mathematics</h3>
+            <div class="price-value">£55/hour</div>
+            <a href="#contact" class="btn btn-gold">Book</a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-sub">One-to-one</div>
+            <h3>A-Level Further Mathematics</h3>
+            <div class="price-value">£55/hour</div>
+            <a href="#contact" class="btn btn-gold">Book</a>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="contact-panel">
-          <h2>Have a Specific Query?</h2>
-          <p>
-            Enquiries are welcome for discussion of current level, academic goals and the form of support most likely to be beneficial.
-          </p>
-          <a href="mailto:info@mathstutor.co.uk" class="btn btn-gold">Contact</a>
+        <div class="final-panel">
+          <h2>Specific Inquiry?</h2>
+          <a href="mailto:info@mathstutor.co.uk" class="btn btn-gold">Get in touch</a>
         </div>
 
         <div class="footer">© mathstutor.co.uk 2026</div>
       </div>
     </section>
   </main>
+
+  <script>
+    (function () {
+      const lessonTrack = document.getElementById("lessonTrack");
+      const lessonSlides = lessonTrack ? lessonTrack.children.length : 0;
+      const lessonPrev = document.querySelector(".slider-wrap .prev");
+      const lessonNext = document.querySelector(".slider-wrap .next");
+      let lessonIndex = 0;
+
+      function updateLessonSlider() {
+        lessonTrack.style.transform = `translateX(-${lessonIndex * 100}%)`;
+      }
+
+      if (lessonPrev && lessonNext && lessonSlides > 0) {
+        lessonPrev.addEventListener("click", function () {
+          lessonIndex = (lessonIndex - 1 + lessonSlides) % lessonSlides;
+          updateLessonSlider();
+        });
+
+        lessonNext.addEventListener("click", function () {
+          lessonIndex = (lessonIndex + 1) % lessonSlides;
+          updateLessonSlider();
+        });
+      }
+
+      const testimonialTrack = document.getElementById("testimonialTrack");
+      const testimonialSlides = testimonialTrack ? testimonialTrack.children.length : 0;
+      const testPrev = document.getElementById("testPrev");
+      const testNext = document.getElementById("testNext");
+      let testimonialIndex = 0;
+
+      function updateTestimonialSlider() {
+        testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+      }
+
+      if (testPrev && testNext && testimonialSlides > 0) {
+        testPrev.addEventListener("click", function () {
+          testimonialIndex = (testimonialIndex - 1 + testimonialSlides) % testimonialSlides;
+          updateTestimonialSlider();
+        });
+
+        testNext.addEventListener("click", function () {
+          testimonialIndex = (testimonialIndex + 1) % testimonialSlides;
+          updateTestimonialSlider();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
