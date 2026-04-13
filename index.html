@@ -30,6 +30,12 @@
       --shadow:0 12px 26px rgba(0,0,0,.08);
       --container:1220px;
       --header-height:118px;
+      --rose:#d9a185;
+      --ink:#1f2430;
+      --rednote:#c84b4b;
+      --blue-tab:#cfe0f6;
+      --grey-tab:#e4e4e4;
+      --active-tab:#f4c9a8;
     }
 
     *{box-sizing:border-box}
@@ -58,7 +64,7 @@
       margin:0 auto;
     }
 
-    /* Header */
+    /* HEADER */
     .site-header{
       position:fixed;
       top:0;
@@ -232,7 +238,7 @@
       border-bottom:1px solid rgba(255,255,255,.08);
     }
 
-    /* Hero */
+    /* HERO */
     .hero{
       background:
         radial-gradient(circle at 18% 20%, rgba(255,255,255,.07), transparent 28%),
@@ -298,7 +304,7 @@
       transform:translateY(12px);
     }
 
-    /* Shared */
+    /* SHARED */
     .section{
       padding:64px 0;
       scroll-margin-top:110px;
@@ -324,19 +330,19 @@
     }
 
     .dark-section{
-      background:var(--navy);
+      background:#536563;
       color:var(--white);
     }
 
     .dark-section h2{
-      color:var(--gold-soft);
+      color:var(--rose);
     }
 
     .dark-section .section-head p{
       color:rgba(255,255,255,.92);
     }
 
-    /* Bio intro */
+    /* BIO INTRO */
     .bio-section{
       text-align:center;
       padding-top:10px;
@@ -379,7 +385,7 @@
       box-shadow:0 8px 16px rgba(0,0,0,.10);
     }
 
-    /* Lessons */
+    /* LESSONS */
     .slider-wrap,
     .testimonial-wrap{
       position:relative;
@@ -406,67 +412,141 @@
       background:transparent;
     }
 
-    .slide-preview{
+    .resource-slide{
       background:#fff;
+      border:1px solid #e9e9e9;
+      box-shadow:0 10px 20px rgba(0,0,0,.06);
+      aspect-ratio:16 / 8.7;
+      position:relative;
+      overflow:hidden;
+      color:var(--ink);
+      padding:22px 26px 34px;
+    }
+
+    .resource-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:28px;
+      line-height:1.08;
+      margin-bottom:12px;
+      color:#111;
+    }
+
+    .resource-subtitle{
+      font-size:13px;
+      line-height:1.45;
+      color:#444;
+      margin-bottom:10px;
+    }
+
+    .resource-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .resource-grid.one-col{
+      grid-template-columns:1fr;
+    }
+
+    .resource-text{
+      font-size:12px;
+      line-height:1.5;
+      color:#2a2a2a;
+    }
+
+    .resource-text ul{
+      margin:8px 0 0 16px;
+      padding:0;
+    }
+
+    .resource-text li{
+      margin:4px 0;
+    }
+
+    .formula-block{
+      font-size:13px;
+      line-height:1.75;
+      white-space:pre-line;
+      font-family:Georgia, "Times New Roman", serif;
+    }
+
+    .question-box{
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .question-box .qhead{
+      font-weight:600;
+      margin-bottom:8px;
+    }
+
+    .diagram-box{
+      min-height:160px;
       border:1px solid #ececec;
-      aspect-ratio:16 / 8.5;
-      padding:16px;
+      background:#fafafa;
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       position:relative;
       overflow:hidden;
     }
 
-    .slide-preview::after{
-      content:"";
-      position:absolute;
-      left:12px;
-      right:12px;
-      bottom:10px;
-      height:7px;
-      background:linear-gradient(90deg,#bed4ee 0 20%,#d5e2f4 20% 40%,#c9dca1 40% 60%,#f3c39c 60% 80%,#d7bfdc 80% 100%);
-      border-radius:4px;
-    }
-
-    .math-title{
-      font-family:"Cormorant Garamond",serif;
-      font-size:20px;
-      font-weight:700;
-      margin-bottom:8px;
-      color:#20304d;
-    }
-
-    .math-content{
-      font-size:11px;
-      line-height:1.5;
-      color:#4d5d74;
-    }
-
-    .math-line{
-      display:block;
-      margin-bottom:4px;
-    }
-
-    .graph-box{
-      width:100%;
-      height:72px;
-      margin-top:10px;
-      border:1px solid #dfe5ee;
-      border-radius:4px;
-      overflow:hidden;
-      background:
-        linear-gradient(to right, transparent 0 9%, rgba(120,140,170,.08) 9% 10%, transparent 10% 19%, rgba(120,140,170,.08) 19% 20%, transparent 20% 29%, rgba(120,140,170,.08) 29% 30%, transparent 30% 39%, rgba(120,140,170,.08) 39% 40%, transparent 40% 49%, rgba(120,140,170,.08) 49% 50%, transparent 50% 59%, rgba(120,140,170,.08) 59% 60%, transparent 60% 69%, rgba(120,140,170,.08) 69% 70%, transparent 70% 79%, rgba(120,140,170,.08) 79% 80%, transparent 80% 89%, rgba(120,140,170,.08) 89% 90%, transparent 90% 100%),
-        linear-gradient(to bottom, transparent 0 24%, rgba(120,140,170,.08) 24% 25%, transparent 25% 49%, rgba(120,140,170,.08) 49% 50%, transparent 50% 74%, rgba(120,140,170,.08) 74% 75%, transparent 75% 100%);
-    }
-
-    .graph-box svg{
+    .diagram-box svg{
       width:100%;
       height:100%;
     }
 
+    .note{
+      position:absolute;
+      color:var(--rednote);
+      font-size:11px;
+      font-family:"Comic Sans MS","Bradley Hand",cursive;
+      transform:rotate(-4deg);
+    }
+
+    .note.blue{
+      color:#4b7ec8;
+    }
+
+    .note.black{
+      color:#444;
+    }
+
+    .tabs-row{
+      position:absolute;
+      left:14px;
+      right:14px;
+      bottom:8px;
+      display:flex;
+      gap:4px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .tab{
+      min-width:40px;
+      height:16px;
+      padding:0 6px;
+      border-radius:4px;
+      background:var(--grey-tab);
+      font-size:9px;
+      line-height:16px;
+      text-align:center;
+      color:#666;
+    }
+
+    .tab.blue{ background:var(--blue-tab); color:#55759a; }
+    .tab.active{ background:var(--active-tab); color:#8a5d49; font-weight:600; }
+
     .slide-body{
       padding:14px 6px 0;
-      color:#e7c9aa;
+      color:var(--rose);
       font-size:15px;
       line-height:1.5;
+      text-align:center;
+      font-family:"Cormorant Garamond",serif;
     }
 
     .slider-btn,
@@ -478,8 +558,8 @@
       height:50px;
       border:none;
       border-radius:50%;
-      background:linear-gradient(180deg, var(--gold-soft), var(--gold));
-      color:var(--navy);
+      background:var(--rose);
+      color:#fff;
       font-size:28px;
       cursor:pointer;
       z-index:3;
@@ -503,7 +583,7 @@
     .slider-btn.next,
     .testimonial-btn.next{right:-8px}
 
-    /* Offer */
+    /* OFFER */
     .offer-grid{
       display:grid;
       grid-template-columns:repeat(5,1fr);
@@ -530,7 +610,7 @@
       line-height:1.78;
     }
 
-    /* Split */
+    /* SPLIT */
     .split{
       display:grid;
       grid-template-columns:.9fr .9fr;
@@ -579,7 +659,7 @@
       display:block;
     }
 
-    /* Testimonials */
+    /* TESTIMONIALS */
     .testimonial-section{
       background:var(--navy);
       color:var(--white);
@@ -615,7 +695,7 @@
       font-weight:500;
     }
 
-    /* Pricing */
+    /* PRICING */
     .pricing-section{
       background:var(--cream);
       padding-top:50px;
@@ -665,7 +745,7 @@
       font-size:14px;
     }
 
-    /* Final */
+    /* FINAL */
     .final-panel{
       background:var(--navy);
       color:var(--white);
@@ -773,6 +853,13 @@
       .testimonial-btn.prev{left:8px}
       .slider-btn.next,
       .testimonial-btn.next{right:8px}
+
+      .resource-slide{
+        aspect-ratio:auto;
+        min-height:360px;
+      }
+
+      .resource-title{ font-size:24px; }
     }
   </style>
 </head>
@@ -862,166 +949,270 @@
 
           <div class="slider-outer">
             <div class="slider-track" id="lessonTrack">
+
+              <!-- Slide 1 -->
               <div class="slide">
                 <article class="slide-card">
-                  <div class="slide-preview">
-                    <div class="math-title">Differentiation</div>
-                    <div class="math-content">
-                      <span class="math-line">f(x)=3x²+4x−7</span>
-                      <span class="math-line">f'(x)=6x+4</span>
-                      <span class="math-line">Power rule applied term by term</span>
+                  <div class="resource-slide">
+                    <div class="resource-title">Complex numbers (level 6)</div>
+                    <div class="resource-subtitle">Advanced A-level topic with algebraic fluency, argument, modulus and geometric interpretation.</div>
+                    <div class="resource-grid">
+                      <div class="resource-text">
+                        <div class="formula-block">z = 3 + 4i
+|z| = √(3² + 4²) = 5
+arg(z) = tan⁻¹(4/3)
+
+w = 1 - 2i
+zw = (3 + 4i)(1 - 2i)
+   = 11 - 2i</div>
+                        <ul>
+                          <li>modulus and argument from coordinates</li>
+                          <li>multiplication and geometric effect</li>
+                          <li>connections to loci and transformations</li>
+                        </ul>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <line x1="24" y1="136" x2="278" y2="136" stroke="#777" stroke-width="1.2"/>
+                          <line x1="54" y1="152" x2="54" y2="18" stroke="#777" stroke-width="1.2"/>
+                          <text x="280" y="132" font-size="10">Re</text>
+                          <text x="58" y="20" font-size="10">Im</text>
+                          <line x1="54" y1="136" x2="170" y2="62" stroke="#4b7ec8" stroke-width="2.5"/>
+                          <circle cx="170" cy="62" r="4" fill="#4b7ec8"/>
+                          <text x="178" y="60" font-size="11">3 + 4i</text>
+                          <path d="M88 136 A34 34 0 0 1 116 116" fill="none" stroke="#c84b4b" stroke-width="2"/>
+                          <text x="98" y="120" font-size="11" fill="#c84b4b">θ</text>
+                          <line x1="170" y1="62" x2="170" y2="136" stroke="#999" stroke-dasharray="4 3"/>
+                          <line x1="54" y1="62" x2="170" y2="62" stroke="#999" stroke-dasharray="4 3"/>
+                        </svg>
+                        <div class="note" style="top:10px; left:16px;">modulus from pythagoras</div>
+                        <div class="note blue" style="bottom:18px; right:16px;">arg from tan⁻¹(y/x)</div>
+                      </div>
                     </div>
-                    <div class="graph-box">
-                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
-                        <path d="M0,80 C50,82 70,20 110,24 C160,28 180,84 230,82 C260,80 280,54 300,36" fill="none" stroke="#6f92c6" stroke-width="3"/>
-                      </svg>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab blue">OCR A</div>
+                      <div class="tab grey">OCR B</div>
+                      <div class="tab grey">WJEC</div>
+                      <div class="tab grey">IB</div>
                     </div>
                   </div>
-                  <div class="slide-body">Presentations across core topics help students build secure understanding before moving into harder questions.</div>
+                  <div class="slide-body">Advanced presentations designed to tackle demanding topics with clarity and structure.</div>
                 </article>
               </div>
 
+              <!-- Slide 2 -->
               <div class="slide">
                 <article class="slide-card">
-                  <div class="slide-preview">
-                    <div class="math-title">Integration</div>
-                    <div class="math-content">
-                      <span class="math-line">∫(6x+4)dx = 3x²+4x+c</span>
-                      <span class="math-line">Reverse of differentiation</span>
-                      <span class="math-line">Constant included correctly</span>
+                  <div class="resource-slide">
+                    <div class="resource-title">Question (level 3)</div>
+                    <div class="resource-subtitle">A-level differentiation and stationary points.</div>
+                    <div class="resource-grid">
+                      <div class="question-box">
+                        <div class="qhead">2. The curve y = x³ − 6x² + 9x + 4</div>
+                        <div>(a) Find the coordinates of each stationary point. [4]</div>
+                        <br>
+                        <div>(b) Determine whether each is a maximum or minimum point. [2]</div>
+                        <br>
+                        <div>(c) Find the equation of the tangent at x = 1. [3]</div>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <line x1="20" y1="132" x2="282" y2="132" stroke="#777" stroke-width="1"/>
+                          <line x1="54" y1="154" x2="54" y2="16" stroke="#777" stroke-width="1"/>
+                          <path d="M18 126 C72 120 90 44 126 54 C154 62 162 126 214 128 C246 130 270 98 282 70" fill="none" stroke="#222" stroke-width="2.2"/>
+                          <circle cx="108" cy="52" r="3.8" fill="#c84b4b"/>
+                          <circle cx="198" cy="128" r="3.8" fill="#c84b4b"/>
+                          <line x1="86" y1="94" x2="146" y2="42" stroke="#c84b4b" stroke-width="2"/>
+                        </svg>
+                        <div class="note" style="top:12px; right:16px;">y' = 0 here</div>
+                        <div class="note blue" style="bottom:18px; left:12px;">tangent needed in part (c)</div>
+                      </div>
                     </div>
-                    <div class="graph-box">
-                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
-                        <path d="M0,70 C60,62 110,18 155,30 C210,45 240,74 300,76" fill="none" stroke="#c78b6f" stroke-width="3"/>
-                      </svg>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab active">OCR A</div>
+                      <div class="tab blue">OCR B</div>
+                      <div class="tab grey">WJEC</div>
+                      <div class="tab grey">IB</div>
                     </div>
                   </div>
-                  <div class="slide-body">Worked examples and structured notes support method accuracy and more confident recall.</div>
+                  <div class="slide-body">Exam questions selected for quality, progression and genuine mathematical depth.</div>
                 </article>
               </div>
 
+              <!-- Slide 3 -->
               <div class="slide">
                 <article class="slide-card">
-                  <div class="slide-preview">
-                    <div class="math-title">Trigonometry</div>
-                    <div class="math-content">
-                      <span class="math-line">sin²θ + cos²θ = 1</span>
-                      <span class="math-line">tanθ = sinθ / cosθ</span>
-                      <span class="math-line">Exact values and identities</span>
+                  <div class="resource-slide">
+                    <div class="resource-title">Differentiation summary</div>
+                    <div class="resource-subtitle">Core rules and reminders used repeatedly across pure mathematics.</div>
+                    <div class="resource-grid">
+                      <div class="resource-text">
+                        <ul>
+                          <li>d/dx (xⁿ) = nxⁿ⁻¹</li>
+                          <li>d/dx (sin x) = cos x</li>
+                          <li>d/dx (cos x) = −sin x</li>
+                          <li>d/dx (eˣ) = eˣ</li>
+                          <li>product rule: (uv)' = u'v + uv'</li>
+                          <li>quotient rule: (u/v)' = (u'v − uv') / v²</li>
+                          <li>chain rule: d/dx f(g(x)) = f'(g(x))g'(x)</li>
+                        </ul>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <rect x="24" y="18" width="252" height="132" rx="8" fill="#fffaf7" stroke="#eadfda"/>
+                          <text x="42" y="48" font-size="15" font-family="Georgia">f(x) = (3x² + 1)⁵</text>
+                          <text x="42" y="78" font-size="15" font-family="Georgia">f'(x) = 5(3x² + 1)⁴ × 6x</text>
+                          <line x1="142" y1="52" x2="142" y2="86" stroke="#c84b4b" stroke-width="2"/>
+                          <line x1="214" y1="52" x2="214" y2="86" stroke="#4b7ec8" stroke-width="2"/>
+                        </svg>
+                        <div class="note" style="top:10px; left:18px;">outer function first</div>
+                        <div class="note blue" style="top:12px; right:16px;">then inner derivative</div>
+                      </div>
                     </div>
-                    <div class="graph-box">
-                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
-                        <path d="M0,50 C25,10 50,10 75,50 C100,90 125,90 150,50 C175,10 200,10 225,50 C250,90 275,90 300,50" fill="none" stroke="#7aa57a" stroke-width="3"/>
-                      </svg>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab blue">OCR A</div>
+                      <div class="tab blue">OCR B</div>
+                      <div class="tab grey">WJEC</div>
+                      <div class="tab grey">IB</div>
                     </div>
                   </div>
-                  <div class="slide-body">Identities, exact values and transformations are broken down carefully so the topic feels more manageable.</div>
+                  <div class="slide-body">Summary slides help students distil key methods and revise more efficiently.</div>
                 </article>
               </div>
 
+              <!-- Slide 4 -->
               <div class="slide">
                 <article class="slide-card">
-                  <div class="slide-preview">
-                    <div class="math-title">Algebra</div>
-                    <div class="math-content">
-                      <span class="math-line">x²−5x+6=(x−2)(x−3)</span>
-                      <span class="math-line">Factorisation and rearrangement</span>
-                      <span class="math-line">Supports fluency across the course</span>
+                  <div class="resource-slide">
+                    <div class="resource-title">Worked example: Integration</div>
+                    <div class="resource-subtitle">Structured method shown line by line, with annotated checking points.</div>
+                    <div class="resource-grid one-col">
+                      <div class="diagram-box" style="min-height:210px;">
+                        <svg viewBox="0 0 500 210" preserveAspectRatio="none">
+                          <rect x="22" y="22" width="456" height="166" rx="8" fill="#fff" stroke="#ececec"/>
+                          <text x="44" y="60" font-size="18" font-family="Georgia">∫ (6x² − 4x + 3) dx</text>
+                          <text x="44" y="96" font-size="18" font-family="Georgia">= 2x³ − 2x² + 3x + c</text>
+                          <text x="44" y="132" font-size="18" font-family="Georgia">Check: d/dx (2x³ − 2x² + 3x + c)</text>
+                          <text x="44" y="164" font-size="18" font-family="Georgia">= 6x² − 4x + 3</text>
+                          <line x1="106" y1="66" x2="124" y2="88" stroke="#c84b4b" stroke-width="2"/>
+                          <line x1="174" y1="66" x2="204" y2="88" stroke="#c84b4b" stroke-width="2"/>
+                          <line x1="260" y1="66" x2="300" y2="88" stroke="#c84b4b" stroke-width="2"/>
+                        </svg>
+                        <div class="note" style="top:16px; left:86px;">power up</div>
+                        <div class="note blue" style="top:16px; left:174px;">divide by new power</div>
+                        <div class="note" style="top:16px; left:292px;">don't forget + c</div>
+                        <div class="note black" style="bottom:16px; right:16px;">differentiate to verify</div>
+                      </div>
                     </div>
-                    <div class="graph-box">
-                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
-                        <path d="M20,70 L90,25 L170,68 L250,20" fill="none" stroke="#9b7ac2" stroke-width="3"/>
-                      </svg>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab blue">OCR A</div>
+                      <div class="tab blue">OCR B</div>
+                      <div class="tab grey">WJEC</div>
+                      <div class="tab grey">IB</div>
                     </div>
                   </div>
-                  <div class="slide-body">Strong algebraic fluency underpins success across mathematics, so it is reinforced consistently.</div>
+                  <div class="slide-body">Annotated worked solutions make methods easier to remember and apply under pressure.</div>
                 </article>
               </div>
 
+              <!-- Slide 5 -->
               <div class="slide">
                 <article class="slide-card">
-                  <div class="slide-preview">
-                    <div class="math-title">Graphs &amp; Functions</div>
-                    <div class="math-content">
-                      <span class="math-line">y=(x−2)²+1</span>
-                      <span class="math-line">Turning point at (2,1)</span>
-                      <span class="math-line">Translations and interpretation</span>
+                  <div class="resource-slide">
+                    <div class="resource-title">Grade 9 quadratics challenge (level 4)</div>
+                    <div class="resource-subtitle">GCSE-style problem solving using factorising, graph insight and reasoning.</div>
+                    <div class="resource-grid">
+                      <div class="question-box">
+                        <div class="qhead">A ball is projected so that its height is modelled by</div>
+                        <div>h = −2t² + 12t + 5</div>
+                        <br>
+                        <div>(a) Find the maximum height reached. [3]</div>
+                        <div>(b) Find when the ball hits the ground. [3]</div>
+                        <div>(c) Explain the significance of each root. [2]</div>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <line x1="22" y1="132" x2="284" y2="132" stroke="#777"/>
+                          <line x1="46" y1="152" x2="46" y2="14" stroke="#777"/>
+                          <path d="M34 120 C72 38 128 22 184 56 C220 78 246 102 276 132" fill="none" stroke="#222" stroke-width="2.2"/>
+                          <circle cx="138" cy="42" r="4" fill="#c84b4b"/>
+                          <line x1="138" y1="42" x2="138" y2="132" stroke="#999" stroke-dasharray="4 4"/>
+                        </svg>
+                        <div class="note" style="top:10px; left:114px;">turning point</div>
+                        <div class="note blue" style="bottom:18px; right:12px;">root = ground impact</div>
+                      </div>
                     </div>
-                    <div class="graph-box">
-                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
-                        <path d="M0,20 C60,100 140,100 220,24 C245,2 272,8 300,28" fill="none" stroke="#d49d4e" stroke-width="3"/>
-                      </svg>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab grey">OCR</div>
+                      <div class="tab grey">WJEC</div>
+                      <div class="tab grey">Eduqas</div>
                     </div>
                   </div>
-                  <div class="slide-body">Visual explanation connects algebraic method with graphs, helping students interpret functions clearly.</div>
+                  <div class="slide-body">High-attaining GCSE students are challenged with problems that demand reasoning, not just routine method.</div>
                 </article>
               </div>
 
+              <!-- Slide 6 -->
               <div class="slide">
                 <article class="slide-card">
-                  <div class="slide-preview">
-                    <div class="math-title">Sequences &amp; Series</div>
-                    <div class="math-content">
-                      <span class="math-line">Arithmetic: aₙ = a + (n−1)d</span>
-                      <span class="math-line">Geometric: aₙ = arⁿ⁻¹</span>
-                      <span class="math-line">Formulae introduced step by step</span>
+                  <div class="resource-slide">
+                    <div class="resource-title">Interception modelling (level 5)</div>
+                    <div class="resource-subtitle">A trajectory and vector-based challenge using coordinates, timing and angle optimisation.</div>
+                    <div class="resource-grid">
+                      <div class="resource-text">
+                        <div class="formula-block">Target path:
+T(t) = (4 + 3t, 2 + t)
+
+Intercept path:
+P(t) = (0, 0) + v t (cosθ, sinθ)
+
+Require:
+P(t) = T(t)
+
+Use simultaneous equations to determine:
+• angle of launch
+• time of interception
+• minimum speed required</div>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <line x1="20" y1="138" x2="280" y2="138" stroke="#777"/>
+                          <line x1="38" y1="156" x2="38" y2="18" stroke="#777"/>
+                          <path d="M40 136 C76 104 112 86 148 74 C186 60 226 48 266 34" fill="none" stroke="#40c2c2" stroke-width="3"/>
+                          <line x1="40" y1="136" x2="214" y2="64" stroke="#c84b4b" stroke-width="2.3"/>
+                          <circle cx="214" cy="64" r="5" fill="#c84b4b"/>
+                          <path d="M70 136 A30 30 0 0 1 92 126" fill="none" stroke="#c84b4b" stroke-width="2"/>
+                          <text x="84" y="130" font-size="11" fill="#c84b4b">θ</text>
+                          <polygon points="244,42 270,32 258,58" fill="#444"/>
+                          <text x="226" y="28" font-size="10">target</text>
+                        </svg>
+                        <div class="note" style="top:10px; left:16px;">solve for same time t</div>
+                        <div class="note blue" style="bottom:16px; right:16px;">vectors meet at intercept point</div>
+                      </div>
                     </div>
-                    <div class="graph-box">
-                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
-                        <rect x="18" y="54" width="24" height="26" fill="#8eb3d8"/>
-                        <rect x="60" y="44" width="24" height="36" fill="#8eb3d8"/>
-                        <rect x="102" y="32" width="24" height="48" fill="#8eb3d8"/>
-                        <rect x="144" y="24" width="24" height="56" fill="#8eb3d8"/>
-                        <rect x="186" y="16" width="24" height="64" fill="#8eb3d8"/>
-                      </svg>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab active">OCR A</div>
+                      <div class="tab grey">OCR B</div>
+                      <div class="tab grey">WJEC</div>
+                      <div class="tab grey">IB</div>
                     </div>
                   </div>
-                  <div class="slide-body">Formula use is made more reliable by breaking the process into clear, manageable stages.</div>
+                  <div class="slide-body">Creative modelling problems bring mathematics to life and push understanding beyond routine exercises.</div>
                 </article>
               </div>
 
-              <div class="slide">
-                <article class="slide-card">
-                  <div class="slide-preview">
-                    <div class="math-title">Exam Technique</div>
-                    <div class="math-content">
-                      <span class="math-line">Show clear working</span>
-                      <span class="math-line">State variables before substitution</span>
-                      <span class="math-line">Check signs, units and exact values</span>
-                    </div>
-                    <div class="graph-box">
-                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
-                        <path d="M18,72 L92,50 L148,56 L230,24 L282,32" fill="none" stroke="#6f92c6" stroke-width="3"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="slide-body">Exam habits are addressed directly so more marks are collected through better presentation and judgement.</div>
-                </article>
-              </div>
-
-              <div class="slide">
-                <article class="slide-card">
-                  <div class="slide-preview">
-                    <div class="math-title">Problem Solving</div>
-                    <div class="math-content">
-                      <span class="math-line">Interpret first, calculate second</span>
-                      <span class="math-line">Break tasks into smaller steps</span>
-                      <span class="math-line">Check whether the answer is sensible</span>
-                    </div>
-                    <div class="graph-box">
-                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
-                        <circle cx="42" cy="62" r="8" fill="#7aa57a"/>
-                        <circle cx="96" cy="42" r="8" fill="#7aa57a"/>
-                        <circle cx="154" cy="58" r="8" fill="#7aa57a"/>
-                        <circle cx="218" cy="28" r="8" fill="#7aa57a"/>
-                        <circle cx="272" cy="42" r="8" fill="#7aa57a"/>
-                        <path d="M42,62 L96,42 L154,58 L218,28 L272,42" fill="none" stroke="#7aa57a" stroke-width="3"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="slide-body">Harder questions are used to strengthen resilience, independent thinking and confidence with unfamiliar material.</div>
-                </article>
-              </div>
             </div>
           </div>
 
