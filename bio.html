@@ -1,262 +1,871 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bio | mathstutor.co.uk</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bio | Maths Tutor UK</title>
+  <title>Bio | mathstutor.co.uk</title>
+  <meta
+    name="description"
+    content="Background, academic record, teaching insight and wider experience for Surinder Sangha."
+    content="Academic background, teacher training, classroom experience and teaching approach for Surinder Sangha."
+  />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
 
-<style>
-:root{
-  --navy:#041b4d;
-  --navy2:#08245e;
-  --gold:#d4af37;
-  --goldsoft:#e0c56a;
-  --cream:#f5f3ef;
-  --text:#23324e;
-  --muted:#667387;
-  --border:#e4dbce;
-  --shadow:0 12px 26px rgba(0,0,0,.08);
-  --container:1120px;
-}
+  <style>
+    :root {
+      --navy: #071f46;
+      --gold: #d4af37;
+      --cream: #f5f3ef;
+      --white: #ffffff;
+      --text: #21314e;
+      --muted: #606c7c;
+      --border: #e6ddd0;
+      --shadow: 0 14px 30px rgba(0,0,0,0.10);
+    :root{
+      --navy:#041b4d;
+      --navy-2:#08245e;
+      --gold:#d4af37;
+      --gold-soft:#e0c56a;
+      --cream:#f5f3ef;
+      --white:#ffffff;
+      --text:#23324e;
+      --muted:#667387;
+      --border:#e4dbce;
+      --shadow:0 12px 26px rgba(0,0,0,.08);
+      --container:1180px;
+      --header-height:118px;
+    }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:"Inter",sans-serif;
-  background:var(--cream);
-  color:var(--text);
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      background:var(--cream);
+      color:var(--text);
+      padding-top:var(--header-height);
+    }
 
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
 
-h1,h2,h3{
-  margin:0;
-  font-family:"Cormorant Garamond",serif;
-  font-weight:600;
-  color:#16244a;
-}
+    h1,h2,h3{
+      margin:0;
+      font-family:"Cormorant Garamond",serif;
+      font-weight:600;
+      color:#16244a;
+      letter-spacing:.01em;
+    }
 
-.container{
-  width:min(var(--container), calc(100% - 40px));
-  margin:0 auto;
-}
+    .container{
+      width:min(var(--container), calc(100% - 40px));
+      margin:0 auto;
+    }
 
-/* header */
-.header{
-  background:var(--navy);
-  padding:18px 0;
-}
+    .site-header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:100;
+      background:var(--navy);
+      padding:16px 0 12px;
+      transition:transform .28s ease, padding .22s ease, box-shadow .22s ease;
+      box-shadow:0 1px 0 rgba(255,255,255,.04);
+    }
 
-.header-inner{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
+    .site-header.scrolled{
+      padding:10px 0 8px;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
+    .site-header.header-hidden{
+      transform:translateY(-100%);
+    }
 
-.brand img{
-  width:74px;
-  height:74px;
-  border-radius:50%;
-  object-fit:cover;
-  object-position:46% 54%;
-}
+    .header-inner{
+      display:grid;
+      grid-template-columns:140px 1fr;
+      gap:24px;
+      align-items:start;
+    }
 
-.brand-title{
-  color:white;
-  font-size:28px;
-}
+    .brand{
+      position:relative;
+      height:96px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:flex-start;
+    }
 
-.back-btn{
-  background:linear-gradient(180deg,var(--goldsoft),var(--gold));
-  color:var(--navy);
-  padding:10px 18px;
-  border-radius:999px;
-  font-weight:600;
-  font-size:14px;
-}
+    .brand img{
+      width:128px;
+      height:128px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center;
+      transform:translateY(-2px) scale(1.06);
+      box-shadow:0 14px 24px rgba(0,0,0,.22);
+    }
 
-/* hero */
-.hero{
-  background:linear-gradient(180deg,var(--navy),var(--navy2));
-  padding:54px 0 58px;
-  text-align:center;
-}
+    .nav-area{
+      display:flex;
+      justify-content:flex-end;
+      padding-top:10px;
+    }
 
-.hero h1{
-  color:var(--gold);
-  font-size:52px;
-  margin-bottom:10px;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:28px;
+      flex-wrap:wrap;
+      color:var(--white);
+      font-size:14px;
+      font-weight:400;
+    }
 
-.hero p{
-  color:white;
-  max-width:720px;
-  margin:0 auto;
-  font-size:18px;
-  line-height:1.8;
-}
+    .nav a{
+      position:relative;
+      white-space:nowrap;
+      padding-bottom:6px;
+      opacity:.97;
+      transition:color .2s ease;
+    }
 
-/* profile */
-.profile{
-  padding:56px 0 20px;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+    .nav a:not(.nav-contact):not(.youtube-link)::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-2px;
+      height:2px;
+      background:rgba(255,255,255,.9);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .2s ease;
+    }
 
-.profile img{
-  width:300px;
-  margin:0 auto 26px;
-  border-radius:26px;
-  box-shadow:var(--shadow);
-}
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      color: #16244a;
+      margin: 0;
+      font-weight: 600;
+    .nav a:not(.nav-contact):not(.youtube-link):hover,
+    .nav a:not(.nav-contact):not(.youtube-link):focus-visible{
+      color:#f0e1a7;
+      outline:none;
+    }
 
-/* IMPORTANT: removed the three lines under image */
+    .nav a:not(.nav-contact):not(.youtube-link):hover::after,
+    .nav a:not(.nav-contact):not(.youtube-link):focus-visible::after,
+    .nav a.active::after{
+      transform:scaleX(1);
+    }
 
-/* sections */
-.section{
-  padding:26px 0;
-}
+    .container {
+      width: min(1220px, calc(100% - 40px));
+      margin: 0 auto;
+    .youtube-link{
+      display:inline-flex;
+      width:38px;
+      height:38px;
+      border:2px solid rgba(255,255,255,.84);
+      border-radius:50%;
+      align-items:center;
+      justify-content:center;
+      padding-bottom:0 !important;
+    }
 
-.card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:28px;
-  box-shadow:0 8px 18px rgba(0,0,0,.04);
-}
+    .site-header {
+      background: var(--navy);
+      padding: 24px 0 16px;
+    .youtube-link svg{
+      width:18px;
+      height:18px;
+      fill:currentColor;
+    }
 
-.card h2{
-  font-size:34px;
-  margin-bottom:14px;
-}
+    .header-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 26px;
+      align-items: start;
+    .nav-contact{
+      background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+      color:var(--navy);
+      padding:10px 20px !important;
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+      box-shadow:0 8px 16px rgba(0,0,0,.14);
+    }
 
-.card p{
-  margin:0;
-  font-size:16px;
-  line-height:1.9;
-  color:var(--muted);
-}
+    .logo-wrap {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 18px 34px rgba(0,0,0,0.28);
+      margin-top: 8px;
+    .mobile-bar{
+      display:none;
+      width:100%;
+      justify-content:flex-end;
+      align-items:center;
+      padding-top:12px;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.73);
+      transform-origin: center;
+      border-radius: 50%;
+    .menu-toggle{
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:50%;
+      background:transparent;
+      color:var(--white);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
 
-.footer{
-  margin-top:60px;
-  background:var(--navy);
-  color:rgba(255,255,255,.85);
-  text-align:center;
-  padding:28px 20px;
-  font-size:14px;
-}
+    .nav-area {
+      padding-top: 26px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    .menu-toggle svg{
+      width:24px;
+      height:24px;
+      fill:currentColor;
+    }
 
-@media (max-width:900px){
-  .grid{grid-template-columns:1fr}
-  .hero h1{font-size:40px}
-}
+    .nav-track {
+      display: inline-flex;
+      flex-direction: column;
+      width: max-content;
+      max-width: 100%;
+    .mobile-menu{
+      display:none;
+      width:100%;
+      background:var(--navy);
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:10px 20px 18px;
+    }
 
-@media (max-width:700px){
-  .header-inner{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 30px;
+      flex-wrap: wrap;
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 500;
+      width: max-content;
+      max-width: 100%;
+    .mobile-menu.open{
+      display:block;
+    }
 
-  .brand-title{font-size:24px}
-  .hero h1{font-size:34px}
-  .profile img{width:260px}
-}
-</style>
+    .nav a:hover { color: var(--gold); }
+    .nav-contact { font-weight: 700; }
+
+    .youtube-link {
+      display: inline-flex;
+      width: 22px;
+      height: 22px;
+      align-items: center;
+      justify-content: center;
+    .mobile-menu a{
+      display:block;
+      color:var(--white);
+      padding:12px 0;
+      font-size:15px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .youtube-link svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    .page-hero{
+      background:linear-gradient(180deg, var(--navy), var(--navy-2));
+      color:var(--white);
+      padding:54px 0 40px;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .gold-line {
+      margin-top: 24px;
+      height: 2px;
+      background: var(--gold);
+      width: 100%;
+    .page-hero::before,
+    .page-hero::after{
+      content:"";
+      position:absolute;
+      left:-5%;
+      right:-5%;
+      height:180px;
+      border-top:1px solid rgba(255,255,255,.10);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .page-hero {
+      padding: 70px 0 34px;
+      text-align: center;
+    .page-hero::before{
+      top:54px;
+      transform:rotate(-6deg);
+    }
+
+    .page-hero h1 {
+      font-size: 58px;
+      margin-bottom: 14px;
+    .page-hero::after{
+      top:146px;
+      transform:rotate(7deg);
+    }
+
+    .page-hero p {
+      max-width: 820px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.8;
+    .page-hero-inner{
+      position:relative;
+      z-index:1;
+    }
+
+    .section {
+      padding: 40px 0 56px;
+    .page-hero h1{
+      color:var(--gold);
+      font-size:46px;
+      margin-bottom:8px;
+    }
+
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 32px;
+      align-items: start;
+    .page-hero p{
+      max-width:760px;
+      margin:0 auto;
+      font-size:18px;
+      line-height:1.8;
+      color:rgba(255,255,255,.92);
+    }
+
+    .bio-image img {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    .bio-grid{
+      display:grid;
+      grid-template-columns:320px 1fr;
+      gap:34px;
+      align-items:start;
+      padding:56px 0 24px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 22px;
+    .bio-image img{
+      width:100%;
+      border-radius:26px;
+      box-shadow:var(--shadow);
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    .bio-summary{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+    }
+
+    .card h2,
+    .card h3 {
+      font-size: 32px;
+      margin-bottom: 14px;
+    .bio-summary h2{
+      font-size:34px;
+      margin-bottom:14px;
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.9;
+    .bio-summary p{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.9;
+    }
+
+    .travel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    .section{
+      padding:18px 0 28px;
+    }
+
+    .travel-shot {
+      background: linear-gradient(135deg, #eef2f8, #dfe8f4);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #31415d;
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      text-align: center;
+      padding: 18px;
+    .card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:28px;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+      margin-bottom:22px;
+    }
+
+    .follow-box {
+      text-align: center;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 22px;
+      padding: 48px 24px;
+    .card h3{
+      font-size:32px;
+      margin-bottom:12px;
+    }
+
+    .follow-box h2 {
+      color: var(--white);
+      font-size: 40px;
+      margin-bottom: 14px;
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.9;
+    }
+
+    .follow-box p {
+      color: #dde5f0;
+      font-size: 18px;
+      line-height: 1.8;
+      margin: 0 0 20px;
+    .footer{
+      text-align:center;
+      color:#7a8798;
+      font-size:14px;
+      padding:16px 0 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      background: var(--gold);
+      color: #151515;
+    @media (max-width:980px){
+      :root{ --header-height:132px; }
+      .header-inner,
+      .bio-grid{
+        grid-template-columns:1fr;
+      }
+      .page-hero h1{font-size:38px}
+    }
+
+    .footer {
+      text-align: center;
+      color: #7b8798;
+      font-size: 14px;
+      padding: 22px 0 36px;
+    }
+    @media (max-width:820px){
+      :root{ --header-height:146px; }
+
+    @media (max-width: 980px) {
+      .bio-grid,
+      .travel-grid {
+        grid-template-columns: 1fr;
+      .header-inner{
+        grid-template-columns:1fr;
+        justify-items:center;
+      }
+
+      .page-hero h1 {
+        font-size: 42px;
+      .brand{
+        justify-content:center;
+        height:104px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      .nav-area{
+        display:none;
+      }
+
+      .logo-wrap {
+        width: 150px;
+        height: 150px;
+        margin-top: 0;
+      .mobile-bar{
+        display:flex;
+      }
+
+      .nav-area {
+        width: 100%;
+        padding-top: 8px;
+        align-items: center;
+      .site-header.mobile-menu-open .mobile-menu{
+        display:block;
+      }
+
+      .nav-track { width: 100%; }
+      .nav {
+        justify-content: center;
+        gap: 18px;
+        width: 100%;
+        text-align: center;
+      .page-hero h1{font-size:32px}
+      .page-hero p,
+      .bio-summary p,
+      .card p{
+        font-size:15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="container header-inner">
-    <div class="brand">
-      <img src="logo-cropped.png" alt="mathstutor.co.uk logo">
-      <div class="brand-title">mathstutor.co.uk</div>
+  <header class="site-header">
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-wrap" aria-label="Maths Tutor UK home">
+        <img src="logo.png" alt="Maths Tutor UK logo">
+      </a>
+      <div class="brand">
+        <img src="logo-cropped.png" alt="Maths Tutor UK logo">
+      </div>
+
+      <div class="nav-area">
+        <div class="nav-track">
+          <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="index.html#offer">Group Classes</a>
+            <a href="index.html#lessons">Question Packs</a>
+            <a href="bio.html">Bio</a>
+            <a href="index.html#online-lessons">Articles</a>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="youtube-link"
+              aria-label="YouTube"
+              title="YouTube"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32.2 32.2 0 0 0 0 12a32.2 32.2 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.9.5 9.3.5 9.3.5s7.4 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32.2 32.2 0 0 0 24 12a32.2 32.2 0 0 0-.5-5.8ZM9.6 15.5v-7l6 3.5-6 3.5Z"/>
+              </svg>
+            </a>
+            <a href="index.html#contact" class="nav-contact">Contact</a>
+          </nav>
+          <div class="gold-line"></div>
+        </div>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#offer">Group Classes</a>
+          <a href="index.html#lessons">Question Packs</a>
+          <a href="bio.html" class="active">Bio</a>
+          <a href="index.html#online-lessons">Articles</a>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="youtube-link"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32.2 32.2 0 0 0 0 12a32.2 32.2 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.9.5 9.3.5 9.3.5s7.4 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32.2 32.2 0 0 0 24 12a32.2 32.2 0 0 0-.5-5.8ZM9.6 15.5v-7l6 3.5-6 3.5Z"/>
+            </svg>
+          </a>
+          <a href="index.html#contact" class="nav-contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="mobile-bar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <a href="index.html" class="back-btn">Back Home</a>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container">
-    <h1>Bio</h1>
-    <p>
-      Academic background, teaching experience and the philosophy behind my approach to mathematics tuition.
-    </p>
-  </div>
-</section>
-
-<section class="profile">
-  <div class="container">
-    <img src="me.png" alt="Surinder Sangha">
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="card">
-      <h2>Academic Credentials</h2>
-      <p>
-        I completed a Bachelor of Science (BSc Hons) at Loughborough University in 2016 with a strong focus on pure mathematics. My studies developed rigorous logical thinking, formal mathematical reasoning and the ability to approach complex problems with clarity and precision.
-        <br><br>
-        My academic background also includes A-level studies in Mathematics, Chemistry, Physics and Philosophy. I achieved 93% in AS-level Philosophy one year early during GCSE studies, placing among the highest-performing students nationally.
-      </p>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#offer">Group Classes</a>
+      <a href="index.html#lessons">Question Packs</a>
+      <a href="bio.html">Bio</a>
+      <a href="index.html#online-lessons">Articles</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="section">
-  <div class="container grid">
-
-    <div class="card">
-      <h2>Teacher Training</h2>
-      <p>
-        I undertook teacher training in Secondary Mathematics at Brunel University, gaining experience across inner-city and diverse school settings including state and independent colleges. This developed strong classroom management, clear explanation and effective lesson structure.
-      </p>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Bio</h1>
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <h1>Bio</h1>
+      <p>Academic background, classroom experience and a carefully developed approach to teaching mathematics.</p>
     </div>
+  </section>
 
-    <div class="card">
-      <h2>Teaching Approach</h2>
-      <p>
-        I prioritise clarity, structure and active engagement. Complex ideas are broken into manageable steps, with lessons adapted to each student’s thinking style. My aim is genuine understanding rather than short-term memorisation.
-      </p>
-    </div>
+  <main class="container">
+    <section class="bio-grid">
+      <div class="bio-image">
+        <img src="me.png" alt="Surinder Sangha portrait">
+      </div>
 
-    <div class="card">
-      <h2>Practical Experience</h2>
-      <p>
-        Alongside my degree, I completed the Employability Award at Loughborough University, supporting students from disadvantaged backgrounds. This strengthened rapport-building, adaptability and the ability to help learners make meaningful progress.
-      </p>
-    </div>
+      <div class="bio-summary">
+        <h2>Surinder Sangha</h2>
+        <p>
+          Experience, academic record, teaching insight and a broader sense of the perspective brought into mathematics tuition.
+          A mathematics tutor with a strong academic background, teacher training in Secondary Mathematics, and experience across classroom teaching and one-to-one tuition. The focus throughout is on clarity, careful structure and helping students develop genuine mathematical understanding.
+        </p>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2>What Students Can Expect</h2>
-      <p>
-        Students can expect a calm, focused and supportive environment where progress is built step by step. Whether aiming for higher grades, stronger confidence or deeper understanding, lessons are tailored carefully to long-term success.
-      </p>
-    </div>
+    <section class="section">
+      <div class="container bio-grid">
+        <div class="bio-image">
+          <img src="me.png" alt="Surinder Sangha portrait">
+        </div>
 
-  </div>
-</section>
+        <div class="stack">
+          <article class="card">
+            <h2>Experience</h2>
+            <p>
+              Teacher training in Secondary Mathematics was undertaken at Brunel University, with experience gained across a range of inner-city and diverse school settings, including both state schools and independent colleges.
+            </p>
+            <p>
+              Strong classroom management and secure subject command were developed in demanding teaching environments, with lessons shaped to support participation, understanding and meaningful progress across a broad range of abilities.
+            </p>
+          </article>
 
-<footer class="footer">
-  © mathstutor.co.uk 2026
-</footer>
+          <article class="card">
+            <h2>Academic Record</h2>
+            <p>
+              A Bachelor of Science (BSc Hons) from Loughborough University, completed in 2016, provided a strong grounding in pure mathematics, logical rigour and formal mathematical argument.
+            </p>
+            <p>
+              Academic study also included A-levels in Mathematics, Chemistry, Physics and Philosophy, supporting a broad analytical foundation across both conceptual and quantitative disciplines.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+      <article class="card">
+        <h3>Academic Credentials</h3>
+        <p>
+          My academic background includes A-level studies in Mathematics, Chemistry, Physics and Philosophy, providing a strong foundation across both analytical and conceptual disciplines. I later completed a BSc (Hons) in Mathematics at Loughborough University in 2016, with a particular focus on pure mathematics, logical reasoning and formal problem solving. AS-level Philosophy was completed one year early during GCSE studies, achieving 93% — the highest mark nationally.
+        </p>
+      </article>
 
+    <section class="section">
+      <div class="container stack">
+        <article class="card">
+          <h3>Teaching Insight</h3>
+          <p>
+            Alongside subject study, mathematics education formed an important part of academic development. This provided insight into how students engage with mathematical ideas, where common misconceptions arise, and how difficult concepts can be made more accessible without sacrificing precision.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Approach</h3>
+          <p>
+            Lessons are built around clarity, structure and active engagement. Complex ideas are broken into manageable stages, while questioning and reflection are used to move students beyond memorisation and towards more secure mathematical reasoning.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Wider Development</h3>
+          <p>
+            Ongoing engagement with research and advanced ideas in mathematics education continues to shape the teaching approach. There is a particular interest in how mathematical thinking can be developed effectively, and how students can be guided towards deeper and more independent understanding.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Beyond the Classroom</h3>
+          <p>
+            Wider experiences, including travel and exposure to different environments, contribute to a broader perspective on communication, personal development and the importance of adaptability. These experiences also help shape a calm, thoughtful and human approach to working with students.
+          </p>
+
+          <div class="travel-grid">
+            <div class="travel-shot">Travel Photo 1</div>
+            <div class="travel-shot">Travel Photo 2</div>
+            <div class="travel-shot">Travel Photo 3</div>
+          </div>
+        </article>
+
+        <div class="follow-box">
+          <h2>Follow My Adventures</h2>
+          <p>
+            A wider look at experiences, reflections and life beyond mathematics tuition can be linked here once the page is ready.
+          </p>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="btn">Instagram</a>
+        </div>
+      </div>
+      <article class="card">
+        <h3>Teacher Training &amp; Classroom Experience</h3>
+        <p>
+          I undertook teacher training in Secondary Mathematics at Brunel University, gaining experience across a range of inner-city and diverse school settings, including both state schools and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons across varying abilities.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Mathematics Education &amp; Teaching Insight</h3>
+        <p>
+          As part of my academic development, I also explored mathematics education, including how students engage with mathematical ideas, where common misconceptions arise, and how difficult concepts can be explained more clearly. This continues to shape the way I teach, helping students build confidence and deeper understanding rather than relying on memorisation alone.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Ongoing Study &amp; Development</h3>
+        <p>
+          Alongside my academic background, I maintain an ongoing interest in mathematics education and regularly engage with research and advanced ideas around teaching methods. There is a particular focus on how mathematical thinking can be developed effectively and how students can be guided towards more independent understanding over time.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Employability Award &amp; Practical Experience</h3>
+        <p>
+          Alongside my degree, I completed the Employability Award at Loughborough University, gaining hands-on experience working with students from disadvantaged backgrounds. This strengthened my ability to build rapport, adapt explanations to different learners, and create a focused and supportive learning environment.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>Teaching Approach</h3>
+        <p>
+          My teaching approach combines clarity, structure and active engagement. Complex ideas are broken down into manageable steps, students are encouraged to ask questions, and lessons are shaped around genuine understanding rather than surface-level memorisation. The aim is not only improved grades, but stronger confidence and more independent mathematical thinking.
+        </p>
+      </article>
+
+      <article class="card">
+        <h3>What Students Can Expect</h3>
+        <p>
+          Students can expect a supportive and focused learning environment, where progress is built carefully step by step. Whether the goal is stronger grades, better examination preparation, or more secure foundations, lessons are designed to provide clear guidance, consistent support and meaningful long-term progress.
+        </p>
+      </article>
+    </section>
+
+    <div class="footer">© mathstutor.co.uk 2026</div>
+  </main>
+
+  <script>
+    (function () {
+      const header = document.getElementById("siteHeader");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      let lastScrollY = window.scrollY;
+
+      function updateHeader() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 20) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+
+        if (!header.classList.contains("mobile-menu-open")) {
+          if (currentScrollY > lastScrollY && currentScrollY > 120) {
+            header.classList.add("header-hidden");
+          } else {
+            header.classList.remove("header-hidden");
+          }
+        }
+
+        lastScrollY = currentScrollY;
+      }
+
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      menuToggle.addEventListener("click", function () {
+        const isOpen = header.classList.toggle("mobile-menu-open");
+        mobileMenu.classList.toggle("open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        header.classList.remove("header-hidden");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          header.classList.remove("mobile-menu-open");
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
