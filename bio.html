@@ -34,6 +34,7 @@
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:"Inter",sans-serif;
@@ -58,6 +59,7 @@
       margin:0 auto;
     }
 
+    /* HEADER */
     .site-header{
       position:fixed;
       top:0;
@@ -99,8 +101,8 @@
       height:128px;
       border-radius:50%;
       object-fit:cover;
-      object-position:center;
-      transform:translateY(-2px) scale(1.06);
+      object-position:46% 54%;
+      transform:translate(-2px,2px) scale(1.06);
       box-shadow:0 14px 24px rgba(0,0,0,.22);
     }
 
@@ -143,13 +145,13 @@
     }
 
     .nav a:not(.nav-contact):not(.youtube-link):hover,
-    .nav a:not(.nav-contact):not(.youtube-link):focus-visible{
+    .nav a:not(.nav-contact):not(.youtube-link):focus-visible,
+    .nav a.active{
       color:#f0e1a7;
       outline:none;
     }
 
-    .nav a:not(.nav-contact):not(.youtube-link):hover::after,
-    .nav a:not(.nav-contact):not(.youtube-link):focus-visible::after,
+    .nav a:hover::after,
     .nav a.active::after{
       transform:scaleX(1);
     }
@@ -172,7 +174,7 @@
     }
 
     .nav-contact{
-      background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+      background:linear-gradient(180deg,var(--gold-soft),var(--gold));
       color:var(--navy);
       padding:10px 20px !important;
       border-radius:999px;
@@ -228,8 +230,9 @@
       border-bottom:1px solid rgba(255,255,255,.08);
     }
 
+    /* HERO */
     .page-hero{
-      background:linear-gradient(180deg, var(--navy), var(--navy-2));
+      background:linear-gradient(180deg,var(--navy),var(--navy-2));
       color:var(--white);
       padding:54px 0 40px;
       text-align:center;
@@ -267,17 +270,10 @@
     .page-hero h1{
       color:var(--gold);
       font-size:46px;
-      margin-bottom:8px;
+      margin-bottom:0;
     }
 
-    .page-hero p{
-      max-width:760px;
-      margin:0 auto;
-      font-size:18px;
-      line-height:1.8;
-      color:rgba(255,255,255,.92);
-    }
-
+    /* MAIN */
     .bio-grid{
       display:grid;
       grid-template-columns:320px 1fr;
@@ -305,7 +301,8 @@
       margin-bottom:14px;
     }
 
-    .bio-summary p{
+    .bio-summary p,
+    .card p{
       margin:0;
       color:var(--muted);
       font-size:17px;
@@ -330,13 +327,6 @@
       margin-bottom:12px;
     }
 
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:17px;
-      line-height:1.9;
-    }
-
     .footer{
       text-align:center;
       color:#7a8798;
@@ -346,10 +336,12 @@
 
     @media (max-width:980px){
       :root{ --header-height:132px; }
+
       .header-inner,
       .bio-grid{
         grid-template-columns:1fr;
       }
+
       .page-hero h1{font-size:38px}
     }
 
@@ -366,20 +358,15 @@
         height:104px;
       }
 
-      .nav-area{
-        display:none;
-      }
-
-      .mobile-bar{
-        display:flex;
-      }
+      .nav-area{display:none}
+      .mobile-bar{display:flex}
 
       .site-header.mobile-menu-open .mobile-menu{
         display:block;
       }
 
       .page-hero h1{font-size:32px}
-      .page-hero p,
+
       .bio-summary p,
       .card p{
         font-size:15px;
@@ -389,174 +376,182 @@
 </head>
 <body>
 
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="logo-cropped.png" alt="Maths Tutor UK logo">
-      </div>
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
 
-      <div class="nav-area">
-        <nav class="nav" aria-label="Main navigation">
-          <a href="index.html">Home</a>
-          <a href="index.html#offer">Group Classes</a>
-          <a href="index.html#lessons">Question Packs</a>
-          <a href="bio.html" class="active">Bio</a>
-          <a href="index.html#online-lessons">Articles</a>
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="youtube-link"
-            aria-label="YouTube"
-            title="YouTube"
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32.2 32.2 0 0 0 0 12a32.2 32.2 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.9.5 9.3.5 9.3.5s7.4 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32.2 32.2 0 0 0 24 12a32.2 32.2 0 0 0-.5-5.8ZM9.6 15.5v-7l6 3.5-6 3.5Z"/>
-            </svg>
-          </a>
-          <a href="index.html#contact" class="nav-contact">Contact</a>
-        </nav>
-      </div>
+    <div class="brand">
+      <img src="logo-cropped.png" alt="Maths Tutor UK logo">
+    </div>
 
-      <div class="mobile-bar">
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+    <div class="nav-area">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#offer">Group Classes</a>
+        <a href="index.html#lessons">Question Packs</a>
+        <a href="bio.html" class="active">Bio</a>
+        <a href="index.html#online-lessons">Articles</a>
+
+        <a
+          href="https://www.youtube.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="youtube-link"
+          aria-label="YouTube"
+          title="YouTube"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/>
+            <path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32.2 32.2 0 0 0 0 12a32.2 32.2 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.9.5 9.3.5 9.3.5s7.4 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32.2 32.2 0 0 0 24 12a32.2 32.2 0 0 0-.5-5.8ZM9.6 15.5v-7l6 3.5-6 3.5Z"/>
           </svg>
-        </button>
-      </div>
+        </a>
+
+        <a href="index.html#contact" class="nav-contact">Contact</a>
+      </nav>
     </div>
 
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="index.html">Home</a>
-      <a href="index.html#offer">Group Classes</a>
-      <a href="index.html#lessons">Question Packs</a>
-      <a href="bio.html">Bio</a>
-      <a href="index.html#online-lessons">Articles</a>
-      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <div class="mobile-bar">
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/>
+        </svg>
+      </button>
     </div>
-  </header>
 
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <h1>Bio</h1>
-      <p>Academic background, classroom experience and a carefully developed approach to teaching mathematics.</p>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="index.html#offer">Group Classes</a>
+    <a href="index.html#lessons">Question Packs</a>
+    <a href="bio.html">Bio</a>
+    <a href="index.html#online-lessons">Articles</a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <h1>Bio</h1>
+  </div>
+</section>
+
+<main class="container">
+
+  <section class="bio-grid">
+    <div class="bio-image">
+      <img src="me.png" alt="Surinder Sangha portrait">
+    </div>
+
+    <div class="bio-summary">
+      <h2>Surinder Sangha</h2>
+      <p>
+        A mathematics tutor with a strong academic background, teacher training in Secondary Mathematics, and experience across classroom teaching and one-to-one tuition. The focus throughout is on clarity, careful structure and helping students develop genuine mathematical understanding.
+      </p>
     </div>
   </section>
 
-  <main class="container">
-    <section class="bio-grid">
-      <div class="bio-image">
-        <img src="me.png" alt="Surinder Sangha portrait">
-      </div>
+  <section class="section">
 
-      <div class="bio-summary">
-        <h2>Surinder Sangha</h2>
-        <p>
-          A mathematics tutor with a strong academic background, teacher training in Secondary Mathematics, and experience across classroom teaching and one-to-one tuition. The focus throughout is on clarity, careful structure and helping students develop genuine mathematical understanding.
-        </p>
-      </div>
-    </section>
+    <article class="card">
+      <h3>Academic Credentials</h3>
+      <p>
+        My academic background includes A-level studies in Mathematics, Chemistry, Physics and Philosophy, providing a strong foundation across both analytical and conceptual disciplines. I later completed a BSc (Hons) in Mathematics at Loughborough University in 2016, with a particular focus on pure mathematics, logical reasoning and formal problem solving. AS-level Philosophy was completed one year early during GCSE studies, achieving 93% — the highest mark nationally.
+      </p>
+    </article>
 
-    <section class="section">
-      <article class="card">
-        <h3>Academic Credentials</h3>
-        <p>
-          My academic background includes A-level studies in Mathematics, Chemistry, Physics and Philosophy, providing a strong foundation across both analytical and conceptual disciplines. I later completed a BSc (Hons) in Mathematics at Loughborough University in 2016, with a particular focus on pure mathematics, logical reasoning and formal problem solving. AS-level Philosophy was completed one year early during GCSE studies, achieving 93% — the highest mark nationally.
-        </p>
-      </article>
+    <article class="card">
+      <h3>Teacher Training &amp; Classroom Experience</h3>
+      <p>
+        I undertook teacher training in Secondary Mathematics at Brunel University, gaining experience across a range of inner-city and diverse school settings, including both state schools and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons across varying abilities.
+      </p>
+    </article>
 
-      <article class="card">
-        <h3>Teacher Training &amp; Classroom Experience</h3>
-        <p>
-          I undertook teacher training in Secondary Mathematics at Brunel University, gaining experience across a range of inner-city and diverse school settings, including both state schools and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons across varying abilities.
-        </p>
-      </article>
+    <article class="card">
+      <h3>Mathematics Education &amp; Teaching Insight</h3>
+      <p>
+        As part of my academic development, I also explored mathematics education, including how students engage with mathematical ideas, where common misconceptions arise, and how difficult concepts can be explained more clearly. This continues to shape the way I teach, helping students build confidence and deeper understanding rather than relying on memorisation alone.
+      </p>
+    </article>
 
-      <article class="card">
-        <h3>Mathematics Education &amp; Teaching Insight</h3>
-        <p>
-          As part of my academic development, I also explored mathematics education, including how students engage with mathematical ideas, where common misconceptions arise, and how difficult concepts can be explained more clearly. This continues to shape the way I teach, helping students build confidence and deeper understanding rather than relying on memorisation alone.
-        </p>
-      </article>
+    <article class="card">
+      <h3>Ongoing Study &amp; Development</h3>
+      <p>
+        Alongside my academic background, I maintain an ongoing interest in mathematics education and regularly engage with research and advanced ideas around teaching methods. There is a particular focus on how mathematical thinking can be developed effectively and how students can be guided towards more independent understanding over time.
+      </p>
+    </article>
 
-      <article class="card">
-        <h3>Ongoing Study &amp; Development</h3>
-        <p>
-          Alongside my academic background, I maintain an ongoing interest in mathematics education and regularly engage with research and advanced ideas around teaching methods. There is a particular focus on how mathematical thinking can be developed effectively and how students can be guided towards more independent understanding over time.
-        </p>
-      </article>
+    <article class="card">
+      <h3>Employability Award &amp; Practical Experience</h3>
+      <p>
+        Alongside my degree, I completed the Employability Award at Loughborough University, gaining hands-on experience working with students from disadvantaged backgrounds. This strengthened my ability to build rapport, adapt explanations to different learners, and create a focused and supportive learning environment.
+      </p>
+    </article>
 
-      <article class="card">
-        <h3>Employability Award &amp; Practical Experience</h3>
-        <p>
-          Alongside my degree, I completed the Employability Award at Loughborough University, gaining hands-on experience working with students from disadvantaged backgrounds. This strengthened my ability to build rapport, adapt explanations to different learners, and create a focused and supportive learning environment.
-        </p>
-      </article>
+    <article class="card">
+      <h3>Teaching Approach</h3>
+      <p>
+        My teaching approach combines clarity, structure and active engagement. Complex ideas are broken down into manageable steps, students are encouraged to ask questions, and lessons are shaped around genuine understanding rather than surface-level memorisation. The aim is not only improved grades, but stronger confidence and more independent mathematical thinking.
+      </p>
+    </article>
 
-      <article class="card">
-        <h3>Teaching Approach</h3>
-        <p>
-          My teaching approach combines clarity, structure and active engagement. Complex ideas are broken down into manageable steps, students are encouraged to ask questions, and lessons are shaped around genuine understanding rather than surface-level memorisation. The aim is not only improved grades, but stronger confidence and more independent mathematical thinking.
-        </p>
-      </article>
+    <article class="card">
+      <h3>What Students Can Expect</h3>
+      <p>
+        Students can expect a supportive and focused learning environment, where progress is built carefully step by step. Whether the goal is stronger grades, better examination preparation, or more secure foundations, lessons are designed to provide clear guidance, consistent support and meaningful long-term progress.
+      </p>
+    </article>
 
-      <article class="card">
-        <h3>What Students Can Expect</h3>
-        <p>
-          Students can expect a supportive and focused learning environment, where progress is built carefully step by step. Whether the goal is stronger grades, better examination preparation, or more secure foundations, lessons are designed to provide clear guidance, consistent support and meaningful long-term progress.
-        </p>
-      </article>
-    </section>
+  </section>
 
-    <div class="footer">© mathstutor.co.uk 2026</div>
-  </main>
+  <div class="footer">© mathstutor.co.uk 2026</div>
 
-  <script>
-    (function () {
-      const header = document.getElementById("siteHeader");
-      const menuToggle = document.getElementById("menuToggle");
-      const mobileMenu = document.getElementById("mobileMenu");
-      let lastScrollY = window.scrollY;
+</main>
 
-      function updateHeader() {
-        const currentScrollY = window.scrollY;
+<script>
+(function () {
+  const header = document.getElementById("siteHeader");
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+  let lastScrollY = window.scrollY;
 
-        if (currentScrollY > 20) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
 
-        if (!header.classList.contains("mobile-menu-open")) {
-          if (currentScrollY > lastScrollY && currentScrollY > 120) {
-            header.classList.add("header-hidden");
-          } else {
-            header.classList.remove("header-hidden");
-          }
-        }
+    if (currentScrollY > 20) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
 
-        lastScrollY = currentScrollY;
-      }
-
-      window.addEventListener("scroll", updateHeader, { passive: true });
-      updateHeader();
-
-      menuToggle.addEventListener("click", function () {
-        const isOpen = header.classList.toggle("mobile-menu-open");
-        mobileMenu.classList.toggle("open", isOpen);
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
+    if (!header.classList.contains("mobile-menu-open")) {
+      if (currentScrollY > lastScrollY && currentScrollY > 120) {
+        header.classList.add("header-hidden");
+      } else {
         header.classList.remove("header-hidden");
-      });
+      }
+    }
 
-      mobileMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          header.classList.remove("mobile-menu-open");
-          mobileMenu.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
-        });
-      });
-    })();
-  </script>
+    lastScrollY = currentScrollY;
+  }
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+  updateHeader();
+
+  menuToggle.addEventListener("click", function () {
+    const isOpen = header.classList.toggle("mobile-menu-open");
+    mobileMenu.classList.toggle("open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    header.classList.remove("header-hidden");
+  });
+
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      header.classList.remove("mobile-menu-open");
+      mobileMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
