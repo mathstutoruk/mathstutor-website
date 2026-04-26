@@ -1,1 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact | mathstutor.co.uk</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#041b4d;
+  --navy-2:#08245e;
+  --gold:#d4af37;
+  --gold-soft:#e0c56a;
+  --cream:#f5f3ef;
+  --text:#23324e;
+  --muted:#667387;
+  --border:#cfc8ba;
+  --white:#ffffff;
+  --container:1220px;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:"Inter",sans-serif;
+  background:var(--cream);
+  color:var(--text);
+}
+
+a{text-decoration:none;color:inherit}
+
+h1,h2,h3{
+  font-family:"Cormorant Garamond",serif;
+  font-weight:600;
+  margin:0;
+}
+
+.container{
+  width:min(var(--container), calc(100% - 40px));
+  margin:0 auto;
+}
+
+/* Header */
+.header{
+  background:var(--navy);
+  padding:22px 0;
+}
+
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+
+.logo img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  object-position:42% 60%;
+}
+
+.nav{
+  display:flex;
+  gap:28px;
+  align-items:center;
+  color:white;
+  font-size:15px;
+}
+
+.nav a{
+  opacity:.95;
+}
+
+.nav a:hover{
+  color:var(--gold-soft);
+}
+
+.nav-contact{
+  background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+  color:var(--navy)!important;
+  padding:10px 22px;
+  border-radius:999px;
+  font-weight:600;
+}
+
+/* Main */
+.contact-section{
+  padding:74px 0 90px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.15fr .9fr;
+  gap:80px;
+  align-items:start;
+}
+
+.contact-title{
+  font-size:52px;
+  line-height:1.15;
+  color:#20324f;
+  max-width:600px;
+  margin-bottom:34px;
+}
+
+.form-group{
+  margin-bottom:28px;
+}
+
+.form-label{
+  display:block;
+  font-size:20px;
+  margin-bottom:12px;
+  color:#40516a;
+}
+
+.name-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.small-label{
+  display:block;
+  color:#8a8d91;
+  font-size:15px;
+  margin-bottom:8px;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  border:1px solid #b9b9b9;
+  background:white;
+  padding:14px 15px;
+  font-size:16px;
+  font-family:"Inter",sans-serif;
+  color:var(--text);
+  outline:none;
+}
+
+textarea{
+  min-height:150px;
+  resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 2px rgba(212,175,55,.18);
+}
+
+.submit-btn{
+  border:none;
+  background:linear-gradient(180deg,var(--gold-soft),var(--gold));
+  color:var(--navy);
+  padding:13px 28px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+}
+
+/* FAQ */
+.faq-title{
+  font-size:44px;
+  color:#20324f;
+  margin:26px 0 70px;
+}
+
+.faq-item{
+  border-top:1px solid #6f756f;
+}
+
+.faq-item:last-child{
+  border-bottom:1px solid #6f756f;
+}
+
+.faq-question{
+  width:100%;
+  border:0;
+  background:transparent;
+  padding:28px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:left;
+  font-family:"Cormorant Garamond",serif;
+  font-size:32px;
+  color:#33445d;
+  cursor:pointer;
+}
+
+.faq-plus{
+  font-family:"Inter",sans-serif;
+  font-size:30px;
+  font-weight:300;
+}
+
+.faq-answer{
+  display:none;
+  padding:0 0 26px;
+  color:#667387;
+  font-size:16px;
+  line-height:1.8;
+}
+
+.faq-item.open .faq-answer{
+  display:block;
+}
+
+.faq-item.open .faq-plus{
+  transform:rotate(45deg);
+}
+
+/* Footer */
+.footer{
+  background:var(--navy);
+  color:rgba(255,255,255,.82);
+  text-align:center;
+  padding:28px 20px;
+  font-size:14px;
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .header-inner{
+    flex-direction:column;
+  }
+
+  .nav{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:48px;
+  }
+
+  .contact-title{
+    font-size:40px;
+  }
+
+  .faq-title{
+    font-size:38px;
+    margin-bottom:28px;
+  }
+
+  .faq-question{
+    font-size:26px;
+  }
+
+  .name-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img src="logo-cropped.png" alt="mathstutor.co.uk logo">
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="index.html#offer">Group Classes</a>
+      <a href="index.html#lessons">Question Packs</a>
+      <a href="bio.html">Bio</a>
+      <a href="index.html#online-lessons">Articles</a>
+      <a href="contact.html" class="nav-contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="contact-section">
+  <div class="container contact-grid">
+
+    <section>
+      <h1 class="contact-title">Get in touch to book your first lesson</h1>
+
+      <!-- Replace YOUR_FORM_ID with your Formspree form endpoint -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <div class="name-grid">
+            <div>
+              <span class="small-label">First Name (required)</span>
+              <input type="text" name="first_name" required>
+            </div>
+            <div>
+              <span class="small-label">Last Name (required)</span>
+              <input type="text" name="last_name" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email <span class="small-label">(required)</span></label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input type="tel" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tuition required</label>
+          <select name="tuition_required">
+            <option>GCSE Mathematics</option>
+            <option>GCSE Further Mathematics</option>
+            <option>A-Level Mathematics</option>
+            <option>A-Level Further Mathematics</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea name="message" placeholder="Please include the student's year group, exam board, current level and what support is needed."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Enquiry</button>
+      </form>
+    </section>
+
+    <aside>
+      <h2 class="faq-title">FAQs</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Prices <span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          One-to-one tuition is currently £70 per hour for GCSE Mathematics, GCSE Further Mathematics, A-Level Mathematics and A-Level Further Mathematics.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Subjects taught <span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          I teach GCSE Mathematics, GCSE Further Mathematics, A-Level Mathematics and A-Level Further Mathematics.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Weekly slots currently free <span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          Availability changes throughout the year. Please send an enquiry with preferred days and times and I will confirm current options.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Online lessons <span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          Online lessons are delivered over Zoom using a shared digital whiteboard, with clear step-by-step explanation and structured lesson materials.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">In-person lessons <span class="faq-plus">+</span></button>
+        <div class="faq-answer">
+          In-person lessons may be available in Notting Hill, subject to availability. Further details can be discussed after enquiry.
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<footer class="footer">
+  © mathstutor.co.uk 2026
+</footer>
+
+<script>
+document.querySelectorAll(".faq-question").forEach(button => {
+  button.addEventListener("click", () => {
+    button.parentElement.classList.toggle("open");
+  });
+});
+</script>
+
+</body>
+</html>
