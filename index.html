@@ -1,370 +1,1535 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>mathstutor.co.uk</title>
-<meta name="description" content="Mathematics tuition for GCSE and A-Level with carefully structured teaching, strong subject knowledge and high-quality lesson preparation." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mathstutor.co.uk</title>
+  <meta
+    name="description"
+    content="Mathematics tuition for GCSE and A-Level with carefully structured teaching, strong subject knowledge and high-quality lesson preparation."
+  />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Patrick+Hand&display=swap"
+    rel="stylesheet"
+  >
 
-<style>
-:root{
-  --navy:#041b4d;
-  --navy-2:#08245e;
-  --gold:#d4af37;
-  --gold-soft:#e0c56a;
-  --cream:#f5f3ef;
-  --white:#ffffff;
-  --text:#23324e;
-  --muted:#667387;
-  --border:#e4dbce;
-  --shadow:0 12px 26px rgba(0,0,0,.08);
-  --container:1220px;
-  --header-height:126px;
-  --ink:#1f2430;
-  --rednote:#c64d4d;
-  --bluenote:#4f7fd4;
-  --blue-tab:#d7e4f7;
-  --grey-tab:#e6e6e6;
-  --active-tab:#f4d2b9;
-}
+  <style>
+    :root{
+      --navy:#041b4d;
+      --navy-2:#08245e;
+      --gold:#d4af37;
+      --gold-soft:#e0c56a;
+      --cream:#f5f3ef;
+      --white:#ffffff;
+      --text:#23324e;
+      --muted:#667387;
+      --border:#e4dbce;
+      --shadow:0 12px 26px rgba(0,0,0,.08);
+      --container:1220px;
+      --header-height:118px;
+      --ink:#1f2430;
+      --rednote:#c64d4d;
+      --bluenote:#4f7fd4;
+      --blue-tab:#d7e4f7;
+      --grey-tab:#e6e6e6;
+      --active-tab:#f4d2b9;
+    }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Inter",sans-serif;
+      background:var(--cream);
+      color:var(--text);
+      padding-top:var(--header-height);
+    }
 
-body{
-  margin:0;
-  font-family:"Inter",sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  padding-top:var(--header-height);
-}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
 
-img{display:block;max-width:100%}
-a{text-decoration:none;color:inherit}
+    h1,h2,h3,h4{
+      margin:0;
+      font-family:"Cormorant Garamond",serif;
+      font-weight:600;
+      letter-spacing:.01em;
+      color:#16244a;
+    }
 
-h1,h2,h3,h4{
-  margin:0;
-  font-family:"Cormorant Garamond",serif;
-  font-weight:600;
-  letter-spacing:.01em;
-  color:#16244a;
-}
+    .container{
+      width:min(var(--container), calc(100% - 40px));
+      margin:0 auto;
+    }
 
-.container{
-  width:min(var(--container), calc(100% - 40px));
-  margin:0 auto;
-}
+    /* HEADER */
+    .site-header{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:100;
+      background:var(--navy);
+      padding:16px 0 12px;
+      transition:transform .28s ease, padding .22s ease, box-shadow .22s ease;
+      box-shadow:0 1px 0 rgba(255,255,255,.04);
+      overflow:visible;
+    }
 
-/* HEADER FIXED */
-.site-header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
-  background:var(--navy);
-  padding:14px 0 6px;
-  transition:transform .28s ease, padding .22s ease, box-shadow .22s ease;
-  box-shadow:0 1px 0 rgba(255,255,255,.04);
-  overflow:visible;
-}
+    .site-header.scrolled{
+      padding:10px 0 8px;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
 
-.site-header.scrolled{
-  padding:10px 0 4px;
-  box-shadow:0 10px 24px rgba(0,0,0,.18);
-}
+    .site-header.header-hidden{
+      transform:translateY(-100%);
+    }
 
-.site-header.header-hidden{
-  transform:translateY(-100%);
-}
+    .header-inner{
+      display:grid;
+      grid-template-columns:140px 1fr;
+      gap:24px;
+      align-items:start;
+    }
 
-.header-inner{
-  display:grid;
-  grid-template-columns:140px 1fr;
-  gap:24px;
-  align-items:start;
-  min-height:118px;
-}
+    .brand{
+      position:relative;
+      height:96px;
+      display:flex;
+      align-items:flex-start;
+      justify-content:flex-start;
+      overflow:visible;
+    }
 
-.brand{
-  position:relative;
-  height:120px;
-  display:flex;
-  align-items:flex-start;
-  justify-content:flex-start;
-  overflow:visible;
-}
+    .brand img{
+      width:128px;
+      height:128px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:46% 54%;
+      transform:translate(-2px, 2px) scale(1.06);
+      box-shadow:0 14px 24px rgba(0,0,0,.22);
+      background:transparent;
+    }
 
-.brand img{
-  width:128px;
-  height:128px;
-  border-radius:50%;
-  object-fit:cover;
-  object-position:42% 60%;
-  transform:translate(-6px,14px) scale(1.06);
-  box-shadow:0 14px 24px rgba(0,0,0,.22);
-  background:transparent;
-}
+    .nav-area{
+      display:flex;
+      justify-content:flex-end;
+      padding-top:10px;
+    }
 
-.nav-area{
-  display:flex;
-  justify-content:flex-end;
-  padding-top:10px;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:28px;
+      flex-wrap:wrap;
+      color:var(--white);
+      font-size:14px;
+      font-weight:400;
+    }
 
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:28px;
-  flex-wrap:wrap;
-  color:var(--white);
-  font-size:14px;
-  font-weight:400;
-}
+    .nav a{
+      position:relative;
+      white-space:nowrap;
+      padding-bottom:6px;
+      opacity:.97;
+      transition:color .2s ease;
+    }
 
-.nav a{
-  position:relative;
-  white-space:nowrap;
-  padding-bottom:6px;
-  opacity:.97;
-  transition:color .2s ease;
-}
+    .nav a:not(.nav-contact):not(.youtube-link)::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-2px;
+      height:2px;
+      background:rgba(255,255,255,.9);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .2s ease;
+    }
 
-.nav a:not(.nav-contact):not(.youtube-link)::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-2px;
-  height:2px;
-  background:rgba(255,255,255,.9);
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .2s ease;
-}
+    .nav a:not(.nav-contact):not(.youtube-link):hover,
+    .nav a:not(.nav-contact):not(.youtube-link):focus-visible{
+      color:#f0e1a7;
+      outline:none;
+    }
 
-.nav a:hover,
-.nav a.active{
-  color:#f0e1a7;
-}
+    .nav a:not(.nav-contact):not(.youtube-link):hover::after,
+    .nav a:not(.nav-contact):not(.youtube-link):focus-visible::after,
+    .nav a.active::after{
+      transform:scaleX(1);
+    }
 
-.nav a:hover::after,
-.nav a.active::after{
-  transform:scaleX(1);
-}
+    .youtube-link{
+      display:inline-flex;
+      width:38px;
+      height:38px;
+      border:2px solid rgba(255,255,255,.84);
+      border-radius:50%;
+      align-items:center;
+      justify-content:center;
+      padding-bottom:0 !important;
+    }
 
-.youtube-link{
-  display:inline-flex;
-  width:38px;
-  height:38px;
-  border:2px solid rgba(255,255,255,.84);
-  border-radius:50%;
-  align-items:center;
-  justify-content:center;
-}
+    .youtube-link svg{
+      width:18px;
+      height:18px;
+      fill:currentColor;
+    }
 
-.nav-contact{
-  background:linear-gradient(180deg,var(--gold-soft),var(--gold));
-  color:var(--navy);
-  padding:10px 20px !important;
-  border-radius:999px;
-  font-weight:600;
-  font-size:13px;
-}
+    .nav-contact{
+      background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+      color:var(--navy);
+      padding:10px 20px !important;
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+      box-shadow:0 8px 16px rgba(0,0,0,.14);
+    }
 
-.mobile-bar,
-.mobile-menu{display:none}
+    .mobile-bar{
+      display:none;
+      width:100%;
+      justify-content:flex-end;
+      align-items:center;
+      padding-top:12px;
+    }
 
-/* everything else unchanged from your current site */
-</style>
+    .menu-toggle{
+      width:44px;
+      height:44px;
+      border:none;
+      border-radius:50%;
+      background:transparent;
+      color:var(--white);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+
+    .menu-toggle svg{
+      width:24px;
+      height:24px;
+      fill:currentColor;
+    }
+
+    .mobile-menu{
+      display:none;
+      width:100%;
+      background:var(--navy);
+      border-top:1px solid rgba(255,255,255,.08);
+      padding:10px 20px 18px;
+    }
+
+    .mobile-menu.open{
+      display:block;
+    }
+
+    .mobile-menu a{
+      display:block;
+      color:var(--white);
+      padding:12px 0;
+      font-size:15px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    /* HERO */
+    .hero{
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255,255,255,.05), transparent 28%),
+        radial-gradient(circle at 80% 32%, rgba(255,255,255,.04), transparent 24%),
+        linear-gradient(180deg, var(--navy), var(--navy-2));
+      position:relative;
+      overflow:hidden;
+      padding:52px 0 24px;
+    }
+
+    /* Option A: subtle mathematical graph curves */
+    .hero::before,
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      opacity:.18;
+      background-repeat:no-repeat;
+      background-size:cover;
+    }
+
+    .hero::before{
+      background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 520'>\
+<path d='M-100 360 C 120 360, 180 140, 380 140 S 640 360, 860 360 S 1100 120, 1380 120 S 1580 280, 1720 300' fill='none' stroke='white' stroke-width='1.4' opacity='0.42'/>\
+<path d='M-80 250 C 120 250, 200 90, 360 90 S 620 250, 820 250 S 1100 80, 1380 80 S 1560 170, 1700 210' fill='none' stroke='white' stroke-width='1.1' opacity='0.28'/>\
+<path d='M-120 430 C 80 430, 200 220, 360 220 S 600 420, 840 420 S 1140 200, 1440 200 S 1620 260, 1760 260' fill='none' stroke='white' stroke-width='1.1' opacity='0.22'/>\
+</svg>");
+    }
+
+    .hero::after{
+      background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 520'>\
+<path d='M-40 470 Q 240 260 520 470 T 1080 470 T 1640 470' fill='none' stroke='white' stroke-width='1.1' opacity='0.16'/>\
+<path d='M80 40 L 80 500' stroke='white' stroke-width='0.8' opacity='0.05'/>\
+<path d='M0 300 L 1600 300' stroke='white' stroke-width='0.8' opacity='0.05'/>\
+</svg>");
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      text-align:center;
+      color:var(--white);
+    }
+
+    .hero h1{
+      color:var(--gold);
+      font-size:44px;
+      line-height:1.08;
+      max-width:860px;
+      margin:0 auto 10px;
+    }
+
+    .hero-credentials{
+      color:var(--white);
+      font-size:22px;
+      line-height:1.42;
+      max-width:900px;
+      margin:0 auto 12px;
+      font-family:"Cormorant Garamond",serif;
+      font-weight:600;
+    }
+
+    .hero-welcome{
+      color:#f4ebd9;
+      font-size:30px;
+      line-height:1.08;
+      font-family:"Cormorant Garamond",serif;
+      transform:translateY(12px);
+    }
+
+    /* SHARED */
+    .section{
+      padding:64px 0;
+      scroll-margin-top:110px;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .section-head h2{
+      font-size:42px;
+      line-height:1.08;
+      margin-bottom:8px;
+    }
+
+    .section-head p{
+      max-width:760px;
+      margin:0 auto;
+      font-size:16px;
+      line-height:1.75;
+      opacity:.92;
+    }
+
+    .dark-section{
+      background:var(--navy);
+      color:var(--white);
+    }
+
+    .dark-section h2{
+      color:var(--gold-soft);
+    }
+
+    .dark-section .section-head p{
+      color:rgba(255,255,255,.92);
+    }
+
+    /* BIO INTRO */
+    .bio-section{
+      text-align:center;
+      padding-top:10px;
+    }
+
+    .bio-photo{
+      width:290px;
+      max-width:100%;
+      margin:0 auto 22px;
+      border-radius:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .bio-text{
+      max-width:760px;
+      margin:0 auto;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.92;
+    }
+
+    .bio-text p{
+      margin:0 0 14px;
+    }
+
+    .bio-text strong{
+      color:#536581;
+      font-weight:600;
+    }
+
+    .bio-contact{
+      display:inline-flex;
+      margin-top:10px;
+      background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+      color:var(--navy);
+      padding:12px 28px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      box-shadow:0 8px 16px rgba(0,0,0,.10);
+    }
+
+    /* LESSONS */
+    .slider-wrap,
+    .testimonial-wrap{
+      position:relative;
+    }
+
+    .slider-outer,
+    .testimonial-outer{
+      overflow:hidden;
+    }
+
+    .slider-track,
+    .testimonial-track{
+      display:flex;
+      transition:transform .35s ease;
+      will-change:transform;
+    }
+
+    .slide{
+      min-width:33.3333%;
+      padding:0 8px;
+    }
+
+    .slide-card{
+      background:transparent;
+    }
+
+    .resource-slide{
+      background:#fff;
+      border:1px solid #e9e9e9;
+      box-shadow:0 10px 20px rgba(0,0,0,.08);
+      aspect-ratio:16 / 8.7;
+      position:relative;
+      overflow:hidden;
+      color:var(--ink);
+      padding:22px 26px 34px;
+    }
+
+    .resource-title{
+      font-family:"Cormorant Garamond",serif;
+      font-size:28px;
+      line-height:1.08;
+      margin-bottom:12px;
+      color:#111;
+    }
+
+    .resource-subtitle{
+      font-size:13px;
+      line-height:1.45;
+      color:#444;
+      margin-bottom:10px;
+    }
+
+    .resource-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .resource-grid.one-col{
+      grid-template-columns:1fr;
+    }
+
+    .resource-text{
+      font-size:12px;
+      line-height:1.5;
+      color:#2a2a2a;
+    }
+
+    .resource-text ul{
+      margin:8px 0 0 16px;
+      padding:0;
+    }
+
+    .resource-text li{
+      margin:4px 0;
+    }
+
+    .formula-block{
+      font-size:13px;
+      line-height:1.75;
+      white-space:pre-line;
+      font-family:Georgia, "Times New Roman", serif;
+    }
+
+    .question-box{
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .question-box .qhead{
+      font-weight:600;
+      margin-bottom:8px;
+    }
+
+    .diagram-box{
+      min-height:160px;
+      border:1px solid #ececec;
+      background:#fafafa;
+      border-radius:6px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .diagram-box svg{
+      width:100%;
+      height:100%;
+    }
+
+    .note{
+      position:absolute;
+      font-family:"Patrick Hand","Comic Sans MS","Bradley Hand",cursive;
+      font-size:13px;
+      line-height:1;
+      letter-spacing:.02em;
+      transform-origin:center;
+      white-space:nowrap;
+      text-shadow:0 1px 0 rgba(255,255,255,.35);
+    }
+
+    .note.red{ color:var(--rednote); }
+    .note.blue{ color:var(--bluenote); }
+    .note.black{ color:#444; }
+
+    .tabs-row{
+      position:absolute;
+      left:14px;
+      right:14px;
+      bottom:8px;
+      display:flex;
+      gap:4px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .tab{
+      min-width:40px;
+      height:16px;
+      padding:0 6px;
+      border-radius:4px;
+      background:var(--grey-tab);
+      font-size:9px;
+      line-height:16px;
+      text-align:center;
+      color:#666;
+    }
+
+    .tab.blue{ background:var(--blue-tab); color:#55759a; }
+    .tab.active{ background:var(--active-tab); color:#8a5d49; font-weight:600; }
+
+    .slide-body{
+      padding:14px 6px 0;
+      color:var(--gold-soft);
+      font-size:15px;
+      line-height:1.5;
+      text-align:center;
+      font-family:"Cormorant Garamond",serif;
+    }
+
+    .slider-btn,
+    .testimonial-btn{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:50px;
+      height:50px;
+      border:none;
+      border-radius:50%;
+      background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+      color:var(--navy);
+      font-size:28px;
+      cursor:pointer;
+      z-index:3;
+      opacity:.96;
+      transition:opacity .2s ease;
+    }
+
+    .slider-btn:hover,
+    .testimonial-btn:hover{
+      opacity:1;
+    }
+
+    .slider-btn.inactive,
+    .testimonial-btn.inactive{
+      opacity:.35;
+      cursor:default;
+    }
+
+    .slider-btn.prev,
+    .testimonial-btn.prev{left:-8px}
+    .slider-btn.next,
+    .testimonial-btn.next{right:-8px}
+
+    /* OFFER */
+    .offer-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:18px;
+    }
+
+    .offer-card{
+      background:var(--white);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:0 8px 18px rgba(0,0,0,.04);
+    }
+
+    .offer-card h3{
+      font-size:22px;
+      margin-bottom:10px;
+    }
+
+    .offer-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.78;
+    }
+
+    /* SPLIT */
+    .split{
+      display:grid;
+      grid-template-columns:.9fr .9fr;
+      gap:34px;
+      align-items:center;
+      justify-content:center;
+      max-width:920px;
+      margin:0 auto;
+    }
+
+    .split-copy h2{
+      font-size:40px;
+      line-height:1.05;
+      margin-bottom:14px;
+      color:var(--gold);
+    }
+
+    .split-copy p{
+      margin:0;
+      font-size:15px;
+      line-height:1.85;
+      max-width:360px;
+    }
+
+    .split-image img{
+      width:100%;
+      max-width:280px;
+      margin-left:auto;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+    }
+
+    .map-frame{
+      border-radius:8px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow);
+      background:#e8edf5;
+      max-width:320px;
+    }
+
+    .map-frame iframe{
+      width:100%;
+      height:270px;
+      border:0;
+      display:block;
+    }
+
+    /* TESTIMONIALS */
+    .testimonial-section{
+      background:var(--navy);
+      color:var(--white);
+    }
+
+    .testimonial-section h2{
+      color:var(--gold-soft);
+      text-align:center;
+      font-size:46px;
+      margin-bottom:24px;
+    }
+
+    .testimonial-slide{
+      min-width:100%;
+      padding:0 74px;
+      text-align:center;
+    }
+
+    .testimonial-slide p{
+      margin:0 auto 16px;
+      max-width:900px;
+      font-size:22px;
+      line-height:1.72;
+      font-family:"Cormorant Garamond",serif;
+      color:rgba(255,255,255,.95);
+      font-weight:600;
+    }
+
+    .testimonial-slide strong{
+      display:block;
+      font-size:15px;
+      color:#e0c38a;
+      font-weight:500;
+    }
+
+    /* PRICING */
+    .pricing-section{
+      background:var(--cream);
+      padding-top:50px;
+      padding-bottom:50px;
+    }
+
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      max-width:980px;
+      margin:0 auto;
+    }
+
+    .price-card{
+      border:1.5px solid #d9c59a;
+      background:transparent;
+      text-align:center;
+      padding:18px 14px 20px;
+      min-height:190px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .price-card h3{
+      font-size:20px;
+      line-height:1.4;
+      margin-bottom:14px;
+      color:#3d4a5b;
+    }
+
+    .price-value{
+      font-size:16px;
+      color:#6b7686;
+      margin-bottom:16px;
+    }
+
+    .price-btn{
+      display:inline-flex;
+      align-self:center;
+      background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+      color:var(--navy);
+      padding:9px 22px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+    }
+
+    /* FINAL */
+    .final-panel{
+      background:var(--navy);
+      color:var(--white);
+      text-align:center;
+      padding:46px 20px 68px;
+    }
+
+    .final-panel h2{
+      color:rgba(255,255,255,.95);
+      font-size:30px;
+      margin-bottom:36px;
+    }
+
+    .final-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, var(--gold-soft), var(--gold));
+      color:var(--navy);
+      padding:12px 28px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+      box-shadow:0 8px 16px rgba(0,0,0,.12);
+    }
+
+    .footer{
+      color:rgba(255,255,255,.84);
+      text-align:center;
+      font-size:14px;
+      margin-top:90px;
+    }
+
+    @media (max-width:1180px){
+      .offer-grid{grid-template-columns:repeat(3,1fr)}
+      .pricing-grid{grid-template-columns:repeat(2,1fr)}
+      .slide{min-width:50%}
+    }
+
+    @media (max-width:980px){
+      :root{ --header-height:132px; }
+
+      .header-inner,
+      .split{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{font-size:36px}
+      .hero-credentials{font-size:20px}
+      .hero-welcome,
+      .section-head h2,
+      .split-copy h2,
+      .testimonial-section h2,
+      .final-panel h2{font-size:34px}
+
+      .offer-grid,
+      .pricing-grid{grid-template-columns:1fr}
+      .slide{min-width:100%}
+      .split-image img{margin-left:0}
+    }
+
+    @media (max-width:820px){
+      :root{ --header-height:146px; }
+
+      .header-inner{
+        grid-template-columns:1fr;
+        justify-items:center;
+      }
+
+      .brand{
+        justify-content:center;
+        height:104px;
+      }
+
+      .nav-area{
+        display:none;
+      }
+
+      .mobile-bar{
+        display:flex;
+      }
+
+      .site-header.mobile-menu-open .mobile-menu{
+        display:block;
+      }
+
+      .hero{
+        padding-top:48px;
+        padding-bottom:30px;
+      }
+
+      .hero h1{font-size:30px}
+      .hero-credentials,
+      .bio-text,
+      .section-head p,
+      .offer-card p,
+      .split-copy p,
+      .testimonial-slide p,
+      .slide-body{
+        font-size:15px;
+      }
+
+      .testimonial-slide{padding:0 52px}
+      .slider-btn.prev,
+      .testimonial-btn.prev{left:8px}
+      .slider-btn.next,
+      .testimonial-btn.next{right:8px}
+
+      .resource-slide{
+        aspect-ratio:auto;
+        min-height:360px;
+      }
+
+      .resource-title{ font-size:24px; }
+    }
+  </style>
 </head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>mathstutor.co.uk</title>
-<meta name="description" content="Mathematics tuition for GCSE and A-Level with carefully structured teaching, strong subject knowledge and high-quality lesson preparation." />
+<body>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="logo-cropped.png" alt="Maths Tutor UK logo">
+      </div>
 
-<style>
-:root{
-  --navy:#041b4d;
-  --navy-2:#08245e;
-  --gold:#d4af37;
-  --gold-soft:#e0c56a;
-  --cream:#f5f3ef;
-  --white:#ffffff;
-  --text:#23324e;
-  --muted:#667387;
-  --border:#e4dbce;
-  --shadow:0 12px 26px rgba(0,0,0,.08);
-  --container:1220px;
-  --header-height:126px;
-  --ink:#1f2430;
-  --rednote:#c64d4d;
-  --bluenote:#4f7fd4;
-  --blue-tab:#d7e4f7;
-  --grey-tab:#e6e6e6;
-  --active-tab:#f4d2b9;
-}
+      <div class="nav-area">
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#top" class="active">Home</a>
+          <a href="#offer">Group Classes</a>
+          <a href="#lessons">Question Packs</a>
+          <a href="bio.html">Bio</a>
+          <a href="#online-lessons">Articles</a>
+          <a
+            href="https://www.youtube.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="youtube-link"
+            aria-label="YouTube"
+            title="YouTube"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.5 6.2a3.1 3.1 0 0 0-2.2-2.2C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.3.5A3.1 3.1 0 0 0 .5 6.2 32.2 32.2 0 0 0 0 12a32.2 32.2 0 0 0 .5 5.8 3.1 3.1 0 0 0 2.2 2.2c1.9.5 9.3.5 9.3.5s7.4 0 9.3-.5a3.1 3.1 0 0 0 2.2-2.2A32.2 32.2 0 0 0 24 12a32.2 32.2 0 0 0-.5-5.8ZM9.6 15.5v-7l6 3.5-6 3.5Z"/>
+            </svg>
+          </a>
+          <a href="#contact" class="nav-contact">Contact</a>
+        </nav>
+      </div>
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+      <div class="mobile-bar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
 
-body{
-  margin:0;
-  font-family:"Inter",sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  padding-top:var(--header-height);
-}
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#top">Home</a>
+      <a href="#offer">Group Classes</a>
+      <a href="#lessons">Question Packs</a>
+      <a href="bio.html">Bio</a>
+      <a href="#online-lessons">Articles</a>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
+  </header>
 
-img{display:block;max-width:100%}
-a{text-decoration:none;color:inherit}
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <h1>Mathematics Tuition for GCSE &amp; A-Level</h1>
+        <div class="hero-credentials">
+          Loughborough Mathematics Graduate | Full-Time Tutor | 12+ Years Experience
+        </div>
+        <div class="hero-welcome">Welcome</div>
+      </div>
+    </section>
 
-h1,h2,h3,h4{
-  margin:0;
-  font-family:"Cormorant Garamond",serif;
-  font-weight:600;
-  letter-spacing:.01em;
-  color:#16244a;
-}
+    <section class="section bio-section">
+      <div class="container">
+        <img src="me.png" alt="Surinder Sangha" class="bio-photo">
 
-.container{
-  width:min(var(--container), calc(100% - 40px));
-  margin:0 auto;
-}
+        <div class="bio-text">
+          <p><strong>Hi, I’m Surinder.</strong></p>
+          <p>
+            Since graduating from Loughborough University in 2016 with a BSc in Mathematics, I’ve delivered thousands of hours of one-to-one tuition across A-Level Mathematics and Further Mathematics. Over that time, I’ve built lessons around clarity, careful structure and strong examination preparation.
+          </p>
+          <a href="#contact" class="bio-contact">Contact</a>
+        </div>
+      </div>
+    </section>
 
-/* HEADER FIXED */
-.site-header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:100;
-  background:var(--navy);
-  padding:14px 0 6px;
-  transition:transform .28s ease, padding .22s ease, box-shadow .22s ease;
-  box-shadow:0 1px 0 rgba(255,255,255,.04);
-  overflow:visible;
-}
+    <section class="section dark-section" id="lessons">
+      <div class="container">
+        <div class="section-head">
+          <h2>Mathematics Lessons</h2>
+        </div>
 
-.site-header.scrolled{
-  padding:10px 0 4px;
-  box-shadow:0 10px 24px rgba(0,0,0,.18);
-}
+        <div class="slider-wrap">
+          <button class="slider-btn prev inactive" type="button" id="lessonPrev" aria-label="Previous mathematics slides">←</button>
 
-.site-header.header-hidden{
-  transform:translateY(-100%);
-}
+          <div class="slider-outer">
+            <div class="slider-track" id="lessonTrack">
 
-.header-inner{
-  display:grid;
-  grid-template-columns:140px 1fr;
-  gap:24px;
-  align-items:start;
-  min-height:118px;
-}
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="resource-slide">
+                    <div class="resource-title">Complex numbers (level 6)</div>
+                    <div class="resource-subtitle">Advanced A-level topic with algebraic fluency, argument, modulus and geometric interpretation.</div>
+                    <div class="resource-grid">
+                      <div class="resource-text">
+                        <div class="formula-block">z = 3 + 4i
+|z| = √(3² + 4²) = 5
+arg(z) = tan⁻¹(4/3)
 
-.brand{
-  position:relative;
-  height:120px;
-  display:flex;
-  align-items:flex-start;
-  justify-content:flex-start;
-  overflow:visible;
-}
+w = 1 - 2i
+zw = (3 + 4i)(1 - 2i)
+   = 11 - 2i</div>
+                        <ul>
+                          <li>modulus and argument from coordinates</li>
+                          <li>multiplication and geometric effect</li>
+                          <li>connections to loci and transformations</li>
+                        </ul>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <line x1="24" y1="136" x2="278" y2="136" stroke="#777" stroke-width="1.2"/>
+                          <line x1="54" y1="152" x2="54" y2="18" stroke="#777" stroke-width="1.2"/>
+                          <text x="280" y="132" font-size="10">Re</text>
+                          <text x="58" y="20" font-size="10">Im</text>
+                          <line x1="54" y1="136" x2="170" y2="62" stroke="#4b7ec8" stroke-width="2.5"/>
+                          <circle cx="170" cy="62" r="4" fill="#4b7ec8"/>
+                          <text x="178" y="60" font-size="11">3 + 4i</text>
+                          <path d="M88 136 A34 34 0 0 1 116 116" fill="none" stroke="#c84b4b" stroke-width="2"/>
+                          <text x="98" y="120" font-size="11" fill="#c84b4b">θ</text>
+                          <line x1="170" y1="62" x2="170" y2="136" stroke="#999" stroke-dasharray="4 3"/>
+                          <line x1="54" y1="62" x2="170" y2="62" stroke="#999" stroke-dasharray="4 3"/>
+                        </svg>
+                        <div class="note red" style="top:12px; left:16px; transform:rotate(-7deg);">modulus from pythagoras</div>
+                        <div class="note blue" style="bottom:18px; right:16px; transform:rotate(4deg);">arg from tan⁻¹(y/x)</div>
+                      </div>
+                    </div>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab blue">OCR A</div>
+                      <div class="tab">OCR B</div>
+                      <div class="tab">WJEC</div>
+                      <div class="tab">IB</div>
+                    </div>
+                  </div>
+                  <div class="slide-body">Advanced presentations designed to tackle demanding topics with clarity and structure.</div>
+                </article>
+              </div>
 
-.brand img{
-  width:128px;
-  height:128px;
-  border-radius:50%;
-  object-fit:cover;
-  object-position:42% 60%;
-  transform:translate(-6px,14px) scale(1.06);
-  box-shadow:0 14px 24px rgba(0,0,0,.22);
-  background:transparent;
-}
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="resource-slide">
+                    <div class="resource-title">Question (level 3)</div>
+                    <div class="resource-subtitle">A-level differentiation and stationary points.</div>
+                    <div class="resource-grid">
+                      <div class="question-box">
+                        <div class="qhead">2. The curve y = x³ − 6x² + 9x + 4</div>
+                        <div>(a) Find the coordinates of each stationary point. [4]</div>
+                        <br>
+                        <div>(b) Determine whether each is a maximum or minimum point. [2]</div>
+                        <br>
+                        <div>(c) Find the equation of the tangent at x = 1. [3]</div>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <line x1="20" y1="132" x2="282" y2="132" stroke="#777" stroke-width="1"/>
+                          <line x1="54" y1="154" x2="54" y2="16" stroke="#777" stroke-width="1"/>
+                          <path d="M18 126 C72 120 90 44 126 54 C154 62 162 126 214 128 C246 130 270 98 282 70" fill="none" stroke="#222" stroke-width="2.2"/>
+                          <circle cx="108" cy="52" r="3.8" fill="#c84b4b"/>
+                          <circle cx="198" cy="128" r="3.8" fill="#c84b4b"/>
+                          <line x1="86" y1="94" x2="146" y2="42" stroke="#c84b4b" stroke-width="2"/>
+                        </svg>
+                        <div class="note red" style="top:12px; right:16px; transform:rotate(-5deg);">y' = 0 here</div>
+                        <div class="note blue" style="bottom:18px; left:12px; transform:rotate(3deg);">tangent needed in part (c)</div>
+                      </div>
+                    </div>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab active">OCR A</div>
+                      <div class="tab blue">OCR B</div>
+                      <div class="tab">WJEC</div>
+                      <div class="tab">IB</div>
+                    </div>
+                  </div>
+                  <div class="slide-body">Exam questions selected for quality, progression and genuine mathematical depth.</div>
+                </article>
+              </div>
 
-.nav-area{
-  display:flex;
-  justify-content:flex-end;
-  padding-top:10px;
-}
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="resource-slide">
+                    <div class="resource-title">Differentiation summary</div>
+                    <div class="resource-subtitle">Core rules and reminders used repeatedly across pure mathematics.</div>
+                    <div class="resource-grid">
+                      <div class="resource-text">
+                        <ul>
+                          <li>d/dx (xⁿ) = nxⁿ⁻¹</li>
+                          <li>d/dx (sin x) = cos x</li>
+                          <li>d/dx (cos x) = −sin x</li>
+                          <li>d/dx (eˣ) = eˣ</li>
+                          <li>product rule: (uv)' = u'v + uv'</li>
+                          <li>quotient rule: (u/v)' = (u'v − uv') / v²</li>
+                          <li>chain rule: d/dx f(g(x)) = f'(g(x))g'(x)</li>
+                        </ul>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <rect x="24" y="18" width="252" height="132" rx="8" fill="#fffaf7" stroke="#eadfda"/>
+                          <text x="42" y="48" font-size="15" font-family="Georgia">f(x) = (3x² + 1)⁵</text>
+                          <text x="42" y="78" font-size="15" font-family="Georgia">f'(x) = 5(3x² + 1)⁴ × 6x</text>
+                          <line x1="142" y1="52" x2="142" y2="86" stroke="#c84b4b" stroke-width="2"/>
+                          <line x1="214" y1="52" x2="214" y2="86" stroke="#4b7ec8" stroke-width="2"/>
+                        </svg>
+                        <div class="note red" style="top:10px; left:18px; transform:rotate(-6deg);">outer function first</div>
+                        <div class="note blue" style="top:12px; right:16px; transform:rotate(5deg);">then inner derivative</div>
+                      </div>
+                    </div>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab blue">OCR A</div>
+                      <div class="tab blue">OCR B</div>
+                      <div class="tab">WJEC</div>
+                      <div class="tab">IB</div>
+                    </div>
+                  </div>
+                  <div class="slide-body">Summary slides help students distil key methods and revise more efficiently.</div>
+                </article>
+              </div>
 
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap:28px;
-  flex-wrap:wrap;
-  color:var(--white);
-  font-size:14px;
-  font-weight:400;
-}
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="resource-slide">
+                    <div class="resource-title">Worked example: Integration</div>
+                    <div class="resource-subtitle">Structured method shown line by line, with annotated checking points.</div>
+                    <div class="resource-grid one-col">
+                      <div class="diagram-box" style="min-height:210px;">
+                        <svg viewBox="0 0 500 210" preserveAspectRatio="none">
+                          <rect x="22" y="22" width="456" height="166" rx="8" fill="#fff" stroke="#ececec"/>
+                          <text x="44" y="60" font-size="18" font-family="Georgia">∫ (6x² − 4x + 3) dx</text>
+                          <text x="44" y="96" font-size="18" font-family="Georgia">= 2x³ − 2x² + 3x + c</text>
+                          <text x="44" y="132" font-size="18" font-family="Georgia">Check: d/dx (2x³ − 2x² + 3x + c)</text>
+                          <text x="44" y="164" font-size="18" font-family="Georgia">= 6x² − 4x + 3</text>
+                          <line x1="106" y1="66" x2="124" y2="88" stroke="#c84b4b" stroke-width="2"/>
+                          <line x1="174" y1="66" x2="204" y2="88" stroke="#c84b4b" stroke-width="2"/>
+                          <line x1="260" y1="66" x2="300" y2="88" stroke="#c84b4b" stroke-width="2"/>
+                        </svg>
+                        <div class="note red" style="top:16px; left:86px; transform:rotate(-8deg);">power up</div>
+                        <div class="note blue" style="top:16px; left:174px; transform:rotate(4deg);">divide by new power</div>
+                        <div class="note red" style="top:16px; left:292px; transform:rotate(-3deg);">don't forget + c</div>
+                        <div class="note black" style="bottom:16px; right:16px; transform:rotate(2deg);">differentiate to verify</div>
+                      </div>
+                    </div>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab blue">OCR A</div>
+                      <div class="tab blue">OCR B</div>
+                      <div class="tab">WJEC</div>
+                      <div class="tab">IB</div>
+                    </div>
+                  </div>
+                  <div class="slide-body">Annotated worked solutions make methods easier to remember and apply under pressure.</div>
+                </article>
+              </div>
 
-.nav a{
-  position:relative;
-  white-space:nowrap;
-  padding-bottom:6px;
-  opacity:.97;
-  transition:color .2s ease;
-}
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="resource-slide">
+                    <div class="resource-title">Grade 9 quadratics challenge (level 4)</div>
+                    <div class="resource-subtitle">GCSE-style problem solving using factorising, graph insight and reasoning.</div>
+                    <div class="resource-grid">
+                      <div class="question-box">
+                        <div class="qhead">A ball is projected so that its height is modelled by</div>
+                        <div>h = −2t² + 12t + 5</div>
+                        <br>
+                        <div>(a) Find the maximum height reached. [3]</div>
+                        <div>(b) Find when the ball hits the ground. [3]</div>
+                        <div>(c) Explain the significance of each root. [2]</div>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <line x1="22" y1="132" x2="284" y2="132" stroke="#777"/>
+                          <line x1="46" y1="152" x2="46" y2="14" stroke="#777"/>
+                          <path d="M34 120 C72 38 128 22 184 56 C220 78 246 102 276 132" fill="none" stroke="#222" stroke-width="2.2"/>
+                          <circle cx="138" cy="42" r="4" fill="#c84b4b"/>
+                          <line x1="138" y1="42" x2="138" y2="132" stroke="#999" stroke-dasharray="4 4"/>
+                        </svg>
+                        <div class="note red" style="top:10px; left:114px; transform:rotate(-7deg);">turning point</div>
+                        <div class="note blue" style="bottom:18px; right:12px; transform:rotate(4deg);">root = ground impact</div>
+                      </div>
+                    </div>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab">OCR</div>
+                      <div class="tab">WJEC</div>
+                      <div class="tab">Eduqas</div>
+                    </div>
+                  </div>
+                  <div class="slide-body">High-attaining GCSE students are challenged with problems that demand reasoning, not just routine method.</div>
+                </article>
+              </div>
 
-.nav a:not(.nav-contact):not(.youtube-link)::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-2px;
-  height:2px;
-  background:rgba(255,255,255,.9);
-  transform:scaleX(0);
-  transform-origin:left;
-  transition:transform .2s ease;
-}
+              <div class="slide">
+                <article class="slide-card">
+                  <div class="resource-slide">
+                    <div class="resource-title">Interception modelling (level 5)</div>
+                    <div class="resource-subtitle">A trajectory and vector-based challenge using coordinates, timing and angle optimisation.</div>
+                    <div class="resource-grid">
+                      <div class="resource-text">
+                        <div class="formula-block">Target path:
+T(t) = (4 + 3t, 2 + t)
 
-.nav a:hover,
-.nav a.active{
-  color:#f0e1a7;
-}
+Intercept path:
+P(t) = (0, 0) + v t (cosθ, sinθ)
 
-.nav a:hover::after,
-.nav a.active::after{
-  transform:scaleX(1);
-}
+Require:
+P(t) = T(t)
 
-.youtube-link{
-  display:inline-flex;
-  width:38px;
-  height:38px;
-  border:2px solid rgba(255,255,255,.84);
-  border-radius:50%;
-  align-items:center;
-  justify-content:center;
-}
+Use simultaneous equations to determine:
+• angle of launch
+• time of interception
+• minimum speed required</div>
+                      </div>
+                      <div class="diagram-box">
+                        <svg viewBox="0 0 300 170" preserveAspectRatio="none">
+                          <line x1="20" y1="138" x2="280" y2="138" stroke="#777"/>
+                          <line x1="38" y1="156" x2="38" y2="18" stroke="#777"/>
+                          <path d="M40 136 C76 104 112 86 148 74 C186 60 226 48 266 34" fill="none" stroke="#40c2c2" stroke-width="3"/>
+                          <line x1="40" y1="136" x2="214" y2="64" stroke="#c84b4b" stroke-width="2.3"/>
+                          <circle cx="214" cy="64" r="5" fill="#c84b4b"/>
+                          <path d="M70 136 A30 30 0 0 1 92 126" fill="none" stroke="#c84b4b" stroke-width="2"/>
+                          <text x="84" y="130" font-size="11" fill="#c84b4b">θ</text>
+                          <polygon points="244,42 270,32 258,58" fill="#444"/>
+                          <text x="226" y="28" font-size="10">target</text>
+                        </svg>
+                        <div class="note red" style="top:10px; left:16px; transform:rotate(-6deg);">solve for same time t</div>
+                        <div class="note blue" style="bottom:16px; right:16px; transform:rotate(4deg);">vectors meet at intercept point</div>
+                      </div>
+                    </div>
+                    <div class="tabs-row">
+                      <div class="tab blue">AQA</div>
+                      <div class="tab blue">Edexcel</div>
+                      <div class="tab active">OCR A</div>
+                      <div class="tab">OCR B</div>
+                      <div class="tab">WJEC</div>
+                      <div class="tab">IB</div>
+                    </div>
+                  </div>
+                  <div class="slide-body">Creative modelling problems bring mathematics to life and push understanding beyond routine exercises.</div>
+                </article>
+              </div>
 
-.nav-contact{
-  background:linear-gradient(180deg,var(--gold-soft),var(--gold));
-  color:var(--navy);
-  padding:10px 20px !important;
-  border-radius:999px;
-  font-weight:600;
-  font-size:13px;
-}
+            </div>
+          </div>
 
-.mobile-bar,
-.mobile-menu{display:none}
+          <button class="slider-btn next" type="button" id="lessonNext" aria-label="Next mathematics slides">→</button>
+        </div>
+      </div>
+    </section>
 
-/* everything else unchanged from your current site */
-</style>
-</head>
+    <section class="section" id="offer">
+      <div class="container">
+        <div class="section-head">
+          <h2>What I Offer</h2>
+          <p>A thoughtful and structured approach to mathematics tuition, designed to build confidence, clarity and long-term progress.</p>
+        </div>
+
+        <div class="offer-grid">
+          <article class="offer-card">
+            <h3>Fully Prepared Lessons</h3>
+            <p>Each lesson is planned carefully, with examples and questions chosen to support real progress.</p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Confidence Building</h3>
+            <p>Steady progression and clear explanation help students feel more secure with difficult material.</p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Effective Learning Habits</h3>
+            <p>Students are guided towards stronger revision habits and more productive independent work.</p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Ensured Learning</h3>
+            <p>Misunderstandings are identified and corrected directly, with ideas revisited until secure.</p>
+          </article>
+
+          <article class="offer-card">
+            <h3>Regular Feedback</h3>
+            <p>Feedback after lessons helps keep progress focused, measured and consistent over time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-section" id="online-lessons">
+      <div class="container split">
+        <div class="split-copy">
+          <h2>Online<br>Lessons</h2>
+          <p>
+            Online lessons are delivered in a structured and interactive format using Zoom. A shared digital whiteboard is used throughout, allowing clear step-by-step explanation and real-time collaboration. Students may write directly using a tablet, though this is not essential. Lessons run smoothly using simple tools such as pen and paper alongside the online session, so accessibility is kept high without sacrificing quality.
+          </p>
+        </div>
+
+        <div class="split-image">
+          <img src="me.png" alt="Online mathematics lessons">
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="in-person-lessons">
+      <div class="container split">
+        <div class="map-frame">
+          <iframe
+            title="Approximate location for Notting Hill"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Notting%20Hill%2C%20London&z=13&output=embed">
+          </iframe>
+        </div>
+
+        <div class="split-copy" style="color: var(--muted);">
+          <h2>In-person<br>Lessons</h2>
+          <p>
+            In-person lessons are available in Notting Hill, subject to availability.
+            <br><br>
+            The map shows an approximate location. Further details can be discussed upon enquiry.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonial-section" id="testimonials">
+      <div class="container">
+        <h2>Testimonials</h2>
+
+        <div class="testimonial-wrap">
+          <button class="testimonial-btn prev inactive" type="button" id="testPrev" aria-label="Previous testimonials">←</button>
+
+          <div class="testimonial-outer">
+            <div class="testimonial-track" id="testimonialTrack">
+              <div class="testimonial-slide">
+                <p>“Surinder was an excellent tutor. Lessons were extremely well prepared, carefully structured and consistently thoughtful. Strong subject knowledge was matched by excellent communication, and progress became much more visible over time.”</p>
+                <strong>Aisha Patel</strong>
+              </div>
+
+              <div class="testimonial-slide">
+                <p>“Confidence improved significantly within a short period. Explanations were calm, precise and easy to follow, even when the content felt demanding at first.”</p>
+                <strong>Rahim Ahmed</strong>
+              </div>
+
+              <div class="testimonial-slide">
+                <p>“A very professional tutor with an obvious depth of preparation. Every lesson felt purposeful, and the written feedback after sessions was especially helpful.”</p>
+                <strong>James Williams</strong>
+              </div>
+
+              <div class="testimonial-slide">
+                <p>“The lessons made a real difference to both understanding and examination performance. Mathematics began to feel far more manageable and much less stressful. Preparation was consistently strong, communication was excellent, and the overall approach felt thoughtful from start to finish.”</p>
+                <strong>Sarah Khan</strong>
+              </div>
+
+              <div class="testimonial-slide">
+                <p>“Careful structure, strong explanation and excellent patience throughout. A highly effective approach that helped turn confusion into confidence. Difficult areas that had previously felt frustrating were broken down clearly, and steady progress followed without unnecessary pressure.”</p>
+                <strong>Laura Turner</strong>
+              </div>
+
+              <div class="testimonial-slide">
+                <p>“One of the strongest tutors encountered during the whole of sixth form. Difficult topics were broken down intelligently and taught with real clarity. The quality of the preparation, the calmness of the teaching and the level of academic care all stood out immediately.”</p>
+                <strong>Mohammed Shah</strong>
+              </div>
+
+              <div class="testimonial-slide">
+                <p>“The quality of the lesson materials was immediately obvious. Sessions felt academically strong, but still accessible and supportive. There was a real sense of direction from week to week, which made revision far more focused and much less overwhelming.”</p>
+                <strong>Daniel Evans</strong>
+              </div>
+
+              <div class="testimonial-slide">
+                <p>“Examination preparation became much more focused. Methods were clearer, mistakes were reduced, and confidence in problem-solving improved greatly.”</p>
+                <strong>Hafsa Ali</strong>
+              </div>
+
+              <div class="testimonial-slide">
+                <p>“A thoughtful, structured and highly reliable tutor. The improvement in confidence, organisation and mathematical fluency was very noticeable.”</p>
+                <strong>Thomas Morgan</strong>
+              </div>
+            </div>
+          </div>
+
+          <button class="testimonial-btn next" type="button" id="testNext" aria-label="Next testimonials">→</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>One-to-one<br>GCSE Mathematics</h3>
+            <div class="price-value">£70/hour</div>
+            <a href="#contact" class="price-btn">Book</a>
+          </article>
+
+          <article class="price-card">
+            <h3>One-to-one<br>GCSE Further Mathematics</h3>
+            <div class="price-value">£70/hour</div>
+            <a href="#contact" class="price-btn">Book</a>
+          </article>
+
+          <article class="price-card">
+            <h3>One-to-one<br>A-Level Mathematics</h3>
+            <div class="price-value">£70/hour</div>
+            <a href="#contact" class="price-btn">Book</a>
+          </article>
+
+          <article class="price-card">
+            <h3>One-to-one<br>A-Level Further Mathematics</h3>
+            <div class="price-value">£70/hour</div>
+            <a href="#contact" class="price-btn">Book</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-panel" id="contact">
+      <div class="container">
+        <h2>Have a specific query?</h2>
+        <a href="mailto:info@mathstutor.co.uk" class="final-cta">Get in touch</a>
+        <div class="footer">© mathstutor.co.uk 2026</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const header = document.getElementById("siteHeader");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      let lastScrollY = window.scrollY;
+
+      function updateHeader() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > 20) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+
+        if (!header.classList.contains("mobile-menu-open")) {
+          if (currentScrollY > lastScrollY && currentScrollY > 120) {
+            header.classList.add("header-hidden");
+          } else {
+            header.classList.remove("header-hidden");
+          }
+        }
+
+        lastScrollY = currentScrollY;
+      }
+
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      menuToggle.addEventListener("click", function () {
+        const isOpen = header.classList.toggle("mobile-menu-open");
+        mobileMenu.classList.toggle("open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        header.classList.remove("header-hidden");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          header.classList.remove("mobile-menu-open");
+          mobileMenu.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      const lessonTrack = document.getElementById("lessonTrack");
+      const lessonSlides = lessonTrack ? lessonTrack.children.length : 0;
+      const lessonPrev = document.getElementById("lessonPrev");
+      const lessonNext = document.getElementById("lessonNext");
+      let lessonIndex = 0;
+
+      function lessonPerView() {
+        if (window.innerWidth <= 980) return 1;
+        if (window.innerWidth <= 1180) return 2;
+        return 3;
+      }
+
+      function maxLessonIndex() {
+        return Math.max(0, lessonSlides - lessonPerView());
+      }
+
+      function updateLessonButtons() {
+        const max = maxLessonIndex();
+        lessonPrev.classList.toggle("inactive", lessonIndex <= 0);
+        lessonNext.classList.toggle("inactive", lessonIndex >= max);
+      }
+
+      function updateLessonSlider() {
+        const perView = lessonPerView();
+        const shift = 100 / perView;
+        lessonTrack.style.transform = `translateX(-${lessonIndex * shift}%)`;
+        updateLessonButtons();
+      }
+
+      if (lessonPrev && lessonNext && lessonSlides > 0) {
+        lessonPrev.addEventListener("click", function () {
+          if (lessonIndex <= 0) return;
+          lessonIndex -= 1;
+          updateLessonSlider();
+        });
+
+        lessonNext.addEventListener("click", function () {
+          if (lessonIndex >= maxLessonIndex()) return;
+          lessonIndex += 1;
+          updateLessonSlider();
+        });
+
+        window.addEventListener("resize", function () {
+          if (lessonIndex > maxLessonIndex()) lessonIndex = maxLessonIndex();
+          updateLessonSlider();
+        });
+
+        updateLessonSlider();
+      }
+
+      const testimonialTrack = document.getElementById("testimonialTrack");
+      const testimonialSlides = testimonialTrack ? testimonialTrack.children.length : 0;
+      const testPrev = document.getElementById("testPrev");
+      const testNext = document.getElementById("testNext");
+      let testimonialIndex = 0;
+
+      function updateTestButtons() {
+        testPrev.classList.toggle("inactive", testimonialIndex <= 0);
+        testNext.classList.toggle("inactive", testimonialIndex >= testimonialSlides - 1);
+      }
+
+      function updateTestimonialSlider() {
+        testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+        updateTestButtons();
+      }
+
+      if (testPrev && testNext && testimonialSlides > 0) {
+        testPrev.addEventListener("click", function () {
+          if (testimonialIndex <= 0) return;
+          testimonialIndex -= 1;
+          updateTestimonialSlider();
+        });
+
+        testNext.addEventListener("click", function () {
+          if (testimonialIndex >= testimonialSlides - 1) return;
+          testimonialIndex += 1;
+          updateTestimonialSlider();
+        });
+
+        updateTestimonialSlider();
+      }
+
+      const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.forEach(item => item.classList.remove("active"));
+          link.classList.add("active");
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
