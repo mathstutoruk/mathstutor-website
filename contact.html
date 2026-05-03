@@ -10,12 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* KEEPING YOUR ORIGINAL STYLING */
 :root{
   --navy:#041b4d;
+  --navy-2:#08245e;
   --gold:#d4af37;
   --gold-soft:#e0c56a;
   --cream:#f5f3ef;
   --text:#23324e;
+  --muted:#667387;
+  --white:#ffffff;
 }
 
 body{
@@ -26,19 +30,19 @@ body{
 }
 
 .container{
-  width:min(1100px, calc(100% - 40px));
+  width:min(1200px, calc(100% - 40px));
   margin:0 auto;
 }
 
 .header{
   background:var(--navy);
-  padding:20px 0;
+  padding:22px 0;
 }
 
 .nav{
   display:flex;
   justify-content:center;
-  gap:24px;
+  gap:30px;
   color:white;
 }
 
@@ -48,34 +52,57 @@ body{
 }
 
 .contact-section{
-  padding:70px 0;
+  padding:80px 0;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
 }
 
 h1{
   font-family:"Cormorant Garamond",serif;
-  font-size:48px;
+  font-size:52px;
   margin-bottom:30px;
 }
 
 .form-group{
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
 
-input, textarea, select{
+input, select, textarea{
   width:100%;
-  padding:12px;
+  padding:14px;
   border:1px solid #ccc;
   font-size:15px;
+}
+
+textarea{
+  min-height:140px;
 }
 
 button{
   background:linear-gradient(180deg,var(--gold-soft),var(--gold));
   border:none;
-  padding:12px 24px;
+  padding:14px 28px;
   border-radius:999px;
   font-weight:600;
   cursor:pointer;
 }
+
+/* FAQ */
+.faq h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.faq-item{
+  border-top:1px solid #aaa;
+  padding:18px 0;
+}
+
 </style>
 </head>
 
@@ -93,56 +120,78 @@ button{
 </header>
 
 <main class="contact-section">
-  <div class="container">
+  <div class="container contact-grid">
 
-    <h1>Get in touch</h1>
+    <!-- LEFT SIDE -->
+    <div>
+      <h1>Get in touch to book your first lesson</h1>
 
-    <!-- ✅ FORM START -->
-    <form action="https://formspree.io/f/mpqbqbww" method="POST">
+      <!-- ✅ WORKING FORM -->
+      <form action="https://formspree.io/f/mpqbqbww" method="POST">
 
-      <!-- Hidden fields -->
-      <input type="hidden" name="_subject" value="New enquiry from mathstutor.co.uk">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://mathstutor.co.uk/thank-you.html">
+        <!-- Hidden fields -->
+        <input type="hidden" name="_subject" value="New enquiry from mathstutor.co.uk">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://mathstutor.co.uk/thank-you.html">
 
-      <div class="form-group">
-        <label>First Name</label>
-        <input type="text" name="first_name" required>
+        <div class="form-group">
+          <input type="text" name="first_name" placeholder="First Name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="last_name" placeholder="Last Name" required>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" name="phone" placeholder="Phone">
+        </div>
+
+        <div class="form-group">
+          <select name="tuition">
+            <option>GCSE Mathematics</option>
+            <option>A-Level Mathematics</option>
+            <option>Further Mathematics</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <textarea name="message" placeholder="Include year group, exam board and what support is needed"></textarea>
+        </div>
+
+        <button type="submit">Send Enquiry</button>
+
+      </form>
+    </div>
+
+    <!-- RIGHT SIDE FAQ -->
+    <div class="faq">
+      <h2>FAQs</h2>
+
+      <div class="faq-item">
+        <strong>Prices</strong>
+        <p>£80 per hour for all tuition.</p>
       </div>
 
-      <div class="form-group">
-        <label>Last Name</label>
-        <input type="text" name="last_name" required>
+      <div class="faq-item">
+        <strong>Subjects</strong>
+        <p>GCSE and A-Level Mathematics.</p>
       </div>
 
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" name="email" required>
+      <div class="faq-item">
+        <strong>Availability</strong>
+        <p>Please enquire for current availability.</p>
       </div>
 
-      <div class="form-group">
-        <label>Phone</label>
-        <input type="tel" name="phone">
+      <div class="faq-item">
+        <strong>Online Lessons</strong>
+        <p>Delivered via Zoom with digital whiteboard.</p>
       </div>
 
-      <div class="form-group">
-        <label>Tuition Required</label>
-        <select name="tuition">
-          <option>GCSE Mathematics</option>
-          <option>A-Level Mathematics</option>
-          <option>Further Mathematics</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label>Message</label>
-        <textarea name="message" placeholder="Include year group, exam board and what support is needed"></textarea>
-      </div>
-
-      <button type="submit">Send Enquiry</button>
-
-    </form>
-    <!-- ✅ FORM END -->
+    </div>
 
   </div>
 </main>
