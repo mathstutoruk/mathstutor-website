@@ -3,46 +3,26 @@
   const toggle = document.getElementById('menuToggle');
   const menu = document.getElementById('mobileMenu');
   if (!header || !toggle || !menu) return;
-
-  const mobile = window.matchMedia('(width < 851px)');
   let lastScrollY = window.scrollY;
-  const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
-
   const setOpen = open => {
-    header.classList.toggle('mobile-menu-open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    header.classList.toggle('mobile-menu-open',open);
+    menu.classList.toggle('open',open);
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+    header.classList.remove('header-hidden');
   };
-
   function updateHeader() {
     const y = window.scrollY;
-    header.classList.toggle('scrolled', y > 20);
-    header.classList.toggle('header-hidden', !mobile.matches && y > lastScrollY && y > 120);
+    header.classList.toggle('scrolled',y > 20);
+    if (!header.classList.contains('mobile-menu-open')) header.classList.toggle('header-hidden',y > lastScrollY && y > 120);
     lastScrollY = y;
   }
-
-  window.addEventListener('scroll', updateHeader, {passive:true});
-  toggle.addEventListener('click', () => setOpen(!isOpen()));
-
-  document.addEventListener('click', event => {
-    if (!isOpen() || toggle.contains(event.target)) return;
-    if (!menu.contains(event.target) || event.target.closest('a')) setOpen(false);
+  window.addEventListener('scroll',updateHeader,{passive:true});
+  toggle.addEventListener('click',() => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click',() => setOpen(false)));
+  document.addEventListener('keydown',event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {setOpen(false);toggle.focus();}
   });
-
-  document.addEventListener('focusin', event => {
-    if (isOpen() && !header.contains(event.target)) setOpen(false);
-  });
-
-  document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape' || !isOpen()) return;
-    event.preventDefault();
-    setOpen(false);
-    toggle.focus();
-  });
-
-  mobile.addEventListener('change', () => {
-    setOpen(false);
-    updateHeader();
-  });
+  window.addEventListener('resize',() => {if (window.innerWidth > 820 && toggle.getAttribute('aria-expanded') === 'true') setOpen(false);});
   updateHeader();
 })();
