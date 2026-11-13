@@ -6,7 +6,7 @@
   <title>Bio | mathstutor.co.uk</title>
   <meta
     name="description"
-    content="Academic background, teacher training, classroom experience and teaching approach for Surinder Sangha."
+    content="Meet Surinder Sangha, a maths tutor and former examiner with classroom teaching experience and Secondary Mathematics teacher training at Brunel University."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -138,6 +138,11 @@
       line-height:1.9;
     }
 
+    .bio-summary p + p,
+    .card p + p{
+      margin-top:14px;
+    }
+
     .section{
       padding:18px 0 28px;
     }
@@ -154,6 +159,60 @@
     .card h3{
       font-size:32px;
       margin-bottom:12px;
+    }
+
+    .section-title{
+      font-size:36px;
+      margin-bottom:18px;
+    }
+
+    .experience-card{
+      display:grid;
+      grid-template-columns:minmax(0, 1.65fr) minmax(0, 1fr);
+      gap:24px;
+      align-items:center;
+    }
+
+    .experience-card img{
+      width:100%;
+      height:auto;
+      border-radius:12px;
+    }
+
+    .lesson-link{
+      color:var(--navy);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .personal-gallery{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:18px;
+    }
+
+    .personal-gallery figure{
+      margin:0;
+      overflow:hidden;
+      border:1px solid var(--border);
+      border-radius:14px;
+      background:var(--white);
+    }
+
+    .personal-gallery img{
+      width:100%;
+      height:auto;
+      aspect-ratio:4 / 5;
+      object-fit:cover;
+    }
+
+    .personal-gallery .athens-photo{
+      object-position:56% center;
+    }
+
+    .personal-gallery figcaption{
+      padding:12px 14px;
+      font-size:14px;
     }
 
     .footer{
@@ -177,6 +236,17 @@
       .bio-summary p,
       .card p{
         font-size:15px;
+      }
+    }
+
+    @media (max-width:640px){
+      .experience-card,
+      .personal-gallery{
+        grid-template-columns:1fr;
+      }
+
+      .personal-gallery img{
+        aspect-ratio:auto;
       }
     }
   </style>
@@ -228,22 +298,40 @@
       <p>
         A mathematics tutor with a strong academic background, teacher training in Secondary Mathematics, and experience across classroom teaching and one-to-one tuition. The focus throughout is on clarity, careful structure and helping students develop genuine mathematical understanding.
       </p>
+      <p>
+        I teach GCSE and A-Level Maths, including Further Maths, and have delivered thousands of hours of one-to-one tuition. I previously worked as an examiner.
+      </p>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" aria-labelledby="teaching-experience">
+    <h2 class="section-title" id="teaching-experience">Teaching experience</h2>
+
+    <article class="card experience-card">
+      <div>
+        <h3>Teacher Training &amp; Classroom Experience</h3>
+        <p>
+          I undertook teacher training in Secondary Mathematics at Brunel University, gaining experience across a range of inner-city and diverse school settings, including both state schools and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons across varying abilities.
+        </p>
+      </div>
+      <img src="images/bio/seated-portrait.webp" alt="Surinder seated at a table" width="1125" height="834" loading="lazy" decoding="async">
+    </article>
 
     <article class="card">
-      <h3>Academic Credentials</h3>
+      <h3>Teaching Approach</h3>
       <p>
-        My academic background includes A-level studies in Mathematics, Chemistry, Physics and Philosophy, providing a strong foundation across both analytical and conceptual disciplines. I later completed a BSc (Hons) in Mathematics at Loughborough University in 2016, with a particular focus on pure mathematics, logical reasoning and formal problem solving. AS-level Philosophy was completed one year early during GCSE studies, achieving 93% — the highest mark nationally.
+        My teaching approach combines clarity, structure and active engagement. Complex ideas are broken down into manageable steps, students are encouraged to ask questions, and lessons are shaped around genuine understanding rather than surface-level memorisation. The aim is not only improved grades, but stronger confidence and more independent mathematical thinking.
+      </p>
+      <p>
+        When a student gets stuck, we look at their working together to find the step that’s causing trouble. We work through an example, then I give them a fresh question to see whether they can use the method independently. As they get more confident, we move on to exam questions where they have to decide which method to use.
+        <a href="index.html#lessons" class="lesson-link">See examples from my maths lessons</a>.
       </p>
     </article>
 
     <article class="card">
-      <h3>Teacher Training &amp; Classroom Experience</h3>
+      <h3>What Students Can Expect</h3>
       <p>
-        I undertook teacher training in Secondary Mathematics at Brunel University, gaining experience across a range of inner-city and diverse school settings, including both state schools and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons across varying abilities.
+        Students can expect a supportive and focused learning environment, where progress is built carefully step by step. Whether the goal is stronger grades, better examination preparation, or more secure foundations, lessons are designed to provide clear guidance, consistent support and meaningful long-term progress.
       </p>
     </article>
 
@@ -251,6 +339,17 @@
       <h3>Mathematics Education &amp; Teaching Insight</h3>
       <p>
         As part of my academic development, I also explored mathematics education, including how students engage with mathematical ideas, where common misconceptions arise, and how difficult concepts can be explained more clearly. This continues to shape the way I teach, helping students build confidence and deeper understanding rather than relying on memorisation alone.
+      </p>
+    </article>
+  </section>
+
+  <section class="section" aria-labelledby="academic-background">
+    <h2 class="section-title" id="academic-background">Academic background</h2>
+
+    <article class="card">
+      <h3>Academic Credentials</h3>
+      <p>
+        My academic background includes A-level studies in Mathematics, Chemistry, Physics and Philosophy, providing a strong foundation across both analytical and conceptual disciplines. I later completed a BSc (Hons) in Mathematics at Loughborough University in 2016, with a particular focus on pure mathematics, logical reasoning and formal problem solving. AS-level Philosophy was completed one year early during GCSE studies, achieving 93% — the highest mark nationally.
       </p>
     </article>
 
@@ -268,20 +367,24 @@
       </p>
     </article>
 
-    <article class="card">
-      <h3>Teaching Approach</h3>
-      <p>
-        My teaching approach combines clarity, structure and active engagement. Complex ideas are broken down into manageable steps, students are encouraged to ask questions, and lessons are shaped around genuine understanding rather than surface-level memorisation. The aim is not only improved grades, but stronger confidence and more independent mathematical thinking.
-      </p>
-    </article>
+  </section>
 
-    <article class="card">
-      <h3>What Students Can Expect</h3>
-      <p>
-        Students can expect a supportive and focused learning environment, where progress is built carefully step by step. Whether the goal is stronger grades, better examination preparation, or more secure foundations, lessons are designed to provide clear guidance, consistent support and meaningful long-term progress.
-      </p>
-    </article>
-
+  <section class="section" aria-labelledby="outside-teaching">
+    <h2 class="section-title" id="outside-teaching">Outside teaching</h2>
+    <div class="personal-gallery">
+      <figure>
+        <img src="images/bio/egypt.webp" alt="Surinder with a pyramid in the distance in Egypt" width="900" height="1200" loading="lazy" decoding="async">
+        <figcaption>Egypt</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bio/athens.webp" class="athens-photo" alt="Surinder standing above ancient ruins in Athens" width="1125" height="826" loading="lazy" decoding="async">
+        <figcaption>Athens, Greece</figcaption>
+      </figure>
+      <figure>
+        <img src="images/bio/piano.webp" alt="Surinder playing a grand piano" width="930" height="1200" loading="lazy" decoding="async">
+        <figcaption>At the piano</figcaption>
+      </figure>
+    </div>
   </section>
 
   <div class="footer">© mathstutor.co.uk 2026</div>
