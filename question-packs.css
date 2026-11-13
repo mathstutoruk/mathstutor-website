@@ -1,0 +1,136 @@
+.packs-main{
+  padding:36px 0 64px;
+}
+
+.packs-main h2{
+  font-size:34px;
+  margin-bottom:18px;
+}
+
+.qualification-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.qualification-card{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:24px;
+  border:1px solid #e4dbce;
+  border-radius:10px;
+  background:#fff;
+}
+
+.qualification-card h3{
+  font-size:30px;
+}
+
+.qualification-card p{
+  margin:10px 0 0;
+  color:#526178;
+  font-size:15px;
+  line-height:1.6;
+}
+
+.qualification-card.available{
+  border-top:3px solid var(--gold);
+}
+
+.board-link{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  margin-top:14px;
+  padding:0 14px;
+  border-radius:6px;
+  background:var(--navy);
+  color:#fff;
+  font-weight:600;
+  font-size:14px;
+}
+
+.board-link:hover{
+  background:var(--navy-2);
+}
+
+.topic-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  border:1px solid #e4dbce;
+  border-top:3px solid var(--gold);
+  border-radius:10px;
+  background:#fff;
+}
+
+.topic-list li{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px 24px;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px 24px;
+}
+
+.topic-list li + li{
+  border-top:1px solid #e4dbce;
+}
+
+.topic-list h3{
+  font-size:29px;
+}
+
+.topic-list p{
+  margin:5px 0 0;
+  color:#526178;
+  font-size:14px;
+  line-height:1.55;
+}
+
+.pack-downloads{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px 18px;
+}
+
+.pack-downloads a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:600;
+  text-decoration:underline;
+  text-decoration-color:#9b7a20;
+  text-underline-offset:4px;
+}
+
+.packs-source{
+  margin:22px 0 0;
+  color:#526178;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.packs-source a{
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+@media(max-width:620px){
+  .packs-main{
+    padding:26px 0 48px;
+  }
+
+  .qualification-grid{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .qualification-card,
+  .topic-list li{
+    padding:18px;
+  }
+}
