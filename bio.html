@@ -113,6 +113,7 @@
 
     .bio-image img{
       width:100%;
+      height:auto;
       border-radius:26px;
       box-shadow:var(--shadow);
     }
@@ -164,19 +165,6 @@
     .section-title{
       font-size:36px;
       margin-bottom:18px;
-    }
-
-    .experience-card{
-      display:grid;
-      grid-template-columns:minmax(0, 1.65fr) minmax(0, 1fr);
-      gap:24px;
-      align-items:center;
-    }
-
-    .experience-card img{
-      width:100%;
-      height:auto;
-      border-radius:12px;
     }
 
     .lesson-link{
@@ -240,7 +228,6 @@
     }
 
     @media (max-width:640px){
-      .experience-card,
       .personal-gallery{
         grid-template-columns:1fr;
       }
@@ -290,7 +277,7 @@
 
   <section class="bio-grid">
     <div class="bio-image">
-      <img src="me.png" alt="Surinder Sangha portrait">
+      <img src="images/bio/seated-portrait.webp" alt="Surinder seated at a table" width="1125" height="834">
     </div>
 
     <div class="bio-summary">
@@ -307,14 +294,11 @@
   <section class="section" aria-labelledby="teaching-experience">
     <h2 class="section-title" id="teaching-experience">Teaching experience</h2>
 
-    <article class="card experience-card">
-      <div>
-        <h3>Teacher Training &amp; Classroom Experience</h3>
-        <p>
-          I undertook teacher training in Secondary Mathematics at Brunel University, gaining experience across a range of inner-city and diverse school settings, including both state schools and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons across varying abilities.
-        </p>
-      </div>
-      <img src="images/bio/seated-portrait.webp" alt="Surinder seated at a table" width="1125" height="834" loading="lazy" decoding="async">
+    <article class="card">
+      <h3>Teacher Training &amp; Classroom Experience</h3>
+      <p>
+        I undertook teacher training in Secondary Mathematics at Brunel University, gaining experience across a range of inner-city and diverse school settings, including both state schools and independent colleges. During this time, I developed strong classroom management skills and a confident command of subject knowledge, enabling me to deliver engaging and structured lessons across varying abilities.
+      </p>
     </article>
 
     <article class="card">
