@@ -11,6 +11,40 @@
   margin-top:30px;
 }
 
+.pack-sections{
+  margin-bottom:28px;
+}
+
+.pack-sections ul{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.pack-sections a{
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  padding:0 13px;
+  border:1px solid #d8d0c2;
+  border-radius:6px;
+  background:#fff;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:600;
+}
+
+.pack-sections a:hover{
+  border-color:#9b7a20;
+}
+
+.packs-main h2[id]{
+  scroll-margin-top:175px;
+}
+
 .qualification-grid{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
