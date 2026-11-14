@@ -1,0 +1,125 @@
+.group-hero{
+  background:linear-gradient(180deg,var(--navy),var(--navy-2));
+  color:#e4eaf4;
+  border-bottom:3px solid var(--gold);
+  padding:clamp(34px,5.5vw,68px) 0;
+}
+
+.group-hero-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:clamp(24px,5vw,68px);
+}
+
+.group-hero h1{
+  color:var(--white);
+  font-size:clamp(42px,6vw,68px);
+  margin:0 0 14px;
+}
+
+.group-hero p{
+  max-width:44ch;
+  line-height:1.65;
+  margin:0 0 18px;
+}
+
+.group-hero .group-rate{
+  color:var(--gold-soft);
+  font-weight:600;
+}
+
+.group-hero img{
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:14px;
+  box-shadow:0 14px 30px rgba(0,0,0,.2);
+}
+
+.group-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:fit-content;
+  min-height:44px;
+  padding:9px 17px;
+  border:1px solid transparent;
+  border-radius:7px;
+  background:var(--navy);
+  color:var(--white);
+  font-size:14px;
+  font-weight:600;
+}
+
+.group-button:hover{background:var(--navy-2)}
+.group-hero .group-button{background:var(--gold-soft);color:var(--navy)}
+.group-hero .group-button:hover{background:var(--gold)}
+.group-hero .group-button:focus-visible{outline-color:var(--white)}
+
+.group-main{
+  display:grid;
+  gap:clamp(32px,5vw,58px);
+  padding:clamp(32px,5vw,60px) 0;
+}
+
+.group-main h2{
+  font-size:clamp(31px,4vw,43px);
+  margin-bottom:16px;
+}
+
+.group-main h3{font-size:29px}
+.group-main p,.group-main li{line-height:1.65}
+.group-main p{margin:0;color:#4a5970}
+.group-main p + p{margin-top:12px}
+
+.group-info,.group-courses{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+}
+
+.group-info section,.group-course{
+  background:var(--white);
+  border:1px solid #e4dbce;
+  border-radius:12px;
+  padding:clamp(18px,3vw,30px);
+}
+
+.group-info ol{
+  padding-left:23px;
+  margin:0 0 14px;
+  color:#4a5970;
+}
+
+.group-info li + li{margin-top:9px}
+.group-info strong{color:var(--navy)}
+
+#group-courses{scroll-margin-top:calc(var(--header-height) + 16px)}
+
+.group-course{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  border-top:3px solid var(--gold);
+}
+
+.group-course .group-button{margin-top:4px}
+.group-course p:first-of-type{flex:1}
+.group-course .group-rate{margin:0;color:var(--navy);font-weight:600}
+
+.group-tutor{
+  border-left:3px solid var(--gold);
+  border-radius:0 10px 10px 0;
+  background:#eee9df;
+  padding:clamp(18px,3vw,30px);
+}
+
+.group-tutor p{max-width:72ch}
+.group-text-link{color:var(--navy);text-decoration:underline;text-underline-offset:4px}
+
+@media(max-width:760px){
+  .group-hero-inner,.group-info,.group-courses{grid-template-columns:1fr}
+  .group-hero img{max-width:550px}
+}

@@ -66,6 +66,12 @@ h1,h2,h3{
   margin-bottom:28px;
 }
 
+.form-group label{
+  display:block;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
 input, select, textarea{
   width:100%;
   border:1px solid #b9b9b9;
@@ -113,6 +119,11 @@ textarea{
   padding-bottom:20px;
 }
 
+.faq-answer a{
+  text-decoration:underline;
+  text-underline-offset:.15em;
+}
+
 .faq-item.open .faq-answer{
   display:block;
 }
@@ -138,7 +149,7 @@ textarea{
       <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="105 33 820 820" role="img" aria-label="Maths Tutor UK logo" focusable="false"><image href="logo-cropped.png" x="0" y="0" width="940" height="940" /></svg>
     </a>
     <div class="nav-area"><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a>
-<a href="index.html#offer">Group Classes</a>
+<a href="group-classes.html">Group Classes</a>
 <a href="question-packs.html">Question Packs</a>
 <a href="bio.html">Bio</a>
 <a href="articles.html">Articles</a>
@@ -149,7 +160,7 @@ textarea{
     <div class="mobile-bar"><button class="menu-toggle" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg></button></div>
   </div>
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><a href="index.html">Home</a>
-<a href="index.html#offer">Group Classes</a>
+<a href="group-classes.html">Group Classes</a>
 <a href="question-packs.html">Question Packs</a>
 <a href="bio.html">Bio</a>
 <a href="articles.html">Articles</a>
@@ -187,10 +198,21 @@ textarea{
         </div>
 
         <div class="form-group">
-          <select name="tuition_required">
-            <option>GCSE Mathematics</option>
-            <option>A-Level Mathematics</option>
-            <option>Further Mathematics</option>
+          <label for="tuitionSubject">Subject</label>
+          <select id="tuitionSubject" name="tuition_required">
+            <option value="GCSE Mathematics">GCSE Mathematics</option>
+            <option value="GCSE Further Mathematics">GCSE Further Mathematics</option>
+            <option value="A-Level Mathematics">A-Level Mathematics</option>
+            <option value="Further Mathematics">A-Level Further Mathematics</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tuitionFormat">Tuition format</label>
+          <select id="tuitionFormat" name="tuition_format">
+            <option value="">Please select</option>
+            <option value="One-to-one">One-to-one lessons</option>
+            <option value="Group classes">Group classes</option>
           </select>
         </div>
 
@@ -209,7 +231,9 @@ textarea{
 
       <div class="faq-item">
         <button class="faq-question">Prices +</button>
-        <div class="faq-answer">£60 per hour.</div>
+        <div class="faq-answer">
+          One-to-one lessons cost £60 per hour. <a href="group-classes.html">Group classes</a> cost £30 per student per hour.
+        </div>
       </div>
 
       <div class="faq-item">
@@ -233,6 +257,22 @@ textarea{
 </footer>
 
 <script>
+const enquiry = new URLSearchParams(window.location.search);
+const subjectOptions = new Map([
+  ["gcse-maths", "GCSE Mathematics"],
+  ["gcse-further-maths", "GCSE Further Mathematics"],
+  ["a-level-maths", "A-Level Mathematics"],
+  ["a-level-further-maths", "Further Mathematics"]
+]);
+const requestedSubject = subjectOptions.get(enquiry.get("subject"));
+
+if (requestedSubject) {
+  document.getElementById("tuitionSubject").value = requestedSubject;
+}
+if (enquiry.get("format") === "group") {
+  document.getElementById("tuitionFormat").value = "Group classes";
+}
+
 document.querySelectorAll(".faq-question").forEach(button => {
   button.addEventListener("click", () => {
     button.parentElement.classList.toggle("open");

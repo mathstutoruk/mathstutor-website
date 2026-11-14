@@ -175,7 +175,7 @@
 
     .personal-gallery{
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
+      grid-template-columns:repeat(2, minmax(0, 1fr));
       gap:18px;
     }
 
@@ -215,6 +215,8 @@
         grid-template-columns:1fr;
       }
 
+      .bio-image{width:min(100%,360px)}
+
       .page-hero h1{font-size:38px}
     }
 
@@ -248,7 +250,7 @@
       <svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="105 33 820 820" role="img" aria-label="Maths Tutor UK logo" focusable="false"><image href="logo-cropped.png" x="0" y="0" width="940" height="940" /></svg>
     </a>
     <div class="nav-area"><nav class="nav" aria-label="Main navigation"><a href="index.html">Home</a>
-<a href="index.html#offer">Group Classes</a>
+<a href="group-classes.html">Group Classes</a>
 <a href="question-packs.html">Question Packs</a>
 <a href="bio.html" class="active" aria-current="page">Bio</a>
 <a href="articles.html">Articles</a>
@@ -259,7 +261,7 @@
     <div class="mobile-bar"><button class="menu-toggle" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg></button></div>
   </div>
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation"><a href="index.html">Home</a>
-<a href="index.html#offer">Group Classes</a>
+<a href="group-classes.html">Group Classes</a>
 <a href="question-packs.html">Question Packs</a>
 <a href="bio.html" class="active" aria-current="page">Bio</a>
 <a href="articles.html">Articles</a>
@@ -277,7 +279,7 @@
 
   <section class="bio-grid">
     <div class="bio-image">
-      <img src="images/bio/seated-portrait.webp" alt="Surinder seated at a table" width="1125" height="834">
+      <img src="images/bio/piano.webp" alt="Surinder Sangha playing a grand piano" width="930" height="1200">
     </div>
 
     <div class="bio-summary">
@@ -363,10 +365,6 @@
       <figure>
         <img src="images/bio/athens.webp" class="athens-photo" alt="Surinder standing above ancient ruins in Athens" width="1125" height="826" loading="lazy" decoding="async">
         <figcaption>Athens, Greece</figcaption>
-      </figure>
-      <figure>
-        <img src="images/bio/piano.webp" alt="Surinder playing a grand piano" width="930" height="1200" loading="lazy" decoding="async">
-        <figcaption>At the piano</figcaption>
       </figure>
     </div>
   </section>
