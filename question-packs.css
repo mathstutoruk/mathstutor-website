@@ -15,6 +15,10 @@
   margin-bottom:28px;
 }
 
+.pack-route{
+  margin:0 0 24px;
+}
+
 .pack-sections ul{
   display:flex;
   flex-wrap:wrap;
