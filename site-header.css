@@ -213,3 +213,10 @@ body{padding-top:var(--header-height)}
 .site-header .mobile-menu .nav-contact{color:var(--navy);text-align:center;margin-top:10px}
 .site-header .brand:focus-visible,.site-header .menu-toggle:focus-visible,.site-header .nav-contact:focus-visible,.site-header .youtube-link:focus-visible{outline:3px solid var(--gold-soft);outline-offset:4px}
 @media(prefers-reduced-motion:reduce){.site-header,.site-header .nav a{transition:none}}
+
+/* Consistent company disclosures on every page. */
+.company-footer{box-sizing:border-box;width:100%;background:#071b46;color:#e1e6f0;text-align:center;padding:32px 24px;font-family:Arial,sans-serif;font-size:13px;line-height:1.8;border-top:1px solid rgba(216,187,89,.25)}
+.company-footer p{max-width:900px;margin:4px auto;overflow-wrap:break-word}
+.company-footer .company-footer-name{color:#e5ce82;font-size:16px;font-weight:600;margin-bottom:8px}
+.company-footer .company-footer-copyright{font-size:12px;color:#b9c3d6;margin-top:14px}
+@media(max-width:600px){.company-footer{padding:28px 20px}.company-footer p{max-width:38ch}}
