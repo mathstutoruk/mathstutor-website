@@ -419,7 +419,7 @@
     /* OFFER */
     .offer-grid{
       display:grid;
-      grid-template-columns:repeat(5,1fr);
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:18px;
     }
 
@@ -442,6 +442,13 @@
       font-size:15px;
       line-height:1.78;
     }
+
+    #offer .offer-grid{gap:28px;max-width:1040px;margin:0 auto}
+    #offer .offer-card{padding:30px}
+    #offer .offer-card h3{font-size:28px;line-height:1.2;margin-bottom:18px}
+    #offer .offer-card p{font-size:16px;line-height:1.8}
+    #offer .offer-card p + p{margin-top:16px}
+    @media(max-width:600px){#offer .offer-card{padding:24px}#offer .offer-grid{gap:20px}}
 
     /* SPLIT */
     .split{
@@ -614,7 +621,7 @@
     }
 
     @media (max-width:1180px){
-      .offer-grid{grid-template-columns:repeat(3,1fr)}
+      .offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .pricing-grid{grid-template-columns:repeat(2,1fr)}
       .slide{min-width:50%}
     }
@@ -681,7 +688,7 @@
 #lessons .slide-body{color:var(--gold-soft);font-size:18px;line-height:1.55;text-align:center;padding:20px 12px 0;min-height:132px}
 #lessons .lesson-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:24px}
 #lessons .slider-btn{position:static;transform:none;flex:0 0 44px;width:44px;height:44px;font-size:24px}
-#lessons #lessonStatus{font-size:13px;color:var(--gold-soft);min-width:110px;text-align:center}
+#lessons #lessonStatus,#lessonModalStatus{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 #lessons .lesson-view-hint{text-align:center;color:#dce3ef;font-size:12px;margin:16px 0 0}
 #lessons button:focus-visible,#lessons .slider-wrap:focus-visible{outline:3px solid var(--gold-soft);outline-offset:4px}
 #lessonDialog{border:0;border-radius:12px;padding:16px;background:#fff;color:#17243b;width:min(1500px,96vw);max-width:96vw;max-height:96vh;max-height:96dvh;margin:auto;overflow:auto}
@@ -774,33 +781,39 @@
       <div class="container">
         <div class="section-head">
           <h2>What I Offer</h2>
-          <p>A thoughtful and structured approach to mathematics tuition, designed to build confidence, clarity and long-term progress.</p>
+          <p>Good tuition is more than showing you the answer. Here’s how I help you understand the maths, practise with purpose and become more independent.</p>
         </div>
 
         <div class="offer-grid">
           <article class="offer-card">
             <h3>Fully Prepared Lessons</h3>
-            <p>Each lesson is planned carefully, with examples and questions chosen to support real progress.</p>
+            <p>I plan lessons around the maths you need to understand, rather than working through a textbook page by page. We start with a clear explanation, look closely at a worked example, then move on to questions that give you a chance to use the idea yourself.</p>
+            <p>The questions build in difficulty, from getting a method secure to deciding how to approach a less familiar problem. We connect the work to your course and exam board, paying attention to the notation, reasoning and working you need to show.</p>
           </article>
-
           <article class="offer-card">
             <h3>Confidence Building</h3>
-            <p>Steady progression and clear explanation help students feel more secure with difficult material.</p>
+            <p>Getting stuck does not mean you are bad at maths. Often, there is one missing step or an earlier idea that has never quite clicked. I help you find that point and work through it without making you feel rushed or embarrassed about asking questions.</p>
+            <p>We build towards doing more of the thinking independently. You can try an approach, explain your reasoning and make mistakes along the way. The aim is to reach the point where you can look at a new question and know how to begin.</p>
           </article>
-
           <article class="offer-card">
             <h3>Effective Learning Habits</h3>
-            <p>Students are guided towards stronger revision habits and more productive independent work.</p>
+            <p>Following an explanation in a lesson is a useful start. Being able to use it a week later, without someone guiding you, is what we work towards. I help you practise recalling methods, attempt questions before looking at solutions, and return to topics after a gap.</p>
+            <p>We also look at how to use mistakes properly. Rather than simply copying out a correct answer, we identify what went wrong and try a related question. That gives your revision a clear purpose and helps you decide what deserves more practice.</p>
           </article>
-
           <article class="offer-card">
-            <h3>Ensured Learning</h3>
-            <p>Misunderstandings are identified and corrected directly, with ideas revisited until secure.</p>
+            <h3>Checking Understanding</h3>
+            <p>I want to know what makes sense to you, not just whether you have reached the right answer. During a lesson, I ask you to explain a step, choose a method or tell me why an approach works. This helps us spot gaps that a finished page of working can hide.</p>
+            <p>If an explanation has not clicked, we can try a diagram, a simpler example or a different way of thinking about it. We then come back to the original question and check that you can apply the idea yourself.</p>
           </article>
-
+          <article class="offer-card">
+            <h3>Lessons That Adapt to You</h3>
+            <p>Some students need time to rebuild the foundations; others want to be stretched by questions that do not give away the method. I adjust the pace and level of support to suit where you are, with space to ask questions and revisit anything that feels uncertain.</p>
+            <p>We can break a longer problem into manageable steps, practise a particular skill or bring several topics together. As your confidence grows, the questions and prompts can change too, so the lessons continue to challenge you.</p>
+          </article>
           <article class="offer-card">
             <h3>Regular Feedback</h3>
-            <p>Feedback after lessons helps keep progress focused, measured and consistent over time.</p>
+            <p>You should leave a lesson knowing what you have understood and what still needs work. I give specific feedback as we go: where your reasoning is strong, which step needs more care and how to make your written solution clearer.</p>
+            <p>We use that feedback to shape what comes next. That might mean another question on the same idea, a return to an earlier topic or a more demanding application. The focus is on practical next steps, so progress means more than simply covering another chapter.</p>
           </article>
         </div>
       </div>
