@@ -19,9 +19,9 @@ p{margin:0}
 
 /* header */
 .head{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.head-row{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;font-size:20px;color:var(--navy)}
-.brand img{width:48px;height:48px;border-radius:50%}
+.head-row{display:flex;align-items:center;justify-content:space-between;height:86px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:25px;letter-spacing:-.02em;color:var(--navy)}
+.brand img{width:64px;height:64px;border-radius:50%;flex:none}
 .brand b{color:var(--gold)}
 .nav{display:flex;align-items:center;gap:28px;font-weight:600;font-size:15px}
 .nav a{text-decoration:none;color:var(--ink)}
@@ -186,7 +186,7 @@ input[type=range]{width:100%;accent-color:var(--navy);height:28px}
   .mnav .btn{display:flex;border:0;margin-top:14px}
 }
 @media(max-width:600px){
-  .head-row{height:64px}.brand img{width:42px;height:42px}.sym{display:none}
+  .head-row{height:76px}.brand img{width:56px;height:56px}.brand{font-size:23px}.sym{display:none}
   .lede{font-size:16px}
   .cta .btn{flex:1 1 100%}
   .chip{font-size:13px;padding:8px 11px}.chip .ic{width:32px;height:32px}
@@ -388,3 +388,8 @@ input[type=range]{width:100%;accent-color:var(--navy);height:28px}
   .page .form-row{gap:0}
   .page .article-main{padding-top:28px}
 }
+
+/* course cards without prices */
+.lesson-types{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.lesson-types span{font-size:13px;font-weight:700;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+.course .go{margin-top:auto}
