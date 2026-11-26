@@ -219,5 +219,5 @@ def build_home():
 
 
 if __name__ == "__main__":
-    build_home()
+    # index.html is now edited directly; build_home() was a one-off conversion.
     build_inner()
