@@ -39,7 +39,9 @@ window.MT_CONFIG = window.MT_CONFIG || {
   if (!LIVE) {
     const b = document.createElement("div");
     b.className = "demo-banner";
-    b.textContent = "Preview: accounts aren't switched on yet, so nothing you type here is saved.";
+    b.textContent = new URLSearchParams(location.search).has("preview")
+      ? "Preview with sample data. Nothing here is saved."
+      : "Student and parent accounts are opening soon. Get in touch and I'll let you know when they're ready.";
     document.querySelector("main")?.prepend(b);
   }
 
@@ -68,7 +70,7 @@ window.MT_CONFIG = window.MT_CONFIG || {
       if (form.password.value.length < 8) return say(msg, "Use at least 8 characters for your password.", "error");
       if (form.password.value !== form.password2.value) return say(msg, "The two passwords don't match.", "error");
       const role = form.role.value;
-      if (!LIVE) { location.href = `account.html?preview=${role}`; return; }
+      if (!LIVE) return say(msg, "Accounts are opening soon, so nothing has been saved yet. Use the contact form and I'll let you know as soon as they're ready.", "info");
       await ready;
       if (!sb) return say(msg, "Couldn't reach the account service. Check your connection and try again.", "error");
       form.querySelector("button[type=submit]").disabled = true;
@@ -92,7 +94,7 @@ window.MT_CONFIG = window.MT_CONFIG || {
     const form = $("#loginForm"), msg = $("#loginMsg"), resetForm = $("#resetForm");
     form.addEventListener("submit", async e => {
       e.preventDefault();
-      if (!LIVE) { location.href = "account.html?preview=student"; return; }
+      if (!LIVE) return say(msg, "Accounts are opening soon, so there's nothing to log in to yet.", "info");
       await ready;
       if (!sb) return say(msg, "Couldn't reach the account service. Check your connection and try again.", "error");
       const { error } = await sb.auth.signInWithPassword({ email: form.email.value.trim(), password: form.password.value });
@@ -201,8 +203,10 @@ window.MT_CONFIG = window.MT_CONFIG || {
 
     (async () => {
       if (!LIVE) {
+        const params = new URLSearchParams(location.search);
+        if (!params.has("preview")) { location.replace("login.html"); return; }
         $("#loading").hidden = true;
-        const role = new URLSearchParams(location.search).get("preview") === "parent" ? "parent" : "student";
+        const role = params.get("preview") === "parent" ? "parent" : "student";
         const sw = $("#previewSwitch"); sw.hidden = false;
         sw.querySelector(`[data-role="${role}"]`).setAttribute("aria-current", "page");
         if (role === "parent") {
