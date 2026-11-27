@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My account | mathstutor.co.uk</title>
+<meta name="description" content="Your mathstutor.co.uk account.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="images/home/logo.webp" type="image/webp">
+</head>
+<body class="page" data-account="account">
+<a class="skip" href="#mainContent">Skip to content</a>
+<header class="head">
+  <div class="wrap head-row">
+    <a class="brand" href="index.html" aria-label="mathstutor home"><img src="images/home/logo.webp" alt="" width="64" height="64"><span class="word">maths<b>tutor</b></span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#lessons">Lessons</a>
+      <a href="group-classes.html">Group classes</a>
+      <a href="question-packs.html">Question packs</a>
+      <a href="articles.html">Articles</a>
+      <a href="bio.html">About</a>
+      <a href="login.html" aria-current="page">Log in</a>
+      <a class="btn btn-gold" href="contact.html">Get in touch</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
+  </div>
+  <nav class="wrap mnav" id="mnav" aria-label="Mobile">
+    <a href="index.html#lessons">Lessons</a><a href="group-classes.html">Group classes</a><a href="question-packs.html">Question packs</a><a href="articles.html">Articles</a><a href="bio.html">About</a><a href="login.html" aria-current="page">Log in</a>
+    <a class="btn btn-gold" href="contact.html">Get in touch</a>
+  </nav>
+</header>
+<main id="mainContent" class="acct">
+  <div class="wrap">
+    <nav class="preview-switch" id="previewSwitch" aria-label="Preview as" hidden>
+      <span>Preview as</span><a href="account.html?preview=student" data-role="student">Student</a><a href="account.html?preview=parent" data-role="parent">Parent</a>
+    </nav>
+    <div class="dash-head">
+      <div><p class="role" id="roleLabel">My account</p><h1 id="hello">My account</h1></div>
+      <button type="button" class="btn btn-line" id="logoutBtn">Log out</button>
+    </div>
+    <p id="loading" class="empty">Loading your account…</p>
+
+    <div id="studentView" hidden>
+      <div class="dash-grid">
+        <section class="dash-card">
+          <h2>My course</h2>
+          <label for="myCourse" class="sr">Course and exam board</label>
+          <select id="myCourse"></select>
+          <p id="courseMsg" class="msg" role="status" hidden></p>
+        </section>
+        <section class="dash-card navy">
+          <h2>Link a parent</h2>
+          <p>Give this code to your parent so they can follow your progress from their account.</p>
+          <p class="code" id="linkCode">------</p>
+        </section>
+        <section class="dash-card">
+          <h2>Lessons</h2>
+          <p>One-to-one or small online groups, matched to your exam board.</p>
+          <a class="btn btn-gold" href="contact.html">Book lessons</a>
+        </section>
+      </div>
+      <section class="dash-packs">
+        <h2>My question packs</h2>
+        <div id="myPacks"></div>
+      </section>
+    </div>
+
+    <div id="parentView" hidden>
+      <div class="dash-grid two">
+        <section class="dash-card">
+          <h2>My students</h2>
+          <div id="children"></div>
+        </section>
+        <section class="dash-card navy">
+          <h2>Link a student</h2>
+          <p>Enter the 6-character code from your child's account page.</p>
+          <form id="linkForm" class="inline-form">
+            <label for="code" class="sr">Link code</label>
+            <input id="code" name="code" maxlength="6" autocomplete="off" placeholder="e.g. K7Q2XM">
+            <button class="btn btn-gold" type="submit">Link</button>
+          </form>
+          <p id="linkMsg" class="msg" role="status" hidden></p>
+        </section>
+      </div>
+      <section class="dash-packs" id="childPacksWrap" hidden>
+        <h2 id="childPacksTitle">Question packs</h2>
+        <div id="childPacks"></div>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="fg">
+      <div><a class="brand" href="index.html" aria-label="mathstutor home"><img src="images/home/logo.webp" alt="" width="64" height="64"><span class="word">maths<b>tutor</b></span></a><p>GCSE and A-level Maths tuition with Surinder Sangha. Online and in Notting Hill.</p></div>
+      <div><h4>Lessons</h4><ul><li><a href="contact.html">One-to-one</a></li><li><a href="group-classes.html">Group classes</a></li><li><a href="contact.html">Book a lesson</a></li></ul></div>
+      <div><h4>Resources</h4><ul><li><a href="question-packs.html">Question packs</a></li><li><a href="articles.html">Articles</a></li><li><a href="maths-revision-plan.html">Revision plan</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="bio.html">About me</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="legal"><span>Maths Tutor Limited. Registered in England and Wales, company number 17469182.</span><span>© Maths Tutor Limited 2026</span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+<script src="assets/account.js" defer></script>
+</body>
+</html>

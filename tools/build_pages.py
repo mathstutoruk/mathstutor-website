@@ -18,7 +18,8 @@ NAV = [("index.html#lessons", "Lessons", "lessons"),
        ("group-classes.html", "Group classes", "group"),
        ("question-packs.html", "Question packs", "packs"),
        ("articles.html", "Articles", "articles"),
-       ("bio.html", "About", "about")]
+       ("bio.html", "About", "about"),
+       ("login.html", "Log in", "login")]
 
 BURGER = ('<svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">'
           '<path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>')

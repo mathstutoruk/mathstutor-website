@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log in | mathstutor.co.uk</title>
+<meta name="description" content="Log in to your mathstutor.co.uk student or parent account.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="images/home/logo.webp" type="image/webp">
+</head>
+<body class="page" data-account="login">
+<a class="skip" href="#mainContent">Skip to content</a>
+<header class="head">
+  <div class="wrap head-row">
+    <a class="brand" href="index.html" aria-label="mathstutor home"><img src="images/home/logo.webp" alt="" width="64" height="64"><span class="word">maths<b>tutor</b></span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#lessons">Lessons</a>
+      <a href="group-classes.html">Group classes</a>
+      <a href="question-packs.html">Question packs</a>
+      <a href="articles.html">Articles</a>
+      <a href="bio.html">About</a>
+      <a href="login.html" aria-current="page">Log in</a>
+      <a class="btn btn-gold" href="contact.html">Get in touch</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
+  </div>
+  <nav class="wrap mnav" id="mnav" aria-label="Mobile">
+    <a href="index.html#lessons">Lessons</a><a href="group-classes.html">Group classes</a><a href="question-packs.html">Question packs</a><a href="articles.html">Articles</a><a href="bio.html">About</a><a href="login.html" aria-current="page">Log in</a>
+    <a class="btn btn-gold" href="contact.html">Get in touch</a>
+  </nav>
+</header>
+<main id="mainContent" class="acct">
+  <div class="wrap acct-narrow">
+    <div class="auth-card">
+      <h1>Log in</h1>
+      <p class="acct-sub">Welcome back. Log in to see your question packs.</p>
+      <form id="loginForm">
+        <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="form-group"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+        <p id="loginMsg" class="msg" role="alert" hidden></p>
+        <button type="submit" class="submit-btn">Log in</button>
+        <div class="auth-links"><button type="button" class="linkish" id="forgotBtn">Forgotten password?</button><a href="register.html">Create an account</a></div>
+      </form>
+      <form id="resetForm" hidden>
+        <div class="form-group"><label for="newPassword">New password <span>(8+ characters)</span></label><input id="newPassword" name="new_password" type="password" autocomplete="new-password" minlength="8" required></div>
+        <p id="resetMsg" class="msg" role="alert" hidden></p>
+        <button type="submit" class="submit-btn">Save new password</button>
+      </form>
+    </div>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="fg">
+      <div><a class="brand" href="index.html" aria-label="mathstutor home"><img src="images/home/logo.webp" alt="" width="64" height="64"><span class="word">maths<b>tutor</b></span></a><p>GCSE and A-level Maths tuition with Surinder Sangha. Online and in Notting Hill.</p></div>
+      <div><h4>Lessons</h4><ul><li><a href="contact.html">One-to-one</a></li><li><a href="group-classes.html">Group classes</a></li><li><a href="contact.html">Book a lesson</a></li></ul></div>
+      <div><h4>Resources</h4><ul><li><a href="question-packs.html">Question packs</a></li><li><a href="articles.html">Articles</a></li><li><a href="maths-revision-plan.html">Revision plan</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="bio.html">About me</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="legal"><span>Maths Tutor Limited. Registered in England and Wales, company number 17469182.</span><span>© Maths Tutor Limited 2026</span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+<script src="assets/account.js" defer></script>
+</body>
+</html>

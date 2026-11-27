@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create an account | mathstutor.co.uk</title>
+<meta name="description" content="Create a free student or parent account to see question packs and worked answers for your exam board.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="images/home/logo.webp" type="image/webp">
+</head>
+<body class="page" data-account="register">
+<a class="skip" href="#mainContent">Skip to content</a>
+<header class="head">
+  <div class="wrap head-row">
+    <a class="brand" href="index.html" aria-label="mathstutor home"><img src="images/home/logo.webp" alt="" width="64" height="64"><span class="word">maths<b>tutor</b></span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#lessons">Lessons</a>
+      <a href="group-classes.html">Group classes</a>
+      <a href="question-packs.html">Question packs</a>
+      <a href="articles.html">Articles</a>
+      <a href="bio.html">About</a>
+      <a href="login.html" aria-current="page">Log in</a>
+      <a class="btn btn-gold" href="contact.html">Get in touch</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mnav"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
+  </div>
+  <nav class="wrap mnav" id="mnav" aria-label="Mobile">
+    <a href="index.html#lessons">Lessons</a><a href="group-classes.html">Group classes</a><a href="question-packs.html">Question packs</a><a href="articles.html">Articles</a><a href="bio.html">About</a><a href="login.html" aria-current="page">Log in</a>
+    <a class="btn btn-gold" href="contact.html">Get in touch</a>
+  </nav>
+</header>
+<main id="mainContent" class="acct">
+  <div class="wrap acct-grid">
+    <section class="acct-intro">
+      <h1>Create your account</h1>
+      <p>Students get their course's question packs in one place. Parents can link to their child's account and see the same packs.</p>
+      <ul class="ticks" style="grid-template-columns:1fr">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Free to join</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Question packs and worked answers for your exam board</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Parents can follow along from their own login</li>
+      </ul>
+    </section>
+    <div class="auth-card">
+      <form id="registerForm" novalidate>
+        <fieldset class="role-pick">
+          <legend>I am a</legend>
+          <label><input type="radio" name="role" value="student" checked><span>Student</span></label>
+          <label><input type="radio" name="role" value="parent"><span>Parent</span></label>
+        </fieldset>
+        <div class="form-row">
+          <div class="form-group"><label for="firstName">First name</label><input id="firstName" name="first_name" autocomplete="given-name" required></div>
+          <div class="form-group"><label for="lastName">Last name</label><input id="lastName" name="last_name" autocomplete="family-name" required></div>
+        </div>
+        <div class="form-group"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="form-group" data-for="student"><label for="course">Your course and exam board</label><select id="course" name="course" data-courses></select></div>
+        <p class="hint" data-for="parent" hidden>After signing up, you'll link to your child using the code on their account page.</p>
+        <div class="form-row">
+          <div class="form-group"><label for="password">Password <span>(8+ characters)</span></label><input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required></div>
+          <div class="form-group"><label for="password2">Confirm password</label><input id="password2" name="password2" type="password" autocomplete="new-password" minlength="8" required></div>
+        </div>
+        <label class="check"><input type="checkbox" name="agree" required><span>I agree to my details being used to run this account.</span></label>
+        <p id="registerMsg" class="msg" role="alert" hidden></p>
+        <button type="submit" class="submit-btn">Create account</button>
+        <p class="form-note">Already have an account? <a href="login.html">Log in</a></p>
+      </form>
+      <p id="registerDone" class="msg ok" role="status" hidden></p>
+    </div>
+  </div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="fg">
+      <div><a class="brand" href="index.html" aria-label="mathstutor home"><img src="images/home/logo.webp" alt="" width="64" height="64"><span class="word">maths<b>tutor</b></span></a><p>GCSE and A-level Maths tuition with Surinder Sangha. Online and in Notting Hill.</p></div>
+      <div><h4>Lessons</h4><ul><li><a href="contact.html">One-to-one</a></li><li><a href="group-classes.html">Group classes</a></li><li><a href="contact.html">Book a lesson</a></li></ul></div>
+      <div><h4>Resources</h4><ul><li><a href="question-packs.html">Question packs</a></li><li><a href="articles.html">Articles</a></li><li><a href="maths-revision-plan.html">Revision plan</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="bio.html">About me</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    </div>
+    <div class="legal"><span>Maths Tutor Limited. Registered in England and Wales, company number 17469182.</span><span>© Maths Tutor Limited 2026</span></div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+<script src="assets/account.js" defer></script>
+</body>
+</html>
