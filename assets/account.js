@@ -141,8 +141,9 @@ window.MT_CONFIG = window.MT_CONFIG || {
         <label class="search"><span class="sr">Search topics</span><input type="search" placeholder="Search topics" data-filter></label></div>` +
         data.sections.map(s => `<details class="pack-group" open><summary>${esc(s.h)} <span>${s.topics.length}</span></summary><ul>` +
           s.topics.map(t => `<li data-topic="${esc(t.t.toLowerCase())}"><span>${esc(t.t)}</span><span class="dl">` +
-            (t.q ? `<a href="${esc(t.q)}" target="_blank" rel="noopener">Questions</a>` : "") +
-            (t.a ? `<a href="${esc(t.a)}" target="_blank" rel="noopener">Answers</a>` : "") + `</span></li>`).join("") +
+            (t.free
+              ? `<a href="${esc(t.q)}" target="_blank" rel="noopener">Workbook</a><a href="${esc(t.a)}" target="_blank" rel="noopener">Solutions</a>`
+              : `<span class="locked">Members only</span>`) + `</span></li>`).join("") +
           `</ul></details>`).join("");
       box.querySelector("[data-filter]").addEventListener("input", e => {
         const q = e.target.value.trim().toLowerCase();
